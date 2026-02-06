@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Social icons - centered */}
         <div className="mt-10 flex justify-center gap-4">
           <a
-            href="#"
+            href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
             className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
           >
@@ -60,7 +60,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://api.whatsapp.com/send?phone=14437972166"
             aria-label="WhatsApp"
             className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
           >
