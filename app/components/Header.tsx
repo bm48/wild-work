@@ -7,7 +7,8 @@ import Image from "next/image";
 const navTabs = [
   { label: "HOME", href: "/pages/Home" },
   { label: "WILDFIRE", href: "/pages/Wildfire" },
-  { label: "LEWFRENCH", href: "/pages/Lew-french" },
+  { label: "INSPIRATION", href: "/pages/Inspiration" },
+  { label: 'THE RUINS', href: "/pages/The-ruins"},
   { label: "I SELL", href: "/pages/I-sell" },
   { label: "WHO IS G", href: "/pages/who-is-g" },
 ];

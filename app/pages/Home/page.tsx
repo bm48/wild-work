@@ -179,59 +179,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden />
       </section>
 
-      {/* The Ruins */}
-      <section className="bg-black px-6 py-12 text-white">
-        <div
-          className="space-y-5 text-left text-[0.8rem] leading-relaxed"
-          style={{ fontFamily: "var(--font-serif), serif" }}
-        >
-          <h2 className="text-[1.15rem] font-bold">The Ruins</h2>
-          <p className="text-[0.8rem] italic text-white/90">
-            Federal Hill, Baltimore City, Maryland
-          </p>
-          <p>
-            The Ruins is a site-specific stonework project located in Federal
-            Hill, a short cannonball&apos;s shot from Baltimore&apos;s Inner
-            Harbor.
-          </p>
-          <p>
-            The project began with a single question from the client:{" "}
-            <em>What do you see here?</em>
-          </p>
-          <p>
-            What I saw was the remains of a colonial American-era munitions
-            depot, dating to the War of 1812, a stray cannonball detonated the
-            munitions, blowing the structure apart and leaving only fragments
-            behind.
-          </p>
-          <p>
-            In that vision, more than 200 years later, the current owners chose
-            to preserve those imagined ruins and memorialize them. The space was
-            completed with bluestone patios and walks, seating, a reflecting
-            pool, and a rusting urn—elements meant to acknowledge time, loss,
-            and endurance.
-          </p>
-          <p>
-            Much of the stone used in the project is reclaimed granite salvaged
-            from the streets of Baltimore City.
-          </p>
-          <p>
-            <em>The Ruins</em> is a quiet acknowledgment of Baltimore&apos;s
-            past, constructed in the present, and I am hoping it will leave
-            many to wonder about its origins for centuries.
-          </p>
-          <p>
-            If you are interested in a Ruin of your own, a purpose built party
-            area that will have people talking for centuries,{" "}
-            <a
-              href="tel:+14437972166"
-              className="underline decoration-white/60 underline-offset-2 hover:decoration-white"
-            >
-              call me
-            </a>
-            .
-          </p>
-        </div>
+      {/* The Ruins CTA */}
+      <section className="bg-black px-6 py-16 text-white text-center" style={{ fontFamily: "var(--font-serif), serif" }}>
+        <h2 className="text-[1.5rem] font-bold mb-3">The Ruins</h2>
+        <p className="text-[0.8rem] text-white/90 mb-4">Federal Hill, Baltimore City, Maryland</p>
+        <p className="text-[0.8rem] mb-8">My Client asked me, &quot;What do you see here?&quot;</p>
+        <Link
+          href="/pages/The-ruins"
+          className="inline-block rounded-xl bg-white px-8 py-4 text-[#555] font-medium transition-opacity hover:opacity-90"
+          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px", padding: "12px 15px" }}
+          >
+          Click Here to Find Out What I Saw
+        </Link>
       </section>
       
       <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">

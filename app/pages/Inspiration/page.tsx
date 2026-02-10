@@ -4,16 +4,20 @@ import InspirationGallery from "../../components/InspirationGallery";
 export default function LewFrench() {
     return (
         <div className="mx-auto w-full max-w-5xl py-12">
+            
+            {/* <div className="absolute inset-0 flex items-center justify-center bg-black/40 pointer-events-none" aria-hidden /> */}
+                <h1
+                    className="flex items-center justify-center text-white text-[1.5rem] font-bold text-center px-6 z-10 pointer-events-none"
+                    style={{ fontFamily: "var(--font-serif), serif" }}
+                >
+                    Inspiration: Lew French
+                </h1>
             <InspirationGallery />
-
-            <section className="bg-black px-6 py-12 text-white">
-                <h2 className="text-[1.15rem] font-bold text-center">Inspiration: Lew French</h2>
-            </section>
 
             <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black px-6">
                 <Image
                 src="/LewFrenchInspiration-2.png"
-                alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
+                alt="Lew French inspiration - stone craftsmanship"
                 fill
                 className="object-contain object-center"
                 priority
