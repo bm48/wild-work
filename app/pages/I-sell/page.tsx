@@ -15,12 +15,10 @@ export default function ISell() {
             </section>
 
             <section className="bg-black px-6 py-16 text-white" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h1 className="text-[1.5rem] font-bold mb-10">
-                    I sell people&apos;s homes.
-                    <br />
-                    Period.
+                <h1 className="text-3xl font-bold mb-10r">
+                My Work Sells People&apos;s Homes. Period.
                 </h1>
-                <div className="space-y-6 text-left text-[0.8rem] leading-relaxed">
+                <div className="space-y-6 text-left text-[0.8rem] leading-relaxed py-10">
                     <p>
                         I don&apos;t work in real estate, or stage houses. But over the years—now more than forty of them—I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—You sold our house.&quot;
                     </p>

@@ -19,7 +19,7 @@ export default function WhoIsG() {
         <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden />
       </section>
 
-      <section className="bg-black text-white py-16 text-center font-serif mx-auto max-w-5xl">
+      <section className="bg-black text-white py-16 font-serif mx-auto max-w-5xl">
         <h1 className="text-[1.5rem] font-bold mb-8">Who is SG Dietz?</h1>
         <p className="text-[0.8rem] leading-relaxed mb-10">
           Scott Gregory Dietz or &quot;G&quot; was born on November 7, 1968 and grew up in Bel Air, MD, a half hour North of Baltimore City, where both his Parents were Born and Raised. G was an Undisciplined Child that was Impossible to Control. Now as an Adult, he has an <span className="font-bold uppercase">UNBRIDLED MIND</span> with <span className="font-bold uppercase">EXPLOSIVE CREATIVE ENERGY</span>.
@@ -28,12 +28,12 @@ export default function WhoIsG() {
         <p className="text-[0.8rem] leading-relaxed mb-12">
           G is a Master Stone Mason, Fine Artist, and Hard Core Problem Solver. With More than 40 Years of Design and Construction Experience, he is known for Charging Directly into the Most Difficult, Complex, and Unconventional Problems People can Face. He and his Team are Capable of any Type of Design, any Type of Build. WildWorks is Centered in Baltimore, MD, Though He Would be Super Happy to <span className="font-bold uppercase">TRAVEL ANYWHERE ON PLANET EARTH</span> to Design &amp; Build for You.
         </p>
-        <h2 className="text-[1.15rem] font-bold mb-4">Call or Text Directly:</h2>
-        <p className="text-[1.2rem] font-bold mb-6">
+        <h2 className="py-6 text-2xl font-bold mb-4 text-center">Call or Text Directly:</h2>
+        <p className="py-8 text-3xl font-bold text-center">
           <a href="tel:+14437972166" className="hover:underline">1+443-797-2166</a>
         </p>
-        <p className="text-[0.8rem] opacity-90 mb-12">Or DM Me on WhatsApp or X, below.</p>
-        <p className="text-[1.2rem] font-bold">G.</p>
+        <p className="text-[0.8rem] opacity-90 mb-12 text-center">Or DM Me on WhatsApp or X, below.</p>
+        <p className="text-3xl font-bold text-center">G.</p>
       </section>
 
     </div>

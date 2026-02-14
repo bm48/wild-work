@@ -4,11 +4,12 @@ export default function Wildfire() {
 
     return (
         <div className="mx-auto w-full max-w-5xl py-12">
-            <section className="bg-black px-6 text-white">
-                <h1 className="text-[1.5rem] font-bold text-center">Project Wildfire</h1>
-            </section>
 
             <ImageGallery />
+            
+            <section className="bg-black px-6 text-white">
+                <h1 className="text-4xl font-bold text-center">Project Wildfire</h1>
+            </section>
             {/* Project Wildfire description */}
             <section className="bg-black px-6 py-12 text-white">
                 <div

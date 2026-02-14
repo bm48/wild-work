@@ -19,7 +19,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h1 className="text-[1.5rem] font-bold mb-2">The Ruins</h1>
+                <h1 className="text-5xl font-bold mb-6 text-center">The Ruins</h1>
                 <p className="text-[0.8rem] text-white/90 mb-8">Federal Hill, Baltimore City, Maryland</p>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
