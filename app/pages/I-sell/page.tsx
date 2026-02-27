@@ -1,24 +1,22 @@
-import Image from "next/image";
+import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function ISell() {
     return (
-        <div className="mx-auto w-full max-w-5xl py-12">
-            <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">
-            <Image
+        <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
+            <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+            <AspectRatioImage
                 src="/Travis-G-20260204-A copy.jpg"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-                fill
-                className="object-contain object-center"
                 priority
                 sizes="100vw"
                 />
             </section>
 
-            <section className="bg-black px-6 pt-16 text-white" >
-                <h1 className="text-3xl font-bold mb-10r">
+            <section className="mx-auto max-w-6xl bg-black px-4 pt-10 text-white sm:px-6 sm:pt-16" >
+                <h1 className="mb-6 text-2xl font-bold sm:mb-8 sm:text-3xl">
                 My Work Sells People&apos;s Homes. Period.
                 </h1>
-                <div className="space-y-6 text-left text-[0.8rem] leading-relaxed py-10">
+                <div className="space-y-6 py-8 text-left text-[0.8rem] leading-relaxed sm:py-10">
                     <p>
                         I don&apos;t work in real estate, or stage houses. But over the years—now more than forty of them—I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—You sold our house.&quot;
                     </p>
@@ -49,13 +47,13 @@ export default function ISell() {
                     <p>
                     If you&apos;d like to talk it through, I&apos;m happy to drive to you or hop on a video call—whether you&apos;re not far away or halfway around the world—and help figure out what will actually make the most sense for you, your family, and your home. Please feel free to call me anytime directly on my cell phone, I&apos;m always happy to talk. G.
                     </p>
-                    <p className="text-4xl mb-10 mt-6 text-center">
+                    <a href="tel:+14437972166" className="block mt-6 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
                     1+443-797-2166
-                    </p>
+                    </a>
                 </div>
             </section>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-4 px-4 sm:px-0">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
@@ -85,7 +83,7 @@ export default function ISell() {
             </svg>
           </a>
         </div>
-        <p className="text-xl text-white/90 pt-4 text-center">
+        <p className="pt-4 text-center text-base text-white/90 sm:text-xl">
         or DM Me on X or WhatsApp</p>
         </div>
     )

@@ -1,29 +1,27 @@
-import Image from "next/image";
+import AspectRatioImage from "../../components/AspectRatioImage";
 import InspirationGallery from "../../components/InspirationGallery";
 
 export default function LewFrench() {
     return (
-        <div className="mx-auto w-full max-w-4xl py-12">
+        <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
             
             {/* <div className="absolute inset-0 flex items-center justify-center bg-black/40 pointer-events-none" aria-hidden /> */}
                 
             {/* <InspirationGallery /> */}
 
 
-            <section className="relative flex min-h-[100vh] max-w-3xl mx-auto items-center justify-center overflow-hidden bg-black px-6">
-                <Image
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
+                <AspectRatioImage
                 src="/LewFrenchInspiration-2.png"
                 alt="Lew French inspiration - stone craftsmanship"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
 
-                <section className="bg-black px-6 py-12 text-white">
+                <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                     <h1
-                        className="flex items-center justify-center text-white text-3xl font-bold text-center px-6 z-10 pointer-events-none"
+                        className="flex items-center justify-center text-white text-2xl font-bold text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-3xl"
                         style={{ fontFamily: "var(--font-serif), serif" }}
                     >
                         Inspiration: Lew French
@@ -71,18 +69,16 @@ export default function LewFrench() {
 
 
 
-            <section className="relative flex min-h-[100vh] max-w-3xl mx-auto items-center justify-center overflow-hidden bg-black px-6 mt-8">
-                <Image
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+                <AspectRatioImage
                 src="/McNulty-Sketch-Cr.jpg"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
             
-            <section className="bg-black px-6 py-12 text-white">
+            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                     <h2 className="text-[1.15rem] font-bold">
                         Design: Sketch
                     </h2>
@@ -94,17 +90,15 @@ export default function LewFrench() {
                     </p>
             </section>
 
-            <section className="relative flex min-h-[120vh] max-w-3xl mx-auto items-center justify-center overflow-hidden bg-black px-6 mt-8">
-                <Image
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+                <AspectRatioImage
                 src="/McNultyDesign-2.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="bg-black px-6 py-12 text-white">
+            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                     <h2 className="text-[1.15rem] font-bold">
                         Stone Purchasing
                     </h2>
@@ -121,33 +115,29 @@ export default function LewFrench() {
                         This was Version 2.0 that I showed the clients, by text. I was not super happy with it, thought something was missing. 
                     </p>
             </section>
-            <section className="relative flex min-h-[100vh] max-w-3xl mx-auto items-center justify-center overflow-hidden bg-black px-6 mt-8">
-                <Image
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+                <AspectRatioImage
                 src="/20260103_204542-2-high.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="bg-black px-6 py-12 text-white">
+            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                 <p className="text-sm py-2">
                     I took about 2 hours, and started into more curved outer edges. I abandoned that after numerous iterations, as I just could not get anything to look pleasing.
                     As I look at it now upon writing this, this style of design could be magnificent for a future build. King Cobra.
                 </p>
             </section>
-            <section className="relative flex min-h-[100vh] max-w-3xl mx-auto items-center justify-center overflow-hidden bg-black px-6 mt-8">
-                <Image
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+                <AspectRatioImage
                 src="/20251222_082817-1-2-high.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="bg-black px-6 py-12 text-white">
+            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                 <p className="text-sm py-2">
                     I realized that we had a pallet of 3 superstepper 
                     stones, massive, chunky, and two of them might be perfect to cantilever out as shoulders and be quite the spectacular finishing touch to the entire project.
@@ -162,7 +152,7 @@ export default function LewFrench() {
                 <p className="text-sm py-2">
                     For all its imperfections, here is the final design. We shall see how close we come to this after the build!
                 </p>
-                <h2 className="text-3xl font-bold py-4">
+                <h2 className="py-4 text-2xl font-bold sm:text-3xl">
                     Project Wildfire
                 </h2>
                 <p className="text-sm py-2">
@@ -179,11 +169,11 @@ export default function LewFrench() {
                     If you would like a Fireplace along these lines, inside or outside of your home, please call me on my cell- G: 
                 </p>
 
-                <p className="text-4xl text-white/90 pt-4 text-center mt-20">
+                <a href="tel:+14437972166" className="block pt-4 mt-12 text-2xl text-center text-white/90 sm:mt-20 sm:text-4xl min-h-[44px]">
                     1+443-797-2166
-                </p>
+                </a>
                 
-                <div className="mt-10 flex justify-center gap-4">
+                <div className="mt-8 flex justify-center gap-4 sm:mt-10">
                 <a
                     href="https://x.com/OfficialSGDietz"
                     aria-label="X (Twitter)"
@@ -215,7 +205,7 @@ export default function LewFrench() {
                     </svg>
                 </a>
                 </div>
-                <p className="text-md text-white/90 pt-4 text-center">
+                <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
                 or DM Me on X or WhatsApp</p>
             </section>
             

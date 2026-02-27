@@ -1,42 +1,36 @@
-import Image from "next/image";
-
-
-
+import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function WhoIsG() {
   return (
-    <div className="py-12 text-white max-w-4xl mx-auto">
+    <div className="max-w-5xl mx-auto py-6 text-white sm:py-12">
       {/* Image constrained to same width as header separator line */}
-      <section className="relative mx-auto flex min-h-[100vh] max-w-4xl items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative mx-auto flex max-w-5xl items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/EllicotCity.jpeg"
           alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
-          fill
-          className="object-cover object-center"
           priority
           sizes="(max-width: 64rem) 100vw, 64rem"
         />
         <div className="absolute inset-0  pointer-events-none" aria-hidden />
       </section>
 
-      <section className="bg-black text-white pt-16 font-serif mx-auto">
-        <h1 className="text-[1.5rem] mb-8">Who is G?</h1>
-        <p className="text-[0.8rem] leading-relaxed mb-10">
+      <section className="mx-auto max-w-5xl bg-black px-4 pt-10 text-white font-serif sm:px-6 sm:pt-16">
+        <h1 className="mb-6 text-xl sm:mb-8 sm:text-[1.5rem]">Who is G?</h1>
+        <p className="mb-8 text-[0.8rem] leading-relaxed sm:mb-10">
           Scott Gregory Dietz or &quot;G&quot; was born on November 7, 1968 and grew up in Bel Air, MD, a half hour North of Baltimore City, where both his Parents were Born and Raised. G was an Undisciplined Child that was Impossible to Control. Now as an Adult, he has an <span className="font-bold uppercase">UNBRIDLED MIND</span> with <span className="font-bold uppercase">EXPLOSIVE CREATIVE ENERGY</span>.
         </p>
         <h2 className="text-[1.15rem] font-bold mb-8">Worked Out. Thank God.</h2>
         <p className="text-[0.8rem] leading-relaxed mb-12">
           G is a Master Stone Mason, Fine Artist, and Hard Core Problem Solver. With More than 40 Years of Design and Construction Experience, he is known for Charging Directly into the Most Difficult, Complex, and Unconventional Problems People can Face. He and his Team are Capable of any Type of Design, any Type of Build. WildWorks is Centered in Baltimore, MD, Though He Would be Super Happy to <span className="font-bold uppercase">TRAVEL ANYWHERE ON PLANET EARTH</span> to Design &amp; Build for You.
         </p>
-        <h2 className=" text-2xl mb-4 text-center">Call or Text Directly:</h2>
-        <p className="py-8 text-3xl text-center">
+        <h2 className="mb-4 text-center text-xl sm:text-2xl">Call or Text Directly:</h2>
+        <a href="tel:+14437972166" className="block py-6 text-2xl text-center sm:py-8 sm:text-3xl min-h-[44px]">
           1+443-797-2166
-        </p>
-        <p className="text-5xl text-center py-6">Just Do It</p>
-        <p className="text-5xl text-center py-6">Call or Text G.</p>
+        </a>
+        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Just Do It</p>
+        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Call or Text G.</p>
 
-         
-        <p className="text-md text-white/90 pt-4 text-center">
+        <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
           or DM Me on X or WhatsApp
         </p>
         <div className="mt-4 flex justify-center gap-4">

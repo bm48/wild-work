@@ -6,11 +6,11 @@ export default function Footer() {
       {/* Top separator - light gray */}
       <div className="border-t border-[#111]" />
 
-      <div className="mx-auto max-w-2xl px-6 py-12">
+      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
         {/* Email signup - left-aligned */}
         <div className="text-left">
           <h3
-            className="mb-6 text-xl font-normal text-[#FFFFFF]"
+            className="mb-4 text-lg font-normal text-[#FFFFFF] sm:mb-6 sm:text-xl"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
             Sign Up For Emails
@@ -27,14 +27,14 @@ export default function Footer() {
                 type="email"
                 name="email"
                 required
-                className="min-w-[280px] max-w-sm rounded border border-[#333] bg-[#1a1a1a] px-3 py-2 text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
+                className="w-full min-w-0 max-w-sm rounded border border-[#333] bg-[#1a1a1a] px-3 py-2.5 text-base text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
                 placeholder=""
               />
             </div>
             <div className="pl-0 sm:pl-[7.5rem]">
               <button
                 type="submit"
-                className="rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0]"
+                className="min-h-[44px] rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0]"
                 style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
               >
                 Submit form
@@ -43,12 +43,12 @@ export default function Footer() {
           </form>
         </div>
 
-        <div className="space-y-6 text-center mt-10">
-          <p className="text-5xl">
+        <div className="space-y-4 text-center mt-8 sm:mt-10 sm:space-y-6">
+          <p className="text-3xl sm:text-5xl">
             Questions?
           </p>
-          <p className="text-2xl">Contact SG Dietz</p>
-          <p className="text-2xl">wildworks@pm.me</p>
+          <p className="text-xl sm:text-2xl">Contact SG Dietz</p>
+          <p className="text-xl sm:text-2xl">wildworks@pm.me</p>
         </div>
 
         {/* Social icons - centered */}
@@ -86,7 +86,7 @@ export default function Footer() {
 
       {/* Copyright bar - left and right */}
       <div className="border-t border-[#111]">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-6 py-4 text-sm text-[#FFFFFF] sm:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
           <span
             style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
           >

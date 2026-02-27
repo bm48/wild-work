@@ -3,15 +3,15 @@ import ImageGallery from "../../components/ImageGallery";
 export default function Wildfire() {
 
     return (
-        <div className="mx-auto w-full max-w-5xl py-12">
+        <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
 
             <ImageGallery />
             
-            <section className="bg-black px-6 text-white">
-                <h1 className="text-5xl font-bold text-center">Project Wildfire</h1>
+            <section className="bg-black px-4 text-white sm:px-6">
+                <h1 className="text-3xl font-bold text-center sm:text-5xl">Project Wildfire</h1>
             </section>
             {/* Project Wildfire description */}
-            <section className="bg-black px-6 py-12 text-white">
+            <section className="bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
                 <div
                 className="space-y-6 text-left text-[0.8rem] leading-relaxed"
                 style={{ fontFamily: "var(--font-serif), serif" }}
@@ -58,7 +58,7 @@ export default function Wildfire() {
                 </div>
             </section>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-4 px-4 sm:px-0">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"

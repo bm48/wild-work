@@ -1,18 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
-import ImageGallery from "../../components/ImageGallery";
-import InspirationGallery from "../../components/InspirationGallery";
+import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function Home() {
   return (
-    <div className="mx-auto w-full max-w-5xl py-12">
+    <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
       {/* Hero: image with overlaid text - full image visible */}
-      <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/hero-wildworks.jpg"
           alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-          fill
-          className="object-contain object-center"
           priority
           sizes="100vw"
         />
@@ -20,38 +16,42 @@ export default function Home() {
       </section>
 
       {/* Promotional / Contact CTA - black background, centered */}
-      <section className="flex flex-col items-center justify-center gap-4 bg-black px-6 py-16 text-center text-white" >
-        <p className="text-3xl text-white/95">On a Quest to Create Planet Earth&apos;s Ultimate Stone Artwork</p>
-        <p className="text-2xl text-white/80 -mt-2">G. Dietz - Owner/Artist</p>
+      <section className="flex flex-col items-center justify-center gap-3 bg-black px-4 py-10 text-center text-white sm:gap-4 sm:px-6 sm:py-16" >
+        <p className="text-xl text-white/95 sm:text-3xl">On a Quest to Create Planet Earth&apos;s Ultimate Stone Artwork</p>
+        <p className="text-lg text-white/80 -mt-2 sm:text-2xl">G. Dietz - Owner/Artist</p>
 
-        <h2 className="py-2 text-5xl md:text-6xl tracking-wide mt-8" >
+        <h2 className="py-2 text-4xl tracking-wide mt-6 sm:mt-8 sm:text-5xl md:text-6xl" >
           WildWorks
         </h2>
-        <p className="text-xl  mt-2">Fine Art and Practical Landscaping</p>
+        <p className="text-lg mt-2 sm:text-xl">Fine Art and Practical Landscaping</p>
 
-        <div className="space-y-1 pt-4 text-2xl md:text-2xl" >
-          <p className="text-3xl md:text-4xl mt-12">Want Something Stunningly Wild</p>
-          <p className="text-3xl md:text-4xl mt-12">That You Own</p>
-          <p className="text-3xl md:text-4xl mt-12">At Your Home</p>
+        <div className="space-y-1 pt-2 text-xl sm:pt-4 sm:text-2xl md:text-2xl" >
+          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">Want Something Stunningly Wild</p>
+          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">That You Own</p>
+          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">At Your Home</p>
         </div>
 
-        <p className="pt-6 mt-2 text-5xl md:text-6xl" >Call Now!</p>
-        <p
-          className="text-3xl md:text-4xl font-medium text-white hover:opacity-90 transition-opacity mt-8"
+        <p className="pt-4 mt-2 text-4xl sm:pt-6 sm:text-5xl md:text-6xl" >Call Now!</p>
+        <a
+          href="tel:+14437972166"
+          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-6 inline-block min-h-[44px] sm:mt-8 sm:text-3xl md:text-4xl"
         >
           1+443-797-2166
-        </p>
-        <p className="text-3xl md:text-4xl font-medium text-white hover:opacity-90 transition-opacity mt-8">
-        or wildworks@pm.me
-        </p>
+        </a>
+        <a
+          href="mailto:wildworks@pm.me"
+          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-4 inline-block min-h-[44px] sm:mt-8 sm:text-3xl md:text-4xl"
+        >
+          or wildworks@pm.me
+        </a>
 
-        <p className="pt-4 text-6xl tracking-widest mt-8" >G.</p>
+        <p className="pt-4 text-5xl tracking-widest mt-6 sm:mt-8 sm:text-6xl" >G.</p>
 
-        <p className="pt-8 text-2xl md:text-3xl  mt-8" >
+        <p className="pt-6 text-lg mt-6 sm:mt-8 sm:text-2xl md:text-3xl" >
           I WILL TRAVEL ANYWHERE IN THE WORLD TO DESIGN, BUILD, AND PROBLEM SOLVE FOR YOU
         </p>
 
-        <div className="flex items-center justify-center gap-4 pt-6">
+        <div className="flex items-center justify-center gap-4 pt-4 sm:pt-6">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
@@ -78,17 +78,15 @@ export default function Home() {
             </svg>
           </a>
         </div>
-        <p className="text-xl text-white/80 pt-2" >
+        <p className="pt-2 text-base text-white/80 sm:text-xl" >
           DM Me on X or WhatsApp:
         </p>
       </section>
 
-      <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/20260121-TreeofLife-Branded-A copy.jpg"
           alt="Tree of Life - A tree with a human face and a tree with a dragon face"
-          fill
-          className="object-contain object-center"
           priority
           sizes="100vw"
         />
@@ -96,22 +94,20 @@ export default function Home() {
       </section>
 
       {/* Current project banner */}
-      <section className="flex flex-col items-center justify-center gap-6 bg-black px-6 pt-2 text-center text-white" >
-        <p className="text-md font-normal">
+      <section className="flex flex-col items-center justify-center gap-4 bg-black px-4 pt-2 text-center text-white sm:gap-6 sm:px-6" >
+        <p className="text-sm font-normal sm:text-base">
           The Tree of Life Natural Stone Patio with Creeping Perennial
           &quot;Leaves&quot;
         </p>
-        <h2 className="text-4xl mt-8 mb-2">
+        <h2 className="text-2xl mt-6 mb-2 sm:mt-8 sm:text-4xl">
           Our Current Project: Wildfire
         </h2>
       </section>
 
-      <section className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/21.jpg"
           alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-          fill
-          className="object-cover object-center"
           priority
           sizes="90vw"
         />
@@ -119,52 +115,43 @@ export default function Home() {
       </section>
 
       {/* Project Wildfire CTA */}
-      <section className="bg-black px-6 pb-16 text-white text-center">
-        <p
-          className="mx-auto text-md leading-relaxed mb-10 mt-2"
-          
-        >
+      <section className="bg-black px-4 pb-10 text-center text-white sm:px-6 sm:pb-16">
+        <p className="mx-auto mb-8 mt-2 text-sm leading-relaxed sm:mb-10 sm:text-base">
           Project Wildfire is a Natural Stone Outdoor Fireplace that we&apos;re Building RIGHT NOW
         </p>
         <Link
           href="/pages/Wildfire"
-          className=" rounded-2xl bg-white px-8 py-4 font-medium transition-opacity hover:opacity-90"
-          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px", padding: "15px 15px" }}
+          className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium transition-opacity hover:opacity-90 sm:px-8 sm:py-4"
+          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
         >
           Click Here To Check Out Project Wildfire
         </Link>
       </section>
 
 
-        <section className="relative flex min-h-[100vh] w-full items-center justify-center overflow-hidden bg-black mt-8">
-          <Image
+        <section className="relative flex w-full items-center justify-center overflow-hidden bg-black mt-8">
+          <AspectRatioImage
           src="/LewFrenchInspiration-2.png"
           alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-          fill
-          className="object-cover object-center"
           priority
           sizes="100vw"
           />
         </section>
 
       {/* Inspiration: Lew French */}
-      <section className="bg-black px-6 pt-8 pb-16 text-white">
-        <div
-          className="space-y-5 text-left text-[0.8rem] leading-relaxed"
-          
-        >
-          <h2 className="text-4xl text-center">
+      <section className="bg-black px-4 pt-6 pb-10 text-white sm:px-6 sm:pt-8 sm:pb-16">
+        <div className="space-y-4 text-left text-[0.8rem] leading-relaxed sm:space-y-5">
+          <h2 className="text-2xl text-center sm:text-4xl">
             Inspiration: Lew French
           </h2>
-          <p className="text-center text-md">
+          <p className="text-center text-sm sm:text-base">
           Project Wildfire Draws Direct Inspiration from the Work of Master Stone Artisan <strong>Lew French</strong>
           </p>
           <div className="flex align-center justify-center">
-
             <Link
               href="/pages/Lew-french"
-              className=" rounded-2xl bg-white px-8 py-4 font-medium transition-opacity hover:opacity-90"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px", padding: "12px 15px" }}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium transition-opacity hover:opacity-90 sm:px-8 sm:py-4"
+              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
             >
               Click Here For Details
             </Link>
@@ -172,12 +159,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex min-h-[100vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/Ruins-Website-20260127-A copy.jpg"
           alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
-          fill
-          className="object-cover object-center"
           priority
           sizes="100vw"
         />
@@ -197,12 +182,10 @@ export default function Home() {
         </Link>
       </section>
       
-      <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/Travis-G-20260204-A copy.jpg"
           alt="WildWorks - client property and landscape"
-          fill
-          className="object-contain object-center"
           priority
           sizes="100vw"
         />
@@ -210,22 +193,19 @@ export default function Home() {
       </section>
 
       {/* I sell people's homes. Period. */}
-      <section className="bg-black px-6 py-16 text-white -mt-12">
-        <div
-          className="space-y-5 text-left text-[0.8rem] leading-relaxed"
-          
-        >
-          <h2 className="text-3xl text-center ">
+      <section className="bg-black px-4 py-10 text-white -mt-8 sm:-mt-12 sm:px-6 sm:py-16">
+        <div className="space-y-4 text-left text-[0.8rem] leading-relaxed sm:space-y-5">
+          <h2 className="text-2xl text-center sm:text-3xl">
             My Work Sells People&apos;s Homes. Period.
           </h2>
-          <p className="text-center">
+          <p className="text-center text-sm sm:text-base">
             I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—you sold our house.&quot;
           </p>
           <div className="flex align-center justify-center">
             <Link
               href="/pages/I-sell"
-              className=" rounded-2xl bg-white px-8 py-4 font-medium transition-opacity hover:opacity-90 text-md"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px", padding: "12px 15px" }}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium transition-opacity hover:opacity-90 text-sm sm:px-8 sm:py-4 sm:text-base"
+              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
             >
               Click Here To See Why
             </Link>
@@ -233,12 +213,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex min-h-[100vh] w-full items-center justify-center overflow-hidden bg-black">
-        <Image
+      <section className="relative flex w-full items-center justify-center overflow-hidden bg-black">
+        <AspectRatioImage
           src="/Fireplace.jpg"
           alt="Stone fireplace with classic ironworks and re-purposed wood from a fallen down barn"
-          fill
-          className="object-contain object-center"
           priority
           sizes="100vw"
         />
@@ -246,17 +224,14 @@ export default function Home() {
       </section>
 
       {/* Fireplace caption */}
-      <section className="bg-black px-6 py-8 text-white">
-        <p
-          className="text-center text-[0.8rem] text-white/90"
-          
-        >
+      <section className="bg-black px-4 py-6 text-white sm:px-6 sm:py-8">
+        <p className="text-center text-[0.8rem] text-white/90">
           Fireplace with Custom Ironworks and Wood Taken from a Colonial Era Fallen Down Barn
         </p>
       </section>
 
       {/* Video section - local video to avoid embed timeouts */}
-      <section className="bg-black px-6 py-12">
+      <section className="bg-black px-4 py-8 sm:px-6 sm:py-12">
         <div className="w-full">
           <div className="relative aspect-video w-full overflow-hidden bg-black">
             <video
@@ -271,36 +246,34 @@ export default function Home() {
             </video>
           </div>
         </div>
-        <p className="text-center text-sm text-white/90 mt-8 mb-8">
-          Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder Steps, a Seat Wall, and a Mushroom Seat. Check it out!        </p>
+        <p className="mt-6 mb-6 text-center text-xs text-white/90 sm:mt-8 sm:mb-8 sm:text-sm">
+          Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder Steps, a Seat Wall, and a Mushroom Seat. Check it out!
+        </p>
       </section>
 
       {/* Exquisite Art / WildWorks CTA */}
-      <section className="bg-black px-6 text-center text-white">
-        <div
-          className="space-y-4"
-          
-        >
-          <p className="text-2xl">Exquisite Art</p>
-          <p className="text-2xl ">
+      <section className="bg-black px-4 py-8 text-center text-white sm:px-6">
+        <div className="space-y-3 sm:space-y-4">
+          <p className="text-xl sm:text-2xl">Exquisite Art</p>
+          <p className="text-xl sm:text-2xl">
             Unequaled Practicality & Craftsmanship
           </p>
-          <h2 className="py-8 text-5xl " >
+          <h2 className="py-6 text-4xl sm:py-8 sm:text-5xl" >
             WildWorks
           </h2>
-          <p className="text-2xl text-white/95">
+          <p className="text-lg text-white/95 sm:text-2xl">
             A Complete Design/Build Global Co.
           </p>
-          <p
-            className="no-underline inline-block py-4 text-3xl  decoration-white/50 underline-offset-4 transition-colors hover:decoration-white"
+          <a
+            href="tel:+14437972166"
+            className="no-underline inline-block min-h-[44px] py-4 text-2xl decoration-white/50 underline-offset-4 transition-colors hover:decoration-white sm:text-3xl"
           >
             1+443-797-2166
-          </p>
-          <p className="text-3xl ">Call or Text Today!</p>
-          <p className="pt-4 text-4xl ">G.</p>
+          </a>
+          <p className="text-2xl sm:text-3xl">Call or Text Today!</p>
+          <p className="pt-4 text-3xl sm:text-4xl">G.</p>
 
-          
-        <div className="mt-10 flex justify-center gap-4">
+        <div className="mt-8 flex justify-center gap-4 sm:mt-10">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
@@ -330,7 +303,7 @@ export default function Home() {
             </svg>
           </a>
         </div>
-        <p className="text-xl text-white/90 pt-4">
+        <p className="pt-4 text-base text-white/90 sm:text-xl">
         or DM Me on X or WhatsApp</p>
         </div>
       </section>

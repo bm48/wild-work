@@ -13,13 +13,22 @@ const GALLERY_IMAGES = [
 ];
 
 const FADE_DURATION_MS = 220;
+const DEFAULT_ASPECT = "4 / 3";
 
 export default function InspirationGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFading, setIsFading] = useState(false);
+  const [aspectRatios, setAspectRatios] = useState<Record<string, string>>({});
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>, src: string) => {
+    const img = e.currentTarget;
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    if (w && h) setAspectRatios((prev) => ({ ...prev, [src]: `${w} / ${h}` }));
+  }, []);
 
   const goPrev = useCallback(() => {
     if (isFading) return;
@@ -72,11 +81,12 @@ export default function InspirationGallery() {
   const current = GALLERY_IMAGES[currentIndex];
 
   return (
-    <section className="bg-black px-4 py-10 sm:px-6">
+    <section className="bg-black px-4 py-6 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-6xl cursor-pointer">
-        {/* Main image viewer - arrows and expand show on hover */}
+        {/* Main image viewer - arrows and expand show on hover; container aspect ratio matches current image */}
         <div
-          className="group relative mx-auto aspect-[4/3] w-full max-w-3xl overflow-hidden bg-black"
+          className="group relative mx-auto w-full max-w-4xl overflow-hidden bg-black"
+          style={{ aspectRatio: aspectRatios[current.src] ?? DEFAULT_ASPECT }}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           onClick={handleImageAreaClick}
@@ -92,6 +102,7 @@ export default function InspirationGallery() {
               className="object-contain"
               sizes="(max-width: 768px) 100vw, 80vw"
               priority
+              onLoad={(e) => handleImageLoad(e, current.src)}
             />
           </div>
 
@@ -138,25 +149,29 @@ export default function InspirationGallery() {
           </button>
         </div>
 
-        {/* Thumbnail strip */}
+        {/* Thumbnail strip - each thumbnail aspect ratio matches its image */}
         <div className="mt-6 flex justify-center gap-1">
           {GALLERY_IMAGES.map((img, i) => (
             <button
               key={img.src}
               type="button"
               onClick={() => goToIndex(i)}
-              className={`relative h-20 w-28 shrink-0 overflow-hidden rounded border-2 transition-colors sm:h-24 sm:w-32 ${
+              className={`relative shrink-0 overflow-hidden rounded border-2 transition-colors ${
                 i === currentIndex
                   ? "border-sky-400"
                   : "border-zinc-600 hover:border-zinc-500"
               }`}
-              style={{ width: "4rem", height: "4rem" }}
+              style={{
+                width: "4rem",
+                aspectRatio: aspectRatios[img.src] ?? "1",
+              }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover cursor-pointer"
+                className="object-contain cursor-pointer"
+                onLoad={(e) => handleImageLoad(e, img.src)}
               />
             </button>
           ))}
@@ -181,7 +196,10 @@ export default function InspirationGallery() {
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
-          <div className="relative h-full w-full max-h-[90vh] max-w-6xl">
+          <div
+            className="relative w-full max-h-[90vh] max-w-6xl mx-auto"
+            style={{ aspectRatio: aspectRatios[current.src] ?? DEFAULT_ASPECT }}
+          >
             <Image
               src={current.src}
               alt={current.alt}

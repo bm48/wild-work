@@ -18,54 +18,56 @@ export default function Header() {
 
   return (
     <header className="bg-[#000000] text-white">
-      {/* Logo + site title block */}
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 px-6 py-10">
-        <div className="flex flex-col items-center justify-center text-left sm:items-start">
+      {/* Logo + title on top; nav titles in a row below (horizontal scroll on mobile) */}
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-4 sm:gap-8 sm:px-6 sm:py-10">
+        {/* Logo + site title */}
+        <div className="flex flex-shrink-0 flex-col items-center sm:flex-row sm:gap-3">
           <Image
             src="/wildLogo.png"
             alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
             width={120}
             height={120}
+            className="h-12 w-12 object-contain sm:h-[120px] sm:w-[120px]"
           />
+          <span
+            className="whitespace-nowrap text-lg font-normal sm:text-4xl"
+            style={{ fontFamily: "var(--font-serif), serif" }}
+          >
+            Wildworks.Live
+          </span>
         </div>
-        <span
-          className="text-3xl font-normal sm:text-4xl"
-          style={{ fontFamily: "var(--font-serif), serif" }}
-        >
-          Wildworks.Live
-        </span>
+
+        {/* Nav titles: one row below logo/title; horizontal scroll on mobile, centered wrap on desktop */}
+        <nav className="w-full pt-4 sm:mx-auto sm:w-auto sm:px-6 sm:pb-2 sm:pt-12">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-1 [-webkit-overflow-scrolling:touch] sm:flex-wrap sm:justify-center sm:gap-6 sm:overflow-visible sm:pb-0 sm:pl-0">
+            {navTabs.map((tab) => {
+              const isActive =
+                tab.href === "/pages/Home"
+                  ? pathname === "/" || pathname === "/pages/Home"
+                  : pathname.startsWith(tab.href);
+              return (
+                <Link
+                  key={tab.href}
+                  href={tab.href}
+                  className={`inline-flex flex-shrink-0 min-h-[44px] min-w-[44px] items-center justify-center rounded px-3 py-2.5 text-xs font-normal uppercase tracking-wide transition-colors sm:px-5 sm:text-sm ${
+                    isActive
+                      ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
+                      : "text-[#FFFFFF] hover:text-white/85"
+                  }`}
+                  style={{
+                    fontFamily: "var(--font-serif), serif",
+                  }}
+                >
+                  {tab.label}
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
       </div>
 
-      {/* Nav tabs - centered */}
-      <nav className="mx-auto max-w-5xl px-6 pb-2" style={{marginTop: "3rem"}}>
-        <div className="flex items-center justify-center gap-6">
-          {navTabs.map((tab) => {
-            const isActive =
-              tab.href === "/pages/Home"
-                ? pathname === "/" || pathname === "/pages/Home"
-                : pathname.startsWith(tab.href);
-            return (
-              <Link
-                key={tab.href}
-                href={tab.href}
-                className={`rounded px-5 py-2.5 text-sm font-normal uppercase tracking-wide transition-colors ${
-                  isActive
-                    ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
-                    : "text-[#FFFFFF] hover:text-white/85"
-                }`}
-                style={{
-                  fontFamily: "var(--font-serif), serif",
-                }}
-              >
-                {tab.label}
-              </Link>
-            );
-          })}
-        </div>
-      </nav>
-
       {/* Separator line below nav */}
-      <div className="border-b mx-auto max-w-5xl px-6 " style={{ borderColor: "#222222" }} />
+      <div className="border-b mx-auto max-w-6xl px-4 sm:px-6" style={{ borderColor: "#222222" }} />
     </header>
   );
 }

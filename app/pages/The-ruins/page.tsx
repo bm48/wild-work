@@ -1,26 +1,23 @@
-import Image from "next/image";
-
+import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function TheRuins() {
     return (
-        <div className="mx-auto w-full max-w-5xl py-12">
+        <div className="mx-auto w-full max-w-5xl py-6 sm:py-12">
             {/* First image: same width as header separator line (like who-is-g) */}
             
-            <section className="relative flex min-h-[110vh] max-w-4xl mx-auto items-center justify-center overflow-hidden bg-black">
-                <Image
+            <section className="relative flex max-w-5xl mx-auto items-center justify-center overflow-hidden bg-black">
+                <AspectRatioImage
                 src="/Ruins-Website-20260127-A copy.jpg"
                 alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
-                fill
-                className="object-cover object-center"
                 priority
                 sizes="100vw"
                 />
                 <div className="absolute inset-0  pointer-events-none" aria-hidden />
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h1 className="text-5xl font-bold mb-6 text-center">The Ruins</h1>
-                <p className="text-[0.8rem] text-white/90 mb-8">Federal Hill, Baltimore City, Maryland</p>
+            <section className="bg-black px-4 py-6 text-white mx-auto max-w-5xl sm:px-6 sm:py-8" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h1 className="mb-4 text-3xl font-bold text-center sm:mb-6 sm:text-5xl">The Ruins</h1>
+                <p className="mb-6 text-[0.8rem] text-white/90 sm:mb-8">Federal Hill, Baltimore City, Maryland</p>
                 <div className="space-y-4 text-sm">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
                     <p>
@@ -38,7 +35,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 py-4 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-4 py-4 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">What I saw</h2>
                 <div className="space-y-4 text-sm">
                     <p>
@@ -55,7 +52,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 pt-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-4 pt-6 text-white mx-auto max-w-5xl sm:px-6 sm:pt-8" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">Building the Ruins</h2>
                 <p className="text-[0.8rem] leading-relaxed mb-4">The finished space was built to feel intentional and lived-in, with:</p>
                 <ul className="list-disc list-inside space-y-2 text-[0.8rem] leading-relaxed mb-6 pl-2">
@@ -67,7 +64,7 @@ export default function TheRuins() {
                 </ul>
             </section>
 
-            <section className="bg-black px-6 py-4 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-4 py-4 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">This Stone has Baltimore in it</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
@@ -85,7 +82,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-4 py-6 text-white mx-auto max-w-5xl sm:px-6 sm:py-8" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">Why this works</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
@@ -98,7 +95,7 @@ export default function TheRuins() {
                 <hr className="mt-2 border-white/30" />
             </section>
 
-            <section className="bg-black px-6 py-2 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-4 py-2 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">If you want a Ruin of your own...</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
@@ -128,13 +125,12 @@ export default function TheRuins() {
                         . I&apos;d love to discuss ideas with you.
                     </p>
                 </div>
-                <p className="text-4xl mb-10 mt-6 text-center">
+                <a href="tel:+14437972166" className="block mt-6 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
                     1+443.797.2166
-                </p>
+                </a>
             </section>
 
-             
-        <div className="mt-4 flex justify-center gap-4">
+        <div className="mt-4 flex justify-center gap-4 px-4 sm:px-0">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
@@ -164,7 +160,7 @@ export default function TheRuins() {
             </svg>
           </a>
         </div>
-        <p className="text-md text-white/90 pt-4 text-center">
+        <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
             or DM Me on X or WhatsApp</p>
         </div>
     );
