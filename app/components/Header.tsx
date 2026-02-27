@@ -37,7 +37,7 @@ export default function Header() {
       </div>
 
       {/* Nav tabs - centered */}
-      <nav className="mx-auto max-w-5xl px-6 py-8">
+      <nav className="mx-auto max-w-5xl px-6 pb-2" style={{marginTop: "3rem"}}>
         <div className="flex items-center justify-center gap-6">
           {navTabs.map((tab) => {
             const isActive =
@@ -65,7 +65,7 @@ export default function Header() {
       </nav>
 
       {/* Separator line below nav */}
-      <div className="border-t border-[#444444] mx-auto max-w-5xl px-6" />
+      <div className="border-b mx-auto max-w-5xl px-6 " style={{ borderColor: "#222222" }} />
     </header>
   );
 }

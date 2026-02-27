@@ -6,22 +6,22 @@ export default function TheRuins() {
         <div className="mx-auto w-full max-w-5xl py-12">
             {/* First image: same width as header separator line (like who-is-g) */}
             
-            <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-black">
+            <section className="relative flex min-h-[110vh] max-w-4xl mx-auto items-center justify-center overflow-hidden bg-black">
                 <Image
                 src="/Ruins-Website-20260127-A copy.jpg"
                 alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
                 fill
-                className="object-contain object-center"
+                className="object-cover object-center"
                 priority
                 sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden />
+                <div className="absolute inset-0  pointer-events-none" aria-hidden />
             </section>
 
             <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h1 className="text-5xl font-bold mb-6 text-center">The Ruins</h1>
                 <p className="text-[0.8rem] text-white/90 mb-8">Federal Hill, Baltimore City, Maryland</p>
-                <div className="space-y-6 text-[0.8rem] leading-relaxed">
+                <div className="space-y-4 text-sm">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
                     <p>
                         I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench … but it didn&apos;t have a story yet.
@@ -38,11 +38,16 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-6 py-4 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">What I saw</h2>
-                <div className="space-y-6 text-[0.8rem] leading-relaxed">
+                <div className="space-y-4 text-sm">
                     <p>
-                        In my mind, the &quot;backstory&quot; was this: A stone munitions structure—a small depot or powder store connected to harbor defense—stood on this ground back in that era. Then a stray cannonball during the actual War of 1812 found it—Boom! What remained were the wall pieces that we see today.
+                        In my mind, the &quot;backstory&quot; was this: 
+                    </p>
+                    <p>
+                        A stone munitions structure—a small depot or powder store connected to harbor defense—stood on this ground back in that era. Then a stray cannonball during the actual War of 1812 found it—Boom! What remained were the wall pieces that we see today.
+                    </p>
+                    <p>
                     </p>
                     <p>
                         And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; In the story, they preserved The Ruins and memorialized them by building gardens and a reflecting pool, etc., around them.
@@ -50,8 +55,8 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">Building the Memorial</h2>
+            <section className="bg-black px-6 pt-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-[1.15rem] font-bold mb-6">Building the Ruins</h2>
                 <p className="text-[0.8rem] leading-relaxed mb-4">The finished space was built to feel intentional and lived-in, with:</p>
                 <ul className="list-disc list-inside space-y-2 text-[0.8rem] leading-relaxed mb-6 pl-2">
                     <li>Bluestone patios and a walk</li>
@@ -60,10 +65,9 @@ export default function TheRuins() {
                     <li>A rusting urn with overflowing water</li>
                     <li>And the ruin fragments themselves—set like remnants, not &quot;decor&quot;</li>
                 </ul>
-                <p className="text-[0.8rem] leading-relaxed">Everything is there to acknowledge the history of Baltimore.</p>
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-6 py-4 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">This Stone has Baltimore in it</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
@@ -91,17 +95,16 @@ export default function TheRuins() {
                         My hope is that decades from now, even hundreds of years from now, people will still stand there looking at these ruins and say: &quot;What is this? Where did it come from? What happened here?&quot;
                     </p>
                 </div>
-                <hr className="mt-10 border-white/30" />
+                <hr className="mt-2 border-white/30" />
             </section>
 
-            <section className="bg-black px-6 py-8 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="bg-black px-6 py-2 text-white mx-auto max-w-5xl" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">If you want a Ruin of your own...</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
-                        A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, whatever would be most useful to you, and whatever we can imagine your own personal Ruins might be, Call Me.
-                    </p>
+                    That would serve in the real world as A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, whatever would be most useful to you, whatever we can imagine your own personal Ruins might be, Let&spos;s Talk, and throw around ideas.                     </p>
                     <p>I&apos;ll happily jump on a video call with you, wherever you are in the world, to talk ideas.</p>
-                    <p>Because the &quot;Ruin&quot; concept can go a hundred directions, and it can be purpose-built for the way you actually live:</p>
+                    <p>The “Ruin” concept can go a hundred directions, and it can be purpose-built to suit your life&apos;s needs. Your Ruin could be:</p>
                     <ul className="list-disc list-inside space-y-4 pl-2">
                         <li>
                             A <strong>farmhouse ruin</strong> that &quot;predates the neighborhood,&quot; where the broken base of an old chimney becomes a working wood-fire feature—fire pit or fireplace—surrounded by stone floors with intentionally fractured edges. What is it today? Outdoor Kitchen and Ultra Cool Party Zone.
@@ -125,7 +128,44 @@ export default function TheRuins() {
                         . I&apos;d love to discuss ideas with you.
                     </p>
                 </div>
+                <p className="text-4xl mb-10 mt-6 text-center">
+                    1+443.797.2166
+                </p>
             </section>
+
+             
+        <div className="mt-4 flex justify-center gap-4">
+          <a
+            href="https://x.com/OfficialSGDietz"
+            aria-label="X (Twitter)"
+            className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="currentColor"
+              aria-hidden
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=14437972166"
+            aria-label="WhatsApp"
+            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="currentColor"
+              aria-hidden
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
+        </div>
+        <p className="text-md text-white/90 pt-4 text-center">
+            or DM Me on X or WhatsApp</p>
         </div>
     );
 }

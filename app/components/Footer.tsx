@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#000000] text-white">
       {/* Top separator - light gray */}
-      <div className="border-t border-[#444444]" />
+      <div className="border-t border-[#111]" />
 
       <div className="mx-auto max-w-2xl px-6 py-12">
         {/* Email signup - left-aligned */}
@@ -43,6 +43,14 @@ export default function Footer() {
           </form>
         </div>
 
+        <div className="space-y-6 text-center mt-10">
+          <p className="text-5xl">
+            Questions?
+          </p>
+          <p className="text-2xl">Contact SG Dietz</p>
+          <p className="text-2xl">wildworks@pm.me</p>
+        </div>
+
         {/* Social icons - centered */}
         <div className="mt-10 flex justify-center gap-4">
           <a
@@ -77,7 +85,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright bar - left and right */}
-      <div className="border-t border-[#444444]">
+      <div className="border-t border-[#111]">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-6 py-4 text-sm text-[#FFFFFF] sm:flex-row">
           <span
             style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
