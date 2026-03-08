@@ -100,20 +100,20 @@ export default function Footer() {
 
       {/* Copyright bar - left and right */}
       <div className="border-t border-[#111]">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 px-4 py-4 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2  px-4 py-2 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
           <span
             style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
           >
             © 2026 WildWorks. All Rights Reserved.
-            <span className="ml-4 sm:ml-10">
-              <Link href="/pages/Wildworks" target="_blank" className="underline hover:text-white/90">
-                Privacy Policy · Terms of Service · Disclaimer · Communications
-              </Link>
-            </span>
           </span>
         </div>
-        <div className="">
 
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2  px-4 py-2 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
+          <span className="ml-4 sm:ml-10 sm:text-sm ">
+            <Link href="/pages/Wildworks" target="_blank" className="underline hover:text-white/90">
+              Privacy Policy | Terms of Service | Disclaimer | Communications
+            </Link>
+          </span> 
         </div>
       </div>
     </footer>
