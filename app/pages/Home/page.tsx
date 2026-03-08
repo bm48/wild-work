@@ -23,12 +23,11 @@ export default function Home() {
         <h2 className="py-2 text-4xl tracking-wide mt-6 sm:mt-8 sm:text-5xl md:text-6xl" >
           WildWorks
         </h2>
-        <p className="text-lg mt-2 sm:text-xl">Fine Art and Practical Landscaping</p>
 
         <div className="space-y-1 pt-2 text-xl sm:pt-4 sm:text-2xl md:text-2xl" >
-          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">Want Something Stunningly Wild</p>
-          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">That You Own</p>
-          <p className="text-2xl mt-8 sm:mt-12 sm:text-3xl md:text-4xl">At Your Home</p>
+          <p className="text-lg mt-2 sm:text-xl">Fine Art and Practical Landscaping</p>
+          <p className="text-xl mt-2 sm:mt-12 sm:text-2xl md:text-3xl">Want Something Stunningly Wild</p>
+          <p className="text-2xl mt-2 sm:mt-12 sm:text-3xl md:text-4xl">In Your Back Yard This Season?</p>
         </div>
 
         <p className="pt-4 mt-2 text-4xl sm:pt-6 sm:text-5xl md:text-6xl" >Call Now!</p>
@@ -39,13 +38,13 @@ export default function Home() {
           1+443-797-2166
         </a>
         <a
-          href="mailto:wildworks@pm.me"
+          href="mailto:Wildworks@pm.me"
           className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-4 inline-block min-h-[44px] sm:mt-8 sm:text-3xl md:text-4xl"
         >
-          or wildworks@pm.me
+          or Wildworks@pm.me
         </a>
 
-        <p className="pt-4 text-5xl tracking-widest mt-6 sm:mt-8 sm:text-6xl" >G.</p>
+        <p className="pt-4 text-5xl tracking-widest mt-6 sm:mt-8 sm:text-6xl" >Scott</p>
 
         <p className="pt-6 text-lg mt-6 sm:mt-8 sm:text-2xl md:text-3xl" >
           I WILL TRAVEL ANYWHERE IN THE WORLD TO DESIGN, BUILD, AND PROBLEM SOLVE FOR YOU
@@ -247,7 +246,7 @@ export default function Home() {
           </div>
         </div>
         <p className="mt-6 mb-6 text-center text-xs text-white/90 sm:mt-8 sm:mb-8 sm:text-sm">
-          Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder Steps, a Seat Wall, and a Mushroom Seat. Check it out!
+          Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder Steps, a Seat Wall, and a Mushroom Seat. 
         </p>
       </section>
 
@@ -271,7 +270,7 @@ export default function Home() {
             1+443-797-2166
           </a>
           <p className="text-2xl sm:text-3xl">Call or Text Today!</p>
-          <p className="pt-4 text-3xl sm:text-4xl">G.</p>
+          <p className="pt-4 text-3xl sm:text-4xl">Scott</p>
 
         <div className="mt-8 flex justify-center gap-4 sm:mt-10">
           <a
@@ -304,7 +303,7 @@ export default function Home() {
           </a>
         </div>
         <p className="pt-4 text-base text-white/90 sm:text-xl">
-        or DM Me on X or WhatsApp</p>
+         DM Me on X or WhatsApp</p>
         </div>
       </section>
     </div>

@@ -166,7 +166,7 @@ export default function LewFrench() {
                     Right now, I&apos;m proudly standing on Lew French&apos;s shoulders.
                 </p>
                 <p>
-                    If you would like a Fireplace along these lines, inside or outside of your home, please call me on my cell- G: 
+                    If you would like a Fireplace along these lines, inside or outside of your home, please call me on my cell: 
                 </p>
 
                 <a href="tel:+14437972166" className="block pt-4 mt-12 text-2xl text-center text-white/90 sm:mt-20 sm:text-4xl min-h-[44px]">

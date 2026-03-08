@@ -1,54 +1,68 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[#000000] text-white">
       {/* Top separator - light gray */}
       <div className="border-t border-[#111]" />
 
-      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
-        {/* Email signup - left-aligned */}
-        <div className="text-left">
-          <h3
-            className="mb-4 text-lg font-normal text-[#FFFFFF] sm:mb-6 sm:text-xl"
-            style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-          >
-            Sign Up For Emails
-          </h3>
-          <form action="#" method="post" className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
+        {/* Email signup - responsive: stacked on mobile, two columns on md+ */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] md:gap-6">
+          {/* Label: visible in left column on md+, hidden on mobile (label shown in form column below) */}
+          <div className="hidden pt-8 md:block" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
+            <span className="text-sm text-[#FFFFFF]">
+              Email address <span className="text-[#FFFFFF]">*</span>
+            </span>
+          </div>
+
+          <div>
+            <h3
+              className="mb-3 text-lg font-normal text-[#FFFFFF] sm:mb-4 md:mb-6 md:text-xl md:pl-6"
+              style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+            >
+              Sign Up For Emails
+            </h3>
+            <form action="#" method="post" className="flex flex-col gap-4">
+              {/* Label: visible only on mobile, above input */}
               <label
-                className="shrink-0 text-sm text-[#FFFFFF]"
+                className="text-sm text-[#FFFFFF] md:hidden"
                 style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
               >
                 Email address <span className="text-[#FFFFFF]">*</span>
               </label>
-              <input
-                type="email"
-                name="email"
-                required
-                className="w-full min-w-0 max-w-sm rounded border border-[#333] bg-[#1a1a1a] px-3 py-2.5 text-base text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
-                placeholder=""
-              />
-            </div>
-            <div className="pl-0 sm:pl-[7.5rem]">
-              <button
-                type="submit"
-                className="min-h-[44px] rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0]"
-                style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-              >
-                Submit form
-              </button>
-            </div>
-          </form>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  aria-label="Email address"
+                  className="w-full min-w-0 rounded border border-[#333] bg-[#1a1a1a] px-3 py-2.5 text-base text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
+                  placeholder=""
+                />
+              </div>
+              <div className="pl-0">
+                <button
+                  type="submit"
+                  className="min-h-[44px] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
+                  style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                >
+                  Submit form
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div className="space-y-4 text-center mt-8 sm:mt-10 sm:space-y-6">
           <p className="text-3xl sm:text-5xl">
             Questions?
           </p>
-          <p className="text-xl sm:text-2xl">Contact SG Dietz</p>
-          <p className="text-xl sm:text-2xl">wildworks@pm.me</p>
+          <p className="text-xl sm:text-2xl">Contact Scott G. Dietz directly on his cell at 1+443-797-2166</p>
+          <p className="text-xl sm:text-2xl">Email Scott at: <a href="mailto:Wildworks@pm.me" className="underline hover:text-white/90">Wildworks@pm.me</a></p>
+          <p className="text-xl sm:text-2xl">or Message Scott directly on X or WhatsApp</p>
         </div>
 
         {/* Social icons - centered */}
@@ -86,21 +100,20 @@ export default function Footer() {
 
       {/* Copyright bar - left and right */}
       <div className="border-t border-[#111]">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 px-4 py-4 text-center text-sm text-[#FFFFFF] sm:flex-row sm:px-6 sm:text-left">
           <span
             style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
           >
-            © 2025 - 2026 WildWorks Fine Art and Practical Landscaping
+            © 2026 WildWorks. All Rights Reserved.
+            <span className="ml-4 sm:ml-10">
+              <Link href="/pages/Wildworks" target="_blank" className="underline hover:text-white/90">
+                Privacy Policy · Terms of Service · Disclaimer · Communications
+              </Link>
+            </span>
           </span>
-          <a
-            href="https://www.webador.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:opacity-90"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
-          >
-            Powered by Webador
-          </a>
+        </div>
+        <div className="">
+
         </div>
       </div>
     </footer>

@@ -21,16 +21,16 @@ export default function TheRuins() {
                 <div className="space-y-4 text-sm">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
                     <p>
-                        I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench … but it didn&apos;t have a story yet.
+                        I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench … not only was there no there there yet but I felt like, given the location, this area needed a story
                     </p>
                     <p>
-                        Federal Hill is a high ground overlook of Baltimore&apos;s harbor—important early, and absolutely relevant in the War of 1812, when it served as a military observation post, signal station, and a gun battery looking out over Baltimore&apos;s inner harbor.
+                        Federal Hill is a high ground overlook of Baltimore&apos;s harbor—important early, and absolutely relevant in the War of 1812, when it served as a military observation post, signal station, and a gun battery looking out over the harbor.
                     </p>
                     <p>
-                        So when my client asked that question, my mind didn&apos;t stay in &quot;landscaping mode.&quot; It went straight to: what could have happened here?
+                        So when my client asked that question, my mind didn&apos;t stay in &quot;landscaping mode.&quot; It went straight to: <i>what could have happened here?</i>
                     </p>
                     <p>
-                        We&apos;d already done a couple projects together in the years prior, so I knew something important: these clients were open to the unconventional. Open to &quot;cool,&quot; as long as it made sense and was executed well. That&apos;s why I didn&apos;t rush it. I spent a couple weeks thinking—pencil and paper, pacing, sitting in the space, staring at it from different angles—because I knew if I could come up with the right idea, they&apos;d let me build it.
+                        We&apos;d already done a couple projects together in the years prior, so I knew something important: these clients were open to the unconventional. Open to &quot;cool and wild,&quot; as long as it made sense and was executed well. That&apos;s why I didn&apos;t rush it. I spent a couple weeks thinking—pencil and paper, pacing, sitting in the space, staring at it from different angles—because I knew if I could come up with the right idea, they&apos;d let me build it.
                     </p>
                 </div>
             </section>
@@ -42,25 +42,25 @@ export default function TheRuins() {
                         In my mind, the &quot;backstory&quot; was this: 
                     </p>
                     <p>
-                        A stone munitions structure—a small depot or powder store connected to harbor defense—stood on this ground back in that era. Then a stray cannonball during the actual War of 1812 found it—Boom! What remained were the wall pieces that we see today.
+                        A stone munitions structure—a small depot or powder store connected to harbor defense—stood on this ground back in that era. Then a stray cannonball during the actual War of 1812 found it and—Boom! What remained were the wall pieces that we see today.
                     </p>
                     <p>
                     </p>
                     <p>
-                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; In the story, they preserved The Ruins and memorialized them by building gardens and a reflecting pool, etc., around them.
+                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; they preserved The Ruins and memorialized them by building gardens and a reflecting pool, etc., around them.
                     </p>
                 </div>
             </section>
 
             <section className="bg-black px-4 pt-6 text-white mx-auto max-w-5xl sm:px-6 sm:pt-8" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-[1.15rem] font-bold mb-6">Building the Ruins</h2>
-                <p className="text-[0.8rem] leading-relaxed mb-4">The finished space was built to feel intentional and lived-in, with:</p>
+                <p className="text-[0.8rem] leading-relaxed mb-4">The finished space was built to feel real, with:</p>
                 <ul className="list-disc list-inside space-y-2 text-[0.8rem] leading-relaxed mb-6 pl-2">
                     <li>Bluestone patios and a walk</li>
                     <li>Seating placed where you&apos;d naturally stop</li>
                     <li>A reflecting pool</li>
                     <li>A rusting urn with overflowing water</li>
-                    <li>And the ruin fragments themselves—set like remnants, not &quot;decor&quot;</li>
+                    <li>And the ruin fragments themselves—built like true remmants</li>
                 </ul>
             </section>
 
@@ -68,13 +68,13 @@ export default function TheRuins() {
                 <h2 className="text-[1.15rem] font-bold mb-6">This Stone has Baltimore in it</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
-                        A big part of what makes The Ruins feel believable is the material. Much of the stone used is reclaimed granite—the kind that actually spent a previous life of 150+ years as Baltimore street and curb stone.
+                        Much of the stone used is reclaimed granite-the kind that actually spent a previous life of 150+years as Baltimore street and curb stone.
                     </p>
                     <p>
-                        As streets aged and construction techniques modernized, a lot of that old stone got ripped out, and much discarded into the city dump. Can you believe that? History dumped like trash.
+                        As streets aged and construction techniques modernized, a lot of that old stone got ripped out, and much discarded into the city dump. Can you believe that-valuable granite, and Baltimore&apos;s history dumped like trash?
                     </p>
                     <p>
-                        A few local people had set some aside, which we found, salvaged, and built with, and hopefully this stone will live another 150+ years right here. Maybe 1,000!
+                        A few local people had set some aside, which we salvaged, and used for the build. Hopefully this stone will live another 150+years right here-maybe a couple thousand!
                     </p>
                     <p>
                         That&apos;s why the finished work doesn&apos;t feel like &quot;new hardscape pretending to be old.&quot; It feels like it could have been there all along—like Baltimore coughed up one of its older layers and we set it down carefully in the present.
@@ -86,7 +86,7 @@ export default function TheRuins() {
                 <h2 className="text-[1.15rem] font-bold mb-6">Why this works</h2>
                 <div className="space-y-6 text-[0.8rem] leading-relaxed">
                     <p>
-                        <em>The Ruins</em> isn&apos;t a replica and it isn&apos;t cosplay. It&apos;s <strong>plausible</strong>—a place that makes people ask questions.
+                        The Ruins isn&apos;t a replica and is plausible and real-and now it is a place that makes people sit and wonder.
                     </p>
                     <p>
                         My hope is that decades from now, even hundreds of years from now, people will still stand there looking at these ruins and say: &quot;What is this? Where did it come from? What happened here?&quot;
@@ -110,14 +110,14 @@ export default function TheRuins() {
                             <strong>Collapsed stone garden walls</strong> that become natural boulder seating, like the structure simply fell into place over time.
                         </li>
                         <li>
-                            A <strong>gristmill ruin</strong> beside a stream or pond—water, stone, moss, worn thresholds—built to feel inevitable.
+                            A <strong>gristmill ruin</strong> beside a stream or pond—water, stone, moss, worn thresholds—built to feel like it is all that remains from an early 1700&apos;s real grismill.
                         </li>
                         <li>
-                            A ruin that&apos;s half gathering space, half sanctuary—something you&apos;ll use constantly, and that people will talk about forever.
+                            A ruin of any type that&apos;s half gathering space, half sanctuary—something you&apos;ll use constantly, and that people will talk about forever.
                         </li>
                     </ul>
                     <p>
-                        And yes: done right, this kind of work can dramatically increase the feel—and often the value—of a property, because it creates something buyers can&apos;t unsee.
+                        And yes: done right, this kind of work can dramatically increase the feel—and often the value—of a property, because it creates something buyers want to live in with them.
                     </p>
                     <p>
                         If you&apos;ve got a space and you want to turn it into a place with a past,{" "}

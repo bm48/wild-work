@@ -18,28 +18,28 @@ export default function ISell() {
                 </h1>
                 <div className="space-y-6 py-8 text-left text-[0.8rem] leading-relaxed sm:py-10">
                     <p>
-                        I don&apos;t work in real estate, or stage houses. But over the years—now more than forty of them—I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—You sold our house.&quot;
+                        I don&apos;t work in real estate, or stage houses. but over the years—now more than forty of them—I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—You sold our house.&quot;
                     </p>
                     <p>
-                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their home and called me to fix up their new one. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten quite a pleasing price for their old home.
+                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their old home and called me in to fix up their new home. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten quite a pleasing sum for their old home.
                     </p>
                     <p>
-                    He said to me: &quot;You sold our house. It had to be you. You gave us the most beautiful things there!&quot; He also said to me, &quot;You&apos;re the best! You are absolutely the best there is. You&apos;re going to make our new house spectacular!&quot; This is the house that two 70 year olds with 20 grandkids are going to spend their golden years. They wanted <em>Spectacular</em>.
+                    He said to me: &quot;You sold our house. It had to be you. You gave us the most beautiful things there!&quot; He also said to me, &quot;You&apos;re the best! You are absolutely the best there is. You&apos;re going to make our new house spectacular!&quot; This is the house that two 70 year olds with 20 grandkids are going to spend their golden years. They believed in me, that I delivered <em>Spectacular</em>.
                     </p>
                     <p>
                         Another client told me the same thing after reading their realtor&apos;s report. The buyers specifically mentioned how much they loved the super artsy and wild patio and seat wall area. That outdoor space was the reason they fell in love with the home, and had to have it.
                     </p>
                     <p>
-                        Another family, with two kids under three years old, wanted a practical back yard that was safe to walk and play on. Their backyard was an 80 year old mess of highs, lows, and mysterious holes. We reshaped and fine graded the entire space, and added a patio, fire pit, and walkways that made the yard usable. When we were finished, I said that I believed we had added at least the value of what they paid for the project back into their home. 
+                        Another family, with two kids under three years old, wanted a practical back yard that was safe to walk and play on. Their backyard was an 80 year old mess of highs, lows, and mysterious holes. We reshaped and fine graded the entire space, and added a patio, fire pit, and walkways that made the yard usable and practical. When we were finished, I said that I believed we had added at least the value of what they paid for the project back into their home. 
                     </p>
                     <p className="-mt-4">
                     The both nodded vociferously and the wife said, “Oh my God—at least!”
                     </p>
                     <p>
-                        That kind of result doesn&apos;t happen by accident. It comes from fixing problems correctly—and at a fair price. The best part of all? You get to enjoy these things as long as you own your home. For them, they had not only the dream back yard for their kids to grow up in, but also the congregating area their family could enjoy for decades, and also an investment that was going to give them maximum Return On Investment.
+                        That kind of result doesn&apos;t happen by accident. It comes from fixing problems correctly—and at a fair price. The best part of all? You, the client, get to enjoy these things as long as you own your home. For these clients, they had not only the dream back yard for their kids to grow up in, but also the congregating area their family could enjoy for decades, and also an investment that was going to give them maximum Return On Investment.
                     </p>
                     <p>
-                        I&apos;ve always been drawn to and charge into the hardest problems—the ones people live with for years because no one can quite figure them out. The spaces that never worked. The water issues no one could solve. I&apos;ve solved home and garden problems for clients who had been searching—sometimes for decades—for real solutions. Not workarounds. Not patches. Solutions that make sense, last, and actually improve people&apos;s quality of life.
+                        I&apos;ve always been drawn to not only beauty, but practicality and problem solving. I charge forward into the hardest problems—the ones people live with for years because no one can quite figure them out. The spaces that never worked. The water issues no one could solve. I&apos;ve solved home and garden problems for clients who had been searching—sometimes for decades—for real solutions. Not workarounds. Not patches. Solutions that make sense, last, and actually improve people&apos;s quality of life.
                     </p>
                     <p>
                         At the end of the day, solving problems the right way creates real return on investment—sometimes in day-to-day livability, sometimes in resale value, and often in both. Whether you need a purely practical solution to something that isn&apos;t working, or you&apos;re looking for an exquisitely beautiful piece of art, my approach is the same: fair pricing, quality building, and work that gives you the highest return on investment.

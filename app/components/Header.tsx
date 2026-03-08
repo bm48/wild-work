@@ -21,7 +21,7 @@ export default function Header() {
       {/* Logo + title on top; nav titles in a row below (horizontal scroll on mobile) */}
       <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-4 sm:gap-8 sm:px-6 sm:py-10">
         {/* Logo + site title */}
-        <div className="flex flex-shrink-0 flex-col items-center sm:flex-row sm:gap-3">
+        {/* <div className="flex flex-shrink-0 flex-col items-center sm:flex-row sm:gap-3">
           <Image
             src="/wildLogo.png"
             alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -35,7 +35,7 @@ export default function Header() {
           >
             Wildworks.Live
           </span>
-        </div>
+        </div> */}
 
         {/* Nav titles: one row below logo/title; horizontal scroll on mobile, centered wrap on desktop */}
         <nav className="w-full pt-4 sm:mx-auto sm:w-auto sm:px-6 sm:pb-2 sm:pt-12">

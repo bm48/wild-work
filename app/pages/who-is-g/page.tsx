@@ -21,14 +21,14 @@ export default function WhoIsG() {
         </p>
         <h2 className="text-[1.15rem] font-bold mb-8">Worked Out. Thank God.</h2>
         <p className="text-[0.8rem] leading-relaxed mb-12">
-          G is a Master Stone Mason, Fine Artist, and Hard Core Problem Solver. With More than 40 Years of Design and Construction Experience, he is known for Charging Directly into the Most Difficult, Complex, and Unconventional Problems People can Face. He and his Team are Capable of any Type of Design, any Type of Build. WildWorks is Centered in Baltimore, MD, Though He Would be Super Happy to <span className="font-bold uppercase">TRAVEL ANYWHERE ON PLANET EARTH</span> to Design &amp; Build for You.
+          G is a master stone mason, fine artist, and hard core problem solver. With more than 40 years of design and construction experience, he is knowns for charging directly into the most difficult, complex, and unconventional problems people face. He and his team are capable of any type of design, any type of build, any type of problem. WildWorks is centered in Baltimore, Md, though he would super happy to TRAVELANYWHERE ON PLANETEARTH to design, build and problem solve for you.
         </p>
         <h2 className="mb-4 text-center text-xl sm:text-2xl">Call or Text Directly:</h2>
         <a href="tel:+14437972166" className="block py-6 text-2xl text-center sm:py-8 sm:text-3xl min-h-[44px]">
           1+443-797-2166
         </a>
         <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Just Do It</p>
-        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Call or Text G.</p>
+        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Call or Text Scott.</p>
 
         <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
           or DM Me on X or WhatsApp
