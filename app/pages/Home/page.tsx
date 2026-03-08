@@ -18,7 +18,7 @@ export default function Home() {
       {/* Promotional / Contact CTA - black background, centered */}
       <section className="flex flex-col items-center justify-center gap-3 bg-black px-4 py-10 text-center text-white sm:gap-4 sm:px-6 sm:py-16" >
         <p className="text-xl text-white/95 sm:text-3xl">On a Quest to Create Planet Earth&apos;s Ultimate Stone Artwork</p>
-        <p className="text-lg text-white/80 -mt-2 sm:text-2xl">G. Dietz - Owner/Artist</p>
+        <p className="text-lg text-white/80 -mt-2 sm:text-2xl">Scott G. Dietz - Owner/Artist</p>
 
         <h2 className="py-2 text-4xl tracking-wide mt-6 sm:mt-8 sm:text-5xl md:text-6xl" >
           WildWorks
