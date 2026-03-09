@@ -16,12 +16,12 @@ export default function Wildfire() {
               className="space-y-2 text-left text-sm leading-[2]"
               style={{ fontFamily: "var(--font-serif), serif" }}
               >
-              <p className="text-sm leading-[2]">
+              <p className="text-xs leading-[2]">
                   Project Wildfire is a custom crafted, natural stone outdoor fireplace
                   installation in Lutherville, Maryland, currently under construction
                   by our team at Wildworks.
               </p>
-              <p className="text-sm leading-[2]">
+              <p className="text-xs leading-[2]">
               Built entirely by hand—literally one stone at a time—this project blends old-world stone craftsmanship 
               with modern scale and design. Our work was inspired by Lew French of {""}
                   <a
@@ -31,12 +31,12 @@ export default function Wildfire() {
                   LewFrenchStone.com
                   </a>
               </p>
-              <p className="text-sm leading-[2]">
+              <p className="text-xs leading-[2]">
                   After more than 40 years in construction, these are the builds I
                   fondly pursue: the most difficult, the most challenging—custom
                   natural stonework projects that demand experience, extreme creativity, and the highest level of problem solving.
               </p>
-              <p className="text-sm leading-[2]">
+              <p className="text-xs leading-[2]">
                 Project Wildfire is a work in progress that I&apos;m fully {" "}
                   <a
                   href="https://x.com/OfficialSGDietz"
@@ -50,7 +50,7 @@ export default function Wildfire() {
                   a large-scale custom outdoor fireplace and stack, come over and say hello
                   
               </p>
-              <p className="text-sm leading-[2]">
+              <p className="text-xs leading-[2]">
                 And always, if you have any questions about any of the photos, or why we built the way we built, 
                 please feel free to ask me directly on my cell at 1+443-797-2166 or you can DM me on X or Whatsapp:
               </p>

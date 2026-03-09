@@ -21,7 +21,7 @@ export default function LewFrench() {
 
                 <section className="mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6">
                     <h2
-                        className="mb-4 flex items-center justify-center text-white text-4xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-5xl"
+                        className="mb-4 flex items-center justify-center text-white text-3xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-4xl"
                         style={{ fontFamily: "var(--font-serif), serif" }}
                     >
                         Inspiration: Lew French
@@ -80,7 +80,7 @@ export default function LewFrench() {
             </section>
             
             <section className="mx-auto w-full bg-black px-4 py-2 text-white sm:px-6 sm:py-4">
-                    <h2 className="text-2xl">
+                    <h2 className="text-2xl font-bold">
                         Design: Sketch
                     </h2>
                     <p className="text-base py-2">
@@ -103,7 +103,7 @@ export default function LewFrench() {
                 />
             </section>
             <section className="space-y-2 mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6 leading-[1]">
-                    <h2 className="text-2xl">
+                    <h2 className="text-2xl font-bold">
                         Stone Purchasing
                     </h2>
                     <p className="text-base ">
