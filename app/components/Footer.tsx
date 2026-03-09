@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Email signup - responsive: stacked on mobile, two columns on md+ */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] md:gap-6">
           {/* Label: visible in left column on md+, hidden on mobile (label shown in form column below) */}
-          <div className="hidden pt-8 md:block" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
+          <div className="hidden pt-14 md:block" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
             <span className="text-sm text-[#FFFFFF]">
               Email address <span className="text-[#FFFFFF]">*</span>
             </span>
@@ -46,7 +46,7 @@ export default function Footer() {
               <div className="pl-0">
                 <button
                   type="submit"
-                  className="min-h-[44px] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
+                  className="min-h-[3.5rem] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
                   style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                 >
                   Submit form
@@ -70,11 +70,11 @@ export default function Footer() {
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
-            className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+            className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-8 w-8"
               fill="currentColor"
               aria-hidden
             >
@@ -84,11 +84,11 @@ export default function Footer() {
           <a
             href="https://api.whatsapp.com/send?phone=14437972166"
             aria-label="WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+            className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-8 w-8"
               fill="currentColor"
               aria-hidden
             >
