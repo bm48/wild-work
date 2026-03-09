@@ -5,7 +5,7 @@ import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
 export default function Home() {
   return (
-    <div className="mx-auto lg:w-[60%] py-4">
+    <div className="mx-auto lg:max-w-5xl py-4">
       {/* Hero: image with overlaid text - full image visible */}
       <section className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
         <AspectRatioImage
