@@ -107,7 +107,7 @@ export default function Home() {
 
       <section className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
         <AspectRatioImage
-          src="/21.jpg"
+          src="/25.jpg"
           alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
           priority
           sizes="90vw"

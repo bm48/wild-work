@@ -55,7 +55,7 @@ export default function Header() {
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-2.5 text-xs font-normal uppercase tracking-wide transition-colors sm:px-2 sm:text-sm ${
+                  className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-1 text-xs font-normal uppercase tracking-wide transition-colors sm:px-2 sm:py-1 sm:text-sm ${
                     isActive
                       ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
                       : "text-[#FFFFFF] hover:text-white/85"
