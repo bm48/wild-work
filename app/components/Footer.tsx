@@ -10,7 +10,7 @@ export default function Footer() {
 
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
         {/* Email signup - responsive: stacked on mobile, two columns on md+ */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] md:gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,30%)_minmax(0,40%)] md:gap-6">
           {/* Label: visible in left column on md+, hidden on mobile (label shown in form column below) */}
           <div className="hidden pt-14 md:block" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
             <span className="text-sm text-[#FFFFFF]">
@@ -20,7 +20,7 @@ export default function Footer() {
 
           <div>
             <h3
-              className="mb-3 text-lg font-normal text-[#FFFFFF] sm:mb-4 md:mb-6 md:text-xl md:pl-6"
+              className="mb-3 text-lg font-normal text-[#FFFFFF] sm:mb-4 md:mb-6 md:text-xl md:pl-6 text-center"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
               Sign Up For Emails
@@ -46,7 +46,7 @@ export default function Footer() {
               <div className="pl-0">
                 <button
                   type="submit"
-                  className="min-h-[3.5rem] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
+                  className="min-h-[3rem] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
                   style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                 >
                   Submit form
