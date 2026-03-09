@@ -2,9 +2,9 @@ import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function WhoIsG() {
   return (
-    <div className="max-w-5xl mx-auto py-6 text-white sm:py-12">
+    <div className="mx-auto lg:max-w-5xl py-4">
       {/* Image constrained to same width as header separator line */}
-      <section className="relative mx-auto flex max-w-5xl items-center justify-center overflow-hidden bg-black">
+      <section className="relative mx-auto flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
         <AspectRatioImage
           src="/EllicotCity.jpeg"
           alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
@@ -14,35 +14,59 @@ export default function WhoIsG() {
         <div className="absolute inset-0  pointer-events-none" aria-hidden />
       </section>
 
-      <section className="mx-auto max-w-5xl bg-black px-4 pt-10 text-white font-serif sm:px-6 sm:pt-16">
-        <h1 className="mb-6 text-xl sm:mb-8 sm:text-[1.5rem]">Who is G?</h1>
-        <p className="mb-8 text-[0.8rem] leading-relaxed sm:mb-10">
-          Scott Gregory Dietz or &quot;G&quot; was born on November 7, 1968 and grew up in Bel Air, MD, a half hour North of Baltimore City, where both his Parents were Born and Raised. G was an Undisciplined Child that was Impossible to Control. Now as an Adult, he has an <span className="font-bold uppercase">UNBRIDLED MIND</span> with <span className="font-bold uppercase">EXPLOSIVE CREATIVE ENERGY</span>.
-        </p>
-        <h2 className="text-[1.15rem] font-bold mb-8">Worked Out. Thank God.</h2>
-        <p className="text-[0.8rem] leading-relaxed mb-12">
-          G is a master stone mason, fine artist, and hard core problem solver. With more than 40 years of design and construction experience, he is knowns for charging directly into the most difficult, complex, and unconventional problems people face. He and his team are capable of any type of design, any type of build, any type of problem. WildWorks is centered in Baltimore, Md, though he would super happy to TRAVELANYWHERE ON PLANETEARTH to design, build and problem solve for you.
-        </p>
-        <h2 className="mb-4 text-center text-xl sm:text-2xl">Call or Text Directly:</h2>
-        <a href="tel:+14437972166" className="block py-6 text-2xl text-center sm:py-8 sm:text-3xl min-h-[44px]">
+      <section className="mx-auto w-full bg-black px-4 pt-6 text-white sm:px-6 sm:pt-8 ">
+        <div className="space-y-2 text-left text-sm leading-relaxed">
+          <h1 className="text-2xl sm:text-3xl">Who is Scott G. Dietz?</h1>
+          <p className="text-base">
+            From 6 months old, Scott G. Dietz was raised in Bel Air, Maryland, just north of Baltimore City. His roots run deep in the area—both of his parents were born and raised in Baltimore City.
+          </p>
+          <p className="text-base">
+            As a kid, Scott was impossible to control—undisciplined, restless, and constantly pushing boundaries. As he grew and matured, that same force became something powerful: explosive creative energy focused on creativity and building.
+          </p>
+          <p className="text-base">
+            For more than 40 years, Scott has channeled that energy into the craft of stone. He is a fine artist, master stonemason, and relentless problem solver known for charging directly into the most complex and unconventional problems people face. His work blends creativity, craftsmanship, and engineering into rock art—stone landscapes designed to feel timeless, powerful, and naturally rooted in the land.
+          </p>
+          <h2 className="text-xl sm:text-2xl mt-6">A Life of Constant Reinvention</h2>
+          <p className="text-base">
+            Scott doesn&apos;t see life as something that moves in phases where one chapter ends and another begins. For him, everything stacks. New interests, new skills, new ideas—they all get added into the mix.
+          </p>
+          <p className="text-base">
+            In his mid-forties he began composing and recording music while learning to play instruments, developing a particular love for the bass guitar. In his mid-fifties he stepped onto a stage for the first time to perform stand-up comedy. At the same time he continued exploring graphic design, technology, and a wide range of creative and technical pursuits.
+          </p>
+          <p className="text-base">
+            Scott is constantly studying, learning, and experimenting. He understands that Ai is reshaping the world and believes the right response is to learn how it works, and use the technology as another tool for creativity, design, and problem solving.
+          </p>
+          <p className="text-lg">
+            His mindset is simple: <strong><b>Middle Age is Just the Beginning.</b></strong>
+          </p>
+          <p className="text-base">
+            Scott is the first to admit he has failed at more things than most people would even attempt to begin (or hasn&apos;t succeeded yet, depending on your outlook). But failure has never been the end of the story. When something doesn&apos;t work, he pivots, restarts, and fires up his creative engines once again.
+          </p>
+          <p className="text-base">
+            WildWorks exists for one reason: to design and build the world&apos;s wildest art, and solve problems that others simply cannot.
+          </p>
+        </div>
+
+        <h2 className="mb-4 mt-10 text-center text-3xl sm:text-4xl">Call or Text Directly:</h2>
+        <a href="tel:+14437972166" className="block py-6 text-2xl text-center text-4xl sm:py-8 sm:text-5xl min-h-[44px]">
           1+443-797-2166
         </a>
-        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Just Do It</p>
-        <p className="py-4 text-center text-4xl sm:py-6 sm:text-5xl">Call or Text Scott.</p>
+        <p className="py-4 text-center text-5xl sm:py-6 sm:text-6xl">Just Do It</p>
+        <p className="py-4 text-center text-5xl sm:py-6 sm:text-6xl">Call or Text Scott.</p>
 
-        <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
-          or DM Me on X or WhatsApp
+        <p className="pt-4 text-center text-md text-white/90 sm:text-base">
+          or DM Me directly on X or WhatsApp
         </p>
         <div className="mt-4 flex justify-center gap-4">
           
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
-            className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+            className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >
@@ -52,11 +76,11 @@ export default function WhoIsG() {
           <a
             href="https://api.whatsapp.com/send?phone=14437972166"
             aria-label="WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+            className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >

@@ -27,7 +27,7 @@ export default function Footer() {
       {/* Top separator - light gray */}
       <div className="border-t border-[#111]" />
 
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 border-t border-[#333]">
         {/* Email signup - responsive: stacked on mobile, two columns on md+ */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,25%)_minmax(0,50%)]">
           {/* Label: visible in left column on md+, hidden on mobile (label shown in form column below) */}
@@ -107,7 +107,7 @@ export default function Footer() {
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-8 w-8"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >

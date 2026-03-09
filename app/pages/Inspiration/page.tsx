@@ -3,14 +3,14 @@ import InspirationGallery from "../../components/InspirationGallery";
 
 export default function LewFrench() {
     return (
-        <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
+        <div className="mx-auto lg:max-w-5xl py-4">
             
             {/* <div className="absolute inset-0 flex items-center justify-center bg-black/40 pointer-events-none" aria-hidden /> */}
                 
             {/* <InspirationGallery /> */}
 
 
-            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
+            <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
                 <AspectRatioImage
                 src="/LewFrenchInspiration-2.png"
                 alt="Lew French inspiration - stone craftsmanship"
@@ -19,14 +19,14 @@ export default function LewFrench() {
                 />
             </section>
 
-                <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
-                    <h1
-                        className="flex items-center justify-center text-white text-2xl font-bold text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-3xl"
+                <section className="mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6">
+                    <h2
+                        className="mb-4 flex items-center justify-center text-white text-5xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-6xl"
                         style={{ fontFamily: "var(--font-serif), serif" }}
                     >
                         Inspiration: Lew French
-                    </h1>
-                    <p className="text-sm py-2">
+                    </h2>
+                    <p className="text-base py-2">
                         Project Wildfire draws direct inspiration from the work of master stone artisan{" "}
                         <strong>Lew French</strong> of{" "}
                         <a
@@ -39,21 +39,21 @@ export default function LewFrench() {
                         </a>
                         .
                     </p>
-                    <p className="text-sm py-2">
+                    <p className="text-base py-2">
                         As you can see in the photo above, Lew is a true artist of natural stone. His eye for proportion, balance, and flow is exceptional—I hold his work in the highest regard.
                     </p>
-                    <h2 className="text-[1.15rem] font-bold pt-2">
+                    <h2 className="text-2xl pt-2 font-bold">
                         How It Started
                     </h2>
-                    <p className="text-sm py-2">
+                    <p className="text-base py-2">
                         Over more than a decade, we had built nearly everything around a couple in Lutherville, Md&apos;s home: 
                         the front masonry porch, 2 walks, planting beds, landscape lighting front and back, and the rear bluestone patio with natural stone seat wall. 
-                        As I walk around the house today, I look with pride, as everything we built is beautiful artwork that all settled in with no trip hazards or visual blemishes.
+                        As I walk around the house today, I look with pride, as everything we built was beautiful artwork that all settled in with no trip hazards or visual blemishes.
                     </p>
-                    <p className="text-sm py-2">
+                    <p className="text-base py-2">
                         So in the fall of 2025 the husband had a friend send him a picture of an outdoor fireplace that the friend built himself. 
-                        Large scale, about the same dimensions as Project Wildfire (14 ft wide x 14 ft ish tall). 
-                        The wife, knowing that the husband loved to sit outside on the patio we had built for them and smoke his cigars, said, &quot;Why don&apos;t you have G build one for you.&quot; 
+                        Large scale, about the same dimensions as Project Wildfire (14 ft wide x 14ish ft tall). 
+                        The wife, knowing that the husband loved to sit outside on the patio we had built for them and smoke his cigars, said, &quot;Why don&apos;t you have Scott build one for you.&quot; 
                         As he was currently sitting around a small metal firepit, she felt like he earned an upgrade.{" "}
                         {/* <span className="text-white/90">
                             [If you know where that line is from, text me!{" "}
@@ -61,7 +61,7 @@ export default function LewFrench() {
                             ]
                         </span> */}
                     </p>
-                    <p className="text-sm py-2">
+                    <p className="text-base py-2">
                         The husband reached out to me, sent me the picture his friend had sent him. I sent him a link of Lew&apos;s 
                         Fireplace, and asked what he thought of it. We had not yet agreed to a price, but he said, &quot;Put us into your schedule.&quot;
                     </p>
@@ -69,7 +69,7 @@ export default function LewFrench() {
 
 
 
-            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6 ">
                 <AspectRatioImage
                 src="/McNulty-Sketch-Cr.jpg"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -78,19 +78,19 @@ export default function LewFrench() {
                 />
             </section>
             
-            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
-                    <h2 className="text-[1.15rem] font-bold">
+            <section className="mx-auto w-full bg-black px-4 py-2 text-white sm:px-6 sm:py-4">
+                    <h2 className="text-2xl font-bold">
                         Design: Sketch
                     </h2>
-                    <p className="text-sm py-2">
-                        I had transitioned to CAD a number of years earlier and hadn&apos;t done a hand rendering in nearly a decade. Because of the complexity of the design, I felt like picking up a pencil and sketching.
+                    <p className="text-base py-2">
+                        I had transitioned to CAD years earlier and hadn&apos;t done a hand rendering in nearly a decade. Because of the complexity of the design, I felt like picking up a pencil and sketching.
                     </p>
-                    <p className="text-sm py-2">
+                    <p className="text-base py-2">
                         Truly, I felt like the ideas just flowed out of me almost on auto pilot, it was almost effortless, with very little thinking. I do many other types of art, including music, stand-up comedy, graphic design, and generally these things are painstaking, iteration after iteration, seriously heavy brain work that takes days and months to get right. But to my amazement, in about 2 hours, I had something I really liked (the design above).
                     </p>
             </section>
 
-            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-2 sm:px-6 sm:mt-4">
                 <AspectRatioImage
                 src="/McNultyDesign-2.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -98,24 +98,24 @@ export default function LewFrench() {
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
-                    <h2 className="text-[1.15rem] font-bold">
+            <section className="space-y-2 mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6 leading-[1]">
+                    <h2 className="text-2xl font-bold">
                         Stone Purchasing
                     </h2>
-                    <p className="text-sm py-2">
+                    <p className="text-base ">
                         The day after I got the go ahead, I started stone hunting.
                     </p>
-                    <p className="text-sm py-2">
-                        Sourcing the stone was going to be tricky. All of the larger pieces of stone would be one-of-a-kind, selected individually for how well they fit into the design. Finding stone at this level takes patience, experience, traveling, and it is never inexpensive.
+                    <p className="text-base ">
+                        Sourcing the stone was tricky. All of the larger were to be one-of-a-kind, selected individually for how well they fit into the actual design. Finding these stones took patience, experience, traveling, and would not be inexpensive.
                     </p>
-                    <p className="text-sm py-2">
-                        I visited numerous retailers and quarries, and took every stone in the design and tried to find it in reality. The high horizontal stone in the original design is drawn at almost 12 feet wide. I couldn&apos;t find anything that big, but I found a stone 10&apos; with cutouts on each end. I found the other stones, literally one at a time, from various sources, and then erased and redrew the design with the new stones in place, above.
+                    <p className="text-base ">
+                        I visited numerous retailers and quarries, and took every stone in the design and did my best to find it in reality. The high horizontal stone in the original design was drawn at almost 12 feet wide. I couldn&apos;t find anything that big, but I found a stone 10&apos; with cutouts on each end. I found the other stones, literally one at a time, from various sources, and then erased and redrew the design with the new stones in place, above.
                     </p>
-                    <p className="text-sm py-2">
+                    <p className="text-base ">
                         This was Version 2.0 that I showed the clients, by text. I was not super happy with it, thought something was missing. 
                     </p>
             </section>
-            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+            <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-2 sm:px-6 sm:mt-4">
                 <AspectRatioImage
                 src="/20260103_204542-2-high.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -123,13 +123,13 @@ export default function LewFrench() {
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
-                <p className="text-sm py-2">
-                    I took about 2 hours, and started into more curved outer edges. I abandoned that after numerous iterations, as I just could not get anything to look pleasing.
-                    As I look at it now upon writing this, this style of design could be magnificent for a future build. King Cobra.
+            <section className="mx-auto w-full bg-black px-4 py-2 text-white sm:px-6 sm:py-4">
+                <p className="text-base">
+                    I took about 2 hours, and started into more curved outer edges. I abandoned the concept after numerous iterations, as I just could not get anything to look pleasing.
+                    As I look at it now upon writing this, this style of design could perhaps be magnificent for a future build. King Cobra.
                 </p>
             </section>
-            <section className="relative flex max-w-6xl mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-6 sm:px-6 sm:mt-8">
+            <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-2 sm:px-6 sm:mt-4">
                 <AspectRatioImage
                 src="/20251222_082817-1-2-high.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -137,39 +137,39 @@ export default function LewFrench() {
                 sizes="(max-width: 64rem) 100vw, 64rem"
                 />
             </section>
-            <section className="mx-auto max-w-6xl bg-black px-4 py-8 text-white sm:px-6 sm:py-12">
-                <p className="text-sm py-2">
+            <section className="mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6">
+                    <p className="text-base ">
                     I realized that we had a pallet of 3 superstepper 
                     stones, massive, chunky, and two of them might be perfect to cantilever out as shoulders and be quite the spectacular finishing touch to the entire project.
                 </p>
-                <p className="text-sm py-2">
+                <p className="text-base ">
 
                 </p>
-                <p className="text-sm py-2">
+                <p className="text-base ">
                     As I write this, we are at the point in the build where we need to actually figure out how to engineer building them into the firestack,
                     and do so in a way that is durable and will last. Certainly, everyone is going to want to climb up, and stand and sit on them (I&apos;ll be first).
                 </p>
-                <p className="text-sm py-2">
+                <p className="text-base ">
                     For all its imperfections, here is the final design. We shall see how close we come to this after the build!
                 </p>
-                <h2 className="py-4 text-2xl font-bold sm:text-3xl">
+                <h2 className="pt-6 pb-2 text-2xl font-bold sm:text-3xl">
                     Project Wildfire
                 </h2>
-                <p className="text-sm py-2">
+                <p className="text-base ">
                     Is an original, hand-built outdoor fireplace, in no way a reproduction. It is a custom stone structure built 
                     in my own voice—shaped by decades of creative experience—while openly acknowledging the influence of a craftsman whose work continues to inspire me.
                 </p>
-                <p className="text-sm py-2">
+                    <p className="text-base ">
                 As Isaac Newton wrote, &quot;If I have seen further, it is by standing on the shoulders of giants.&quot;
                 </p>
-                <p className="text-sm py-2">
+                <p className="text-base ">
                     Right now, I&apos;m proudly standing on Lew French&apos;s shoulders.
                 </p>
-                <p>
+                <p className="text-base ">
                     If you would like a Fireplace along these lines, inside or outside of your home, please call me on my cell: 
                 </p>
 
-                <a href="tel:+14437972166" className="block pt-4 mt-12 text-2xl text-center text-white/90 sm:mt-20 sm:text-4xl min-h-[44px]">
+                <a href="tel:+14437972166" className="block pt-4 mt-2 text-4xl text-center text-white/90 sm:mt-4 sm:text-5xl min-h-[44px]">
                     1+443-797-2166
                 </a>
                 
@@ -177,11 +177,11 @@ export default function LewFrench() {
                 <a
                     href="https://x.com/OfficialSGDietz"
                     aria-label="X (Twitter)"
-                    className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+                    className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
                 >
                     <svg
                     viewBox="0 0 24 24"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                     fill="currentColor"
                     aria-hidden
                     >
@@ -193,11 +193,11 @@ export default function LewFrench() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+                    className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
                 >
                     <svg
                     viewBox="0 0 24 24"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                     fill="currentColor"
                     aria-hidden
                     >
@@ -206,7 +206,7 @@ export default function LewFrench() {
                 </a>
                 </div>
                 <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
-                or DM Me on X or WhatsApp</p>
+                or DM Me directly on X or WhatsApp</p>
             </section>
             
         </div>

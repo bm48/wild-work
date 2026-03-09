@@ -2,10 +2,10 @@ import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function TheRuins() {
     return (
-        <div className="mx-auto w-full max-w-5xl py-6 sm:py-12">
+        <div className="mx-auto lg:max-w-5xl py-4">
             {/* First image: same width as header separator line (like who-is-g) */}
             
-            <section className="relative flex max-w-5xl mx-auto items-center justify-center overflow-hidden bg-black">
+            <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
                 <AspectRatioImage
                 src="/Ruins-Website-20260127-A copy.jpg"
                 alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
@@ -15,58 +15,62 @@ export default function TheRuins() {
                 <div className="absolute inset-0  pointer-events-none" aria-hidden />
             </section>
 
-            <section className="bg-black px-4 py-6 text-white mx-auto max-w-5xl sm:px-6 sm:py-8" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h1 className="mb-4 text-3xl font-bold text-center sm:mb-6 sm:text-5xl">The Ruins</h1>
-                <p className="mb-6 text-[0.8rem] text-white/90 sm:mb-8">Federal Hill, Baltimore City, Maryland</p>
-                <div className="space-y-4 text-sm">
+            <section className="bg-black px-4 pt-6 text-white mx-auto w-full sm:px-6 sm:pt-8 pb-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h1 className="mb-4 text-3xl text-center sm:mb-6 sm:text-6xl">The Ruins</h1>
+                <p className="text-sm text-white/90 pb-2">Federal Hill, Baltimore City, Maryland</p>
+                <div className="space-y-2 text-sm leading-relaxed">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
                     <p>
                         I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench … not only was there no there there yet but I felt like, given the location, this area needed a story
                     </p>
                     <p>
-                        Federal Hill is a high ground overlook of Baltimore&apos;s harbor—important early, and absolutely relevant in the War of 1812, when it served as a military observation post, signal station, and a gun battery looking out over the harbor.
+                        Federal Hill is a high ground overlook of Baltimore&apos;s inner harbor—important early, and absolutely relevant in the War of 1812, when it served as a military observation post, signal station, and a gun battery looking out over the harbor.
                     </p>
                     <p>
                         So when my client asked that question, my mind didn&apos;t stay in &quot;landscaping mode.&quot; It went straight to: <i>what could have happened here?</i>
                     </p>
                     <p>
-                        We&apos;d already done a couple projects together in the years prior, so I knew something important: these clients were open to the unconventional. Open to &quot;cool and wild,&quot; as long as it made sense and was executed well. That&apos;s why I didn&apos;t rush it. I spent a couple weeks thinking—pencil and paper, pacing, sitting in the space, staring at it from different angles—because I knew if I could come up with the right idea, they&apos;d let me build it.
+                        We&apos;d already done a couple projects with these clients in the years prior, so I knew something important: they
+                         were open to &quot;cool and wild,&quot; as long as it made sense and was executed well. 
+                         That&apos;s why I didn&apos;t rush it. I spent a couple weeks thinking—pencil and paper, sitting in the space, staring at it from different angles—because I knew if I could come up with the right idea, they&apos;d let me build it.
                     </p>
                 </div>
             </section>
 
-            <section className="bg-black px-4 py-4 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">What I saw</h2>
-                <div className="space-y-4 text-sm">
+            <section className="bg-black px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-xl font-bold mb-2">What I saw</h2>
+                <div className="space-y-2 text-sm leading-relaxed">
                     <p>
                         In my mind, the &quot;backstory&quot; was this: 
                     </p>
                     <p>
-                        A stone munitions structure—a small depot or powder store connected to harbor defense—stood on this ground back in that era. Then a stray cannonball during the actual War of 1812 found it and—Boom! What remained were the wall pieces that we see today.
+                        A stone munitions structure—a small powder store connected to harbor defense—stood on this ground back in that era. 
+                        Then a stray cannonball during the War of 1812 found it and—Boom! What remained were the wall pieces that we see today.
                     </p>
                     <p>
                     </p>
                     <p>
-                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; they preserved The Ruins and memorialized them by building gardens and a reflecting pool, etc., around them.
+                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; they preserved 
+                        The Ruins and memorialized them by building gardens and a reflecting pool around them.
                     </p>
                 </div>
             </section>
 
-            <section className="bg-black px-4 pt-6 text-white mx-auto max-w-5xl sm:px-6 sm:pt-8" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">Building the Ruins</h2>
-                <p className="text-[0.8rem] leading-relaxed mb-4">The finished space was built to feel real, with:</p>
-                <ul className="list-disc list-inside space-y-2 text-[0.8rem] leading-relaxed mb-6 pl-2">
+            <section className="bg-black px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-xl font-bold mb-2">Building the Ruins</h2>
+                <p className="text-sm leading-relaxed mb-4">The finished space was built to feel real, with:</p>
+                <ul className="list-disc list-outside space-y-2 text-sm leading-relaxed mb-2 pl-6">
                     <li>Bluestone patios and a walk</li>
-                    <li>Seating placed where you&apos;d naturally stop</li>
+                    <li>Seating placed where you&apos;d naturally want to sit</li>
                     <li>A reflecting pool</li>
                     <li>A rusting urn with overflowing water</li>
                     <li>And the ruin fragments themselves—built like true remmants</li>
                 </ul>
             </section>
 
-            <section className="bg-black px-4 py-4 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">This Stone has Baltimore in it</h2>
-                <div className="space-y-6 text-[0.8rem] leading-relaxed">
+            <section className="bg-black px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-xl font-bold mb-2">This Stone has Baltimore in it</h2>
+                <div className="space-y-2 text-sm leading-relaxed">
                     <p>
                         Much of the stone used is reclaimed granite-the kind that actually spent a previous life of 150+years as Baltimore street and curb stone.
                     </p>
@@ -82,63 +86,68 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="bg-black px-4 py-6 text-white mx-auto max-w-5xl sm:px-6 sm:py-8" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">Why this works</h2>
-                <div className="space-y-6 text-[0.8rem] leading-relaxed">
+            <section className="bg-black px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-xl font-bold mb-2">Why this works</h2>
+                <div className="space-y-2 text-sm leading-relaxed">
                     <p>
                         The Ruins isn&apos;t a replica and is plausible and real-and now it is a place that makes people sit and wonder.
                     </p>
                     <p>
-                        My hope is that decades from now, even hundreds of years from now, people will still stand there looking at these ruins and say: &quot;What is this? Where did it come from? What happened here?&quot;
+                        My hope is that decades from now, even hundreds of years from now, people will still stand there looking at The Ruins and say:
+                         &quot;What is this? Where did it come from? What happened here?&quot;
                     </p>
                 </div>
                 <hr className="mt-2 border-white/30" />
             </section>
 
-            <section className="bg-black px-4 py-2 text-white mx-auto max-w-5xl sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-[1.15rem] font-bold mb-6">If you want a Ruin of your own...</h2>
-                <div className="space-y-6 text-[0.8rem] leading-relaxed">
+            <section className="bg-black px-4 py-2 text-white mx-auto w-full sm:px-6 mt-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+                <h2 className="text-xl font-bold mb-2">If you want a Ruin of your own...</h2>
+                <div className="space-y-2 text-sm leading-relaxed">
                     <p>
-                    That would serve in the real world as A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, whatever would be most useful to you, whatever we can imagine your own personal Ruins might be, Let&spos;s Talk, and throw around ideas.                     </p>
-                    <p>I&apos;ll happily jump on a video call with you, wherever you are in the world, to talk ideas.</p>
+                    That would serve in the real world as A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, 
+                    <i>whatever would be most useful to you</i>, whatever we can imagine your own personal Ruins might be, Let&spos;s Talk, and throw around ideas.                     </p>
+                    <p>I&apos;ll happily come over to your house, or jump on a video call with you, wherever you are in the world, to discuss ideas.</p>
                     <p>The “Ruin” concept can go a hundred directions, and it can be purpose-built to suit your life&apos;s needs. Your Ruin could be:</p>
-                    <ul className="list-disc list-inside space-y-4 pl-2">
+                    <ul className="list-disc list-outside space-y-2 text-sm leading-relaxed mb-2 pl-6">
                         <li>
-                            A <strong>farmhouse ruin</strong> that &quot;predates the neighborhood,&quot; where the broken base of an old chimney becomes a working wood-fire feature—fire pit or fireplace—surrounded by stone floors with intentionally fractured edges. What is it today? Outdoor Kitchen and Ultra Cool Party Zone.
+                            A <strong>farmhouse ruin</strong> that is the original farm that &quot;predates the neighborhood,&quot; 
+                            where the gnarley, jagged, broken base of an old chimney becomes
+                             a mordern, purpose built, working wood-fire feature—surrounded by stone floors with intentionally fractured edges. 
+                             What is it today? Ultra Cool Party Zone.
                         </li>
                         <li>
-                            <strong>Collapsed stone garden walls</strong> that become natural boulder seating, like the structure simply fell into place over time.
+                            <strong>Collapsed stone garden walls</strong> from an old stone building that become natural boulder seating, like the structure simply fell into place over time.
                         </li>
                         <li>
-                            A <strong>gristmill ruin</strong> beside a stream or pond—water, stone, moss, worn thresholds—built to feel like it is all that remains from an early 1700&apos;s real grismill.
+                            A <strong>gristmill ruin</strong> beside a stream-water, stone, moss, worn thresholds—built to feel like it is all that remains from an early 1700&apos;s real grismill.
                         </li>
                         <li>
-                            A ruin of any type that&apos;s half gathering space, half sanctuary—something you&apos;ll use constantly, and that people will talk about forever.
+                            A ruin of any type that&apos;s half gathering space, half sanctuary—something you&apos;ll use constantly, 
+                            and that people will talk about forever.
                         </li>
                     </ul>
                     <p>
-                        And yes: done right, this kind of work can dramatically increase the feel—and often the value—of a property, because it creates something buyers want to live in with them.
+                        And yes: done right, this kind of work can dramatically increase the feel—and the value—of a property, because it creates something buyers want to live in with them.
                     </p>
                     <p>
-                        If you&apos;ve got a space and you want to turn it into a place with a past,{" "}
-                        <a href="tel:+14437972166" className="underline decoration-white/60 underline-offset-2 hover:decoration-white">call me</a>
-                        . I&apos;d love to discuss ideas with you.
+                        If you&apos;ve got a space and you want to turn it into a place with a past,{" "} call me directly on my cell I&apos;d love to discuss ideas with you.
+                        
                     </p>
                 </div>
-                <a href="tel:+14437972166" className="block mt-6 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
+                <a href="tel:+14437972166" className="block mt-10 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
                     1+443.797.2166
                 </a>
             </section>
 
-        <div className="mt-4 flex justify-center gap-4 px-4 sm:px-0">
+        <div className="flex justify-center gap-4 px-4 sm:px-0">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
-            className="flex h-10 w-10 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+            className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >
@@ -148,11 +157,11 @@ export default function TheRuins() {
           <a
             href="https://api.whatsapp.com/send?phone=14437972166"
             aria-label="WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+            className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >
@@ -161,7 +170,7 @@ export default function TheRuins() {
           </a>
         </div>
         <p className="pt-4 text-center text-sm text-white/90 sm:text-base">
-            or DM Me on X or WhatsApp</p>
+            or DM Me directly on X or WhatsApp</p>
         </div>
     );
 }
