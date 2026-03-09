@@ -10,7 +10,7 @@ const navTabs = [
   { label: "INSPIRATION", href: "/pages/Inspiration" },
   { label: 'THE RUINS', href: "/pages/The-ruins"},
   { label: "I SELL", href: "/pages/I-sell" },
-  { label: "WHO IS G", href: "/pages/who-is-g" },
+  { label: "BIO", href: "/pages/who-is-g" },
 ];
 
 export default function Header() {
