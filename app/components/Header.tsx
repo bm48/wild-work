@@ -2,44 +2,50 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useState } from "react";
 
 const navTabs = [
   { label: "HOME", href: "/pages/Home" },
   { label: "WILDFIRE", href: "/pages/Wildfire" },
   { label: "INSPIRATION", href: "/pages/Inspiration" },
-  { label: 'THE RUINS', href: "/pages/The-ruins"},
+  { label: "THE RUINS", href: "/pages/The-ruins" },
   { label: "I SELL", href: "/pages/I-sell" },
   { label: "BIO", href: "/pages/who-is-g" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-[#000000] text-white">
-      {/* Logo + title on top; nav titles in a row below (horizontal scroll on mobile) */}
-      <div className="mx-auto flex w-[80%] flex-col items-center py-4 sm:gap-8 sm:pt-10">
-        {/* Logo + site title */}
-        {/* <div className="flex flex-shrink-0 flex-col items-center sm:flex-row sm:gap-3">
-          <Image
-            src="/wildLogo.png"
-            alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
-            width={120}
-            height={120}
-            className="h-12 w-12 object-contain sm:h-[120px] sm:w-[120px]"
-          />
-          <span
-            className="whitespace-nowrap text-lg font-normal sm:text-4xl"
-            style={{ fontFamily: "var(--font-serif), serif" }}
+      {/* Mobile: hamburger at top right (width < 500px) */}
+      <div className="hidden min-h-[56px] items-center justify-end px-4 max-[500px]:flex">
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(true)}
+          className="flex h-10 w-10 items-center justify-center rounded text-[#d4d4d4] transition-opacity hover:opacity-90"
+          aria-label="Open menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
           >
-            Wildworks.Live
-          </span>
-        </div> */}
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
-        {/* Nav titles: one row below logo/title; horizontal scroll on mobile, centered wrap on desktop */}
-        <nav className="w-full pt-4 sm:mx-auto sm:w-auto sm:px-6 sm:pb-2 sm:pt-12">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-1 [-webkit-overflow-scrolling:touch] md:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:pb-0 sm:pl-0">
+      {/* Desktop: logo + nav row (width >= 500px) */}
+      <div className="mx-auto hidden flex-col items-center py-4 min-[501px]:flex sm:gap-4 sm:pt-10">
+        <nav className="w-[60%] pt-4 sm:mx-auto sm:px-6 sm:pb-2 sm:pt-12">
+          <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3">
             {navTabs.map((tab) => {
               const isActive =
                 tab.href === "/pages/Home"
@@ -49,14 +55,12 @@ export default function Header() {
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className={`inline-flex flex-shrink-0 min-h-[44px] min-w-[44px] items-center justify-center rounded px-3 py-2.5 text-xs font-normal uppercase tracking-wide transition-colors sm:px-5 sm:text-sm ${
+                  className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-2.5 text-xs font-normal uppercase tracking-wide transition-colors sm:px-2 sm:text-sm ${
                     isActive
                       ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
                       : "text-[#FFFFFF] hover:text-white/85"
                   }`}
-                  style={{
-                    fontFamily: "var(--font-serif), serif",
-                  }}
+                  style={{ fontFamily: "var(--font-serif), serif" }}
                 >
                   {tab.label}
                 </Link>
@@ -66,8 +70,60 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Separator line below nav */}
-      <div className="border-b mx-auto w-[80%] px-4 sm:px-6" style={{ borderColor: "#222222" }} />
+      {/* Separator: hide on mobile (hamburger only), show on desktop */}
+      <div
+        className="mx-auto hidden w-[80%] border-b px-4 min-[501px]:block sm:px-6"
+        style={{ borderColor: "#222222" }}
+      />
+
+      {/* Full-screen mobile menu overlay (like second image) */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col bg-black max-[500px]:flex min-[501px]:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
+          {/* Top bar with close (X) on the right */}
+          <div className="flex min-h-[56px] items-center justify-end border-b border-[#333] px-4">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded text-white transition-opacity hover:opacity-80"
+              aria-label="Close menu"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* HOME label (light grey, centered) */}
+          {/* Vertical nav links: white, uppercase, centered, generous spacing */}
+          <nav className="flex flex-1 flex-col items-center justify-start gap-8 py-10">
+            {navTabs.map((tab) => (
+              <Link
+                key={tab.href}
+                href={tab.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg font-normal uppercase tracking-wide text-white transition-opacity hover:opacity-85"
+                style={{ fontFamily: "var(--font-serif), serif" }}
+              >
+                {tab.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

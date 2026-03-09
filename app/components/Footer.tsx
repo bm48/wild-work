@@ -23,7 +23,7 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <footer className="bg-[#000000] text-white">
+    <footer className="bg-[#000000] text-white max-[450px]:pb-24">
       {/* Top separator - light gray */}
       <div className="border-t border-[#111]" />
 
@@ -58,14 +58,14 @@ export default function Footer() {
                   name="email"
                   required
                   aria-label="Email address"
-                  className="w-full min-w-0 rounded border border-[#333] bg-[#1a1a1a] px-3 py-2.5 text-base text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
+                  className="w-full min-w-0 rounded border border-[#333] bg-[#1a1a1a] px-3 py-1 text-base text-white placeholder-zinc-500 focus:border-[#555] focus:outline-none"
                   placeholder=""
                 />
               </div>
               <div className="pl-0">
                 <button
                   type="submit"
-                  className="min-h-[3rem] w-full rounded bg-[#d4d4d4] px-5 py-2.5 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
+                  className="min-h-[2.4rem] w-full rounded bg-[#d4d4d4] px-5 py-1 text-sm font-medium text-[#555555] transition-colors hover:bg-[#e0e0e0] sm:w-auto"
                   style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                 >
                   Submit form

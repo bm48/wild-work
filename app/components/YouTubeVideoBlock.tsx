@@ -23,7 +23,7 @@ export default function YouTubeVideoBlock() {
 
   return (
     <section className="bg-black px-4 py-2 sm:px-6">
-      <div className="w-full">
+      <div className="md:w-[60%] mx-auto">
         <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
           <iframe
             src={YOUTUBE_EMBED_URL}
@@ -33,7 +33,7 @@ export default function YouTubeVideoBlock() {
             className="absolute inset-0 h-full w-full"
           />
           {/* Copy link - top right */}
-          <div className="absolute right-2 top-2 z-10 sm:right-4 sm:top-4">
+          {/* <div className="absolute right-2 top-2 z-10 sm:right-4 sm:top-4">
             <button
               type="button"
               onClick={handleCopyLink}
@@ -58,9 +58,9 @@ export default function YouTubeVideoBlock() {
                 {copied ? "Copied!" : "Copy link"}
               </span>
             </button>
-          </div>
+          </div> */}
           {/* Watch on YouTube - bottom left */}
-          <div className="absolute bottom-2 left-2 z-10 sm:bottom-4 sm:left-4">
+          {/* <div className="absolute bottom-2 left-2 z-10 sm:bottom-4 sm:left-4">
             <a
               href={YOUTUBE_WATCH_URL}
               target="_blank"
@@ -78,7 +78,7 @@ export default function YouTubeVideoBlock() {
               </svg>
               <span className="text-xs font-medium sm:text-sm">Watch on YouTube</span>
             </a>
-          </div>
+          </div> */}
         </div>
         <p className="mt-6 mb-6 text-center text-xs text-white/90 sm:mt-8 sm:mb-8 sm:text-sm">
           Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder
