@@ -21,7 +21,7 @@ export default function LewFrench() {
 
                 <section className="mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6">
                     <h2
-                        className="mb-4 flex items-center justify-center text-white text-5xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-6xl"
+                        className="mb-4 flex items-center justify-center text-white text-4xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-5xl"
                         style={{ fontFamily: "var(--font-serif), serif" }}
                     >
                         Inspiration: Lew French
@@ -42,16 +42,16 @@ export default function LewFrench() {
                     <p className="text-base py-2">
                         As you can see in the photo above, Lew is a true artist of natural stone. His eye for proportion, balance, and flow is exceptional—I hold his work in the highest regard.
                     </p>
-                    <h2 className="text-2xl pt-2 font-bold">
+                    <h2 className="text-2xl pt-2">
                         How It Started
                     </h2>
                     <p className="text-base py-2">
-                        Over more than a decade, we had built nearly everything around a couple in Lutherville, Md&apos;s home: 
+                        Over more than 15 years, we had built nearly everything around a couple in Lutherville, Md&apos;s home: 
                         the front masonry porch, 2 walks, planting beds, landscape lighting front and back, and the rear bluestone patio with natural stone seat wall. 
-                        As I walk around the house today, I look with pride, as everything we built was beautiful artwork that all settled in with no trip hazards or visual blemishes.
+                        As I walk around the house today, I look with pride, as everything we had built was beautiful artwork that settled in with no trip hazards or visual blemishes.
                     </p>
                     <p className="text-base py-2">
-                        So in the fall of 2025 the husband had a friend send him a picture of an outdoor fireplace that the friend built himself. 
+                        In the fall of 2025 the husband had a friend send him a picture of an outdoor fireplace that the friend built himself. 
                         Large scale, about the same dimensions as Project Wildfire (14 ft wide x 14ish ft tall). 
                         The wife, knowing that the husband loved to sit outside on the patio we had built for them and smoke his cigars, said, &quot;Why don&apos;t you have Scott build one for you.&quot; 
                         As he was currently sitting around a small metal firepit, she felt like he earned an upgrade.{" "}
@@ -63,7 +63,8 @@ export default function LewFrench() {
                     </p>
                     <p className="text-base py-2">
                         The husband reached out to me, sent me the picture his friend had sent him. I sent him a link of Lew&apos;s 
-                        Fireplace, and asked what he thought of it. We had not yet agreed to a price, but he said, &quot;Put us into your schedule.&quot;
+                        Fireplace, and asked what he thought of that style. We had not yet agreed to a price, 
+                        but he said, &quot;Put us into your schedule.&quot;
                     </p>
                 </section>
 
@@ -79,14 +80,17 @@ export default function LewFrench() {
             </section>
             
             <section className="mx-auto w-full bg-black px-4 py-2 text-white sm:px-6 sm:py-4">
-                    <h2 className="text-2xl font-bold">
+                    <h2 className="text-2xl">
                         Design: Sketch
                     </h2>
                     <p className="text-base py-2">
                         I had transitioned to CAD years earlier and hadn&apos;t done a hand rendering in nearly a decade. Because of the complexity of the design, I felt like picking up a pencil and sketching.
                     </p>
                     <p className="text-base py-2">
-                        Truly, I felt like the ideas just flowed out of me almost on auto pilot, it was almost effortless, with very little thinking. I do many other types of art, including music, stand-up comedy, graphic design, and generally these things are painstaking, iteration after iteration, seriously heavy brain work that takes days and months to get right. But to my amazement, in about 2 hours, I had something I really liked (the design above).
+                        Truly, I felt like the ideas just flowed out of me almost on auto pilot, it was almost effortless, 
+                        with very little thinking. I do many other types of art, including music, stand-up comedy, graphic design, 
+                        and generally these things are painstaking, iteration after iteration, seriously heavy brain work that takes days 
+                        and months to get right. But to my amazement, in about 2 hours, I had something I really liked, the design above.
                     </p>
             </section>
 
@@ -99,20 +103,23 @@ export default function LewFrench() {
                 />
             </section>
             <section className="space-y-2 mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6 leading-[1]">
-                    <h2 className="text-2xl font-bold">
+                    <h2 className="text-2xl">
                         Stone Purchasing
                     </h2>
                     <p className="text-base ">
                         The day after I got the go ahead, I started stone hunting.
                     </p>
                     <p className="text-base ">
-                        Sourcing the stone was tricky. All of the larger were to be one-of-a-kind, selected individually for how well they fit into the actual design. Finding these stones took patience, experience, traveling, and would not be inexpensive.
+                        Sourcing the stone was tricky. All of the larger pieces were to be one-of-a-kind, selected individually for 
+                        how well they fit into the actual design. Finding these stones was going to take patience, experience, 
+                        traveling, and none were going to come cheap.
                     </p>
                     <p className="text-base ">
                         I visited numerous retailers and quarries, and took every stone in the design and did my best to find it in reality. The high horizontal stone in the original design was drawn at almost 12 feet wide. I couldn&apos;t find anything that big, but I found a stone 10&apos; with cutouts on each end. I found the other stones, literally one at a time, from various sources, and then erased and redrew the design with the new stones in place, above.
                     </p>
                     <p className="text-base ">
-                        This was Version 2.0 that I showed the clients, by text. I was not super happy with it, thought something was missing. 
+                        This was Version 2.0 that I showed the clients, by text. I was not happy with it, thought
+                         something was missing. 
                     </p>
             </section>
             <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden bg-black px-4 mt-2 sm:px-6 sm:mt-4">
@@ -150,9 +157,9 @@ export default function LewFrench() {
                     and do so in a way that is durable and will last. Certainly, everyone is going to want to climb up, and stand and sit on them (I&apos;ll be first).
                 </p>
                 <p className="text-base ">
-                    For all its imperfections, here is the final design. We shall see how close we come to this after the build!
+                    For all its imperfections, above is the final design. We shall see how close we come to this after the build!
                 </p>
-                <h2 className="pt-6 pb-2 text-2xl font-bold sm:text-3xl">
+                <h2 className="pt-6 pb-2 text-2xl sm:text-3xl">
                     Project Wildfire
                 </h2>
                 <p className="text-base ">
@@ -166,7 +173,7 @@ export default function LewFrench() {
                     Right now, I&apos;m proudly standing on Lew French&apos;s shoulders.
                 </p>
                 <p className="text-base ">
-                    If you would like a Fireplace along these lines, inside or outside of your home, please call me on my cell: 
+                    If you would like a Fireplace along these lines, inside or outside of your home, please feel free to call me on my cell: 
                 </p>
 
                 <a href="tel:+14437972166" className="block pt-4 mt-2 text-4xl text-center text-white/90 sm:mt-4 sm:text-5xl min-h-[44px]">

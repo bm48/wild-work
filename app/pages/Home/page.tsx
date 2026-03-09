@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Project Wildfire CTA */}
-      <section className="bg-black px-4 pb-10 text-center text-white sm:px-6 sm:pb-10">
+      <section className="bg-black px-4 pb-10 text-center text-white sm:px-6 sm:pb-14">
         <p className="mx-auto mb-4 mt-5 text-sm leading-relaxed sm:mb-6 sm:text-base">
           Project Wildfire is a Natural Stone Outdoor Fireplace that we&apos;re Building RIGHT NOW
         </p>
@@ -140,8 +140,8 @@ export default function Home() {
         </section>
 
       {/* Inspiration: Lew French */}
-      <section className="bg-black px-4 pt-6 pb-10 text-white sm:px-6 sm:pt-8 sm:pb-12">
-        <div className="space-y-4 text-left text-[0.8rem] leading-relaxed sm:space-y-5">
+      <section className="bg-black px-4 pt-6 pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14">
+        <div className="space-y-2 text-left text-sm leading-relaxed sm:space-y-5">
           <h2 className="text-2xl text-center sm:text-4xl">
             Inspiration: Lew French
           </h2>
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* The Ruins CTA */}
-      <section className="bg-black px-6 pt-8 pb-12 text-white text-center" >
+      <section className="bg-black px-6 pt-8 pb-14 text-white text-center" >
         <h2 className="text-4xl  mb-2">The Ruins</h2>
         <p className="text-md text-white/90 mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
         <Link
@@ -194,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* I sell people's homes. Period. */}
-      <section className="bg-black px-4 py-10 text-white -mt-8 sm:-mt-12 sm:px-6 sm:pt-16">
+      <section className="bg-black px-4 py-10 text-white pb-14 sm:-mt-12 sm:px-6 sm:pt-16">
         <div className="space-y-4 text-left leading-relaxed sm:space-y-5">
           <h2 className="text-2xl text-center sm:text-3xl mt-3">
             My Work Sells People&apos;s Homes. Period.
