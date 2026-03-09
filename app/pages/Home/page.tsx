@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Script from "next/script";
 import AspectRatioImage from "../../components/AspectRatioImage";
+import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
 export default function Home() {
   return (
-    <div className="mx-auto w-full max-w-6xl py-6 sm:py-12">
+    <div className="mx-auto lg:w-[80%] py-4">
       {/* Hero: image with overlaid text - full image visible */}
       <section className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
         <AspectRatioImage
@@ -120,8 +122,8 @@ export default function Home() {
         </p>
         <Link
           href="/pages/Wildfire"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-2 py-2 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-4"
-          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
+          className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-2 py-1 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
+          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
         >
           Click Here To Check Out Project Wildfire
         </Link>
@@ -149,8 +151,8 @@ export default function Home() {
           <div className="flex align-center justify-center">
             <Link
               href="/pages/Lew-french"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-3 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-3"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: "1rem", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-1 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
+              style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: "1rem", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
             >
               Click Here For Details
             </Link>
@@ -169,13 +171,13 @@ export default function Home() {
       </section>
 
       {/* The Ruins CTA */}
-      <section className="bg-black px-6 pt-8 pb-10 text-white text-center" >
-        <h2 className="text-4xl  mb-3">The Ruins</h2>
-        <p className="text-md text-white/90 mt-8 mb-8">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
+      <section className="bg-black px-6 pt-8 pb-12 text-white text-center" >
+        <h2 className="text-4xl  mb-2">The Ruins</h2>
+        <p className="text-md text-white/90 mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
         <Link
           href="/pages/The-ruins"
-          className="inline-block rounded-xl bg-white px-8 py-4 text-[#555] font-medium transition-opacity hover:opacity-90"
-          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px", padding: "12px 15px" }}
+          className="inline-block rounded-xl bg-white px-8 py-2 text-[#888] font-medium transition-opacity hover:opacity-90"
+          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px", padding: "12px 15px" }}
           >
           Click Here to Find Out What I Saw
         </Link>
@@ -192,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* I sell people's homes. Period. */}
-      <section className="bg-black px-4 py-10 text-white -mt-8 sm:-mt-12 sm:px-6 sm:py-16">
+      <section className="bg-black px-4 py-10 text-white -mt-8 sm:-mt-12 sm:px-6 sm:pt-16">
         <div className="space-y-4 text-left leading-relaxed sm:space-y-5">
           <h2 className="text-2xl text-center sm:text-3xl mt-3">
             My Work Sells People&apos;s Homes. Period.
@@ -203,8 +205,8 @@ export default function Home() {
           <div className="flex align-center justify-center">
             <Link
               href="/pages/I-sell"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium transition-opacity hover:opacity-90 text-sm sm:px-6 sm:py-3 sm:text-base"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#555", borderRadius: "10px" }}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-1 font-medium transition-opacity hover:opacity-90 text-sm sm:px-6 sm:py-2 sm:text-base"
+              style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
             >
               Click Here To See How
             </Link>
@@ -229,25 +231,23 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Video section - local video to avoid embed timeouts */}
-      <section className="bg-black px-4 py-8 sm:px-6 sm:py-12">
-        <div className="w-full">
-          <div className="relative aspect-video w-full overflow-hidden bg-black">
-            <video
-              className="h-full w-full object-contain"
-              controls
-              playsInline
-              preload="metadata"
-              poster="/hero-wildworks.jpg"
-            >
-              <source src="/WildWorksVideo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+      {/* Video section - YouTube embed with Copy link & Watch on YouTube */}
+      <YouTubeVideoBlock />
+
+      {/* Twitter embed */}
+      <section className="bg-black px-4 pb-8 text-center text-white sm:px-6">
+        <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-tweet]:mx-auto">
+          <blockquote
+            className="twitter-tweet"
+            dangerouslySetInnerHTML={{
+              __html: `<p lang="en" dir="ltr">Most People Never See Stonework Like This.<br><br>Drone footage of a handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>When the lush foliage grows in and around this landscape, it's built to look like it's been part of the… <a href="https://t.co/NPQRR59Eyj">pic.twitter.com/NPQRR59Eyj</a></p>&mdash; WildWorks (@OfficialSGDietz) <a href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw">March 7, 2026</a>`,
+            }}
+          />
         </div>
-        <p className="mt-6 mb-6 text-center text-xs text-white/90 sm:mt-8 sm:mb-8 sm:text-sm">
-          Drone Footage of a Project with Boulders, Rock Outcroppings, Boulder Steps, a Seat Wall, and a Mushroom Seat. 
-        </p>
+        <Script
+          src="https://platform.twitter.com/widgets.js"
+          strategy="lazyOnload"
+        />
       </section>
 
       {/* Exquisite Art / WildWorks CTA */}
@@ -280,7 +280,7 @@ export default function Home() {
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-8 w-8"
+              className="h-6 w-6"
               fill="currentColor"
               aria-hidden
             >

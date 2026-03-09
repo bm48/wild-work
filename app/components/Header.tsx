@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="bg-[#000000] text-white">
       {/* Logo + title on top; nav titles in a row below (horizontal scroll on mobile) */}
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-4 sm:gap-8 sm:px-6 sm:py-10">
+      <div className="mx-auto flex w-[80%] flex-col items-center py-4 sm:gap-8 sm:pt-10">
         {/* Logo + site title */}
         {/* <div className="flex flex-shrink-0 flex-col items-center sm:flex-row sm:gap-3">
           <Image
@@ -39,7 +39,7 @@ export default function Header() {
 
         {/* Nav titles: one row below logo/title; horizontal scroll on mobile, centered wrap on desktop */}
         <nav className="w-full pt-4 sm:mx-auto sm:w-auto sm:px-6 sm:pb-2 sm:pt-12">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-1 [-webkit-overflow-scrolling:touch] sm:flex-wrap sm:justify-center sm:gap-6 sm:overflow-visible sm:pb-0 sm:pl-0">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-1 [-webkit-overflow-scrolling:touch] md:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:pb-0 sm:pl-0">
             {navTabs.map((tab) => {
               const isActive =
                 tab.href === "/pages/Home"
@@ -67,7 +67,7 @@ export default function Header() {
       </div>
 
       {/* Separator line below nav */}
-      <div className="border-b mx-auto max-w-6xl px-4 sm:px-6" style={{ borderColor: "#222222" }} />
+      <div className="border-b mx-auto w-[80%] px-4 sm:px-6" style={{ borderColor: "#222222" }} />
     </header>
   );
 }
