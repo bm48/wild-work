@@ -71,10 +71,10 @@ export default function Header() {
       </div>
 
       {/* Separator: hide on mobile (hamburger only), show on desktop */}
-      <div
+      {/* <div
         className="mx-auto hidden w-[80%] border-b px-4 min-[501px]:block sm:px-6"
         style={{ borderColor: "#222222" }}
-      />
+      /> */}
 
       {/* Full-screen mobile menu overlay (like second image) */}
       {mobileMenuOpen && (
