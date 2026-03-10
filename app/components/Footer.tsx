@@ -23,7 +23,7 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <footer className="bg-[#000000] text-white max-[450px]:pb-24">
+    <footer className="bg-[#000000] text-white max-[450px]:pb-24 mt-6">
       {/* Top separator - light gray */}
       <div className="border-t border-[#111]" />
 
