@@ -21,7 +21,7 @@ export default function LewFrench() {
 
                 <section className="mx-auto w-full bg-black px-4 py-4 text-white sm:px-6 sm:py-6">
                     <h2
-                        className="mb-4 flex items-center justify-center text-white text-3xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-4xl"
+                        className="mb-4 flex items-center justify-center text-white text-2xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-4xl"
                         style={{ fontFamily: "var(--font-serif), serif" }}
                     >
                         Inspiration: Lew French
