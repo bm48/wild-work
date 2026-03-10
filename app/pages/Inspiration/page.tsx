@@ -176,9 +176,10 @@ export default function LewFrench() {
                     If you would like a Fireplace along these lines, inside or outside of your home, please feel free to call me on my cell: 
                 </p>
 
-                <a href="tel:+14437972166" className="block pt-4 mt-2 text-4xl text-center text-white/90 sm:mt-4 sm:text-5xl min-h-[44px]">
+                <a href="tel:+14437972166" className="block pt-4 mt-2 text-4xl text-center text-white/90 sm:mt-4 sm:text-5xl min-h-[44px] mb-6 sm:mb-10">
                     1+443-797-2166
                 </a>
+                <h1 className="text-center text-5xl sm:text-6xl mb-6 sm:mb-12">Scott</h1>
                 
                 <div className="mt-8 flex justify-center gap-4 sm:mt-10">
                 <a

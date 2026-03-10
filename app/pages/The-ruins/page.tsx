@@ -143,8 +143,9 @@ export default function TheRuins() {
                     </p>
                 </div>
                 <a href="tel:+14437972166" className="block mt-10 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
-                    1+443.797.2166
+                    1+443-797-2166
                 </a>
+                <h1 className="text-center text-5xl sm:text-6xl mb-6 sm:mb-12">Scott</h1>
             </section>
 
         <div className="flex justify-center gap-4 px-4 sm:px-0">
