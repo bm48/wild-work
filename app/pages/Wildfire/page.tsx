@@ -23,7 +23,7 @@ export default function Wildfire() {
               </p>
               <p className="text-xs leading-[2]">
               Built entirely by hand—literally one stone at a time—this project blends old-world stone craftsmanship 
-              with modern scale and design. Our work was inspired by Lew French of {""}
+              with modern scale and design. Our work was inspired by Lew French of {" "}
                   <a
                   href="https://lewfrenchstone.com"
                   className="underline decoration-white/60 underline-offset-2 hover:decoration-white"

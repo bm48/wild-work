@@ -28,7 +28,7 @@ export default function LewFrench() {
                     </h2>
                     <p className="text-base py-2">
                         Project Wildfire draws direct inspiration from the work of master stone artisan{" "}
-                        <strong>Lew French</strong> of{" "}
+                        <strong>Lew French</strong> of {" "}
                         <a
                             href="https://lewfrenchstone.com"
                             target="_blank"
