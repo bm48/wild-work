@@ -53,28 +53,28 @@ export default function ImageGallery() {
         </div>
 
         {/* Pagination */}
-        <div className="mt-8 flex items-center justify-center gap-2">
+        <div className="mt-2 flex items-center justify-center gap-1">
           <button
             type="button"
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            disabled={currentPage === 1}
             aria-label="Previous page"
-            className="flex h-10 w-10 items-center justify-center border border-white bg-black text-white transition-colors hover:bg-zinc-800 disabled:opacity-40 disabled:hover:bg-black"
+            className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white text-gray-500 transition-opacity hover:bg-white/90 cursor-pointer ${currentPage === 1 ? "hidden" : ""}`}
           >
             <span className="text-lg font-medium">&lt;</span>
           </button>
+          
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-3">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(
               (page) => (
                 <button
                   key={page}
                   type="button"
                   onClick={() => setCurrentPage(page)}
-                  className={`flex h-10 w-10 items-center justify-center text-sm font-medium text-white transition-colors ${
+                  className={`flex h-10 min-w-10 items-center justify-center rounded-xl px-3 text-sm font-medium underline transition-colors cursor-pointer ${
                     currentPage === page
-                      ? "border border-white bg-black"
-                      : "hover:text-white/80"
+                      ? "border border-white bg-black text-white"
+                      : "text-white hover:text-cyan-300"
                   }`}
                 >
                   {page}
@@ -86,9 +86,8 @@ export default function ImageGallery() {
           <button
             type="button"
             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-            disabled={currentPage === totalPages}
             aria-label="Next page"
-            className="flex h-10 w-10 items-center justify-center border border-white bg-black text-white transition-colors hover:bg-zinc-800 disabled:opacity-40 disabled:hover:bg-black"
+            className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white text-gray-600 transition-opacity hover:bg-white/90 cursor-pointer ${currentPage === totalPages ? "hidden" : ""}`}
           >
             <span className="text-lg font-medium">&gt;</span>
           </button>
