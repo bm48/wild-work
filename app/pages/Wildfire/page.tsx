@@ -27,6 +27,8 @@ export default function Wildfire() {
                   <a
                   href="https://lewfrenchstone.com"
                   className="underline decoration-white/60 underline-offset-2 hover:decoration-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >
                   LewFrenchStone.com
                   </a>
@@ -62,6 +64,8 @@ export default function Wildfire() {
               href="https://x.com/OfficialSGDietz"
               aria-label="X (Twitter)"
               className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -76,6 +80,8 @@ export default function Wildfire() {
               href="https://api.whatsapp.com/send?phone=14437972166"
               aria-label="WhatsApp"
               className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"

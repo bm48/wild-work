@@ -60,6 +60,8 @@ export default function ISell() {
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
             className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               viewBox="0 0 24 24"
@@ -74,6 +76,8 @@ export default function ISell() {
             href="https://api.whatsapp.com/send?phone=14437972166"
             aria-label="WhatsApp"
             className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#25D366] text-white transition-opacity hover:opacity-90"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               viewBox="0 0 24 24"

@@ -186,6 +186,8 @@ export default function LewFrench() {
                     href="https://x.com/OfficialSGDietz"
                     aria-label="X (Twitter)"
                     className="flex h-12 w-12 items-center justify-center text-[#FFFFFF] transition-opacity hover:opacity-80"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <svg
                     viewBox="0 0 24 24"
