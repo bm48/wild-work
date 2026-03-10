@@ -78,7 +78,7 @@ export default function TheRuins() {
                         As streets aged and construction techniques modernized, a lot of that old stone got ripped out, and much discarded into the city dump. Can you believe that-valuable granite, and Baltimore&apos;s history dumped like trash?
                     </p>
                     <p>
-                        A few local people had set some aside, which we salvaged, and used for the build. Hopefully this stone will live another 150+ years right here-maybe a couple thousand!
+                        A few local people had set some aside, which we salvaged and used for the build. Hopefully this stone will live another 150+ years right here-maybe a couple thousand!
                     </p>
                     <p>
                         That&apos;s why the finished work doesn&apos;t feel like &quot;new hardscape pretending to be old.&quot; It feels like it could have been there all along—like Baltimore coughed up one of its older layers and set it down carefully in the present.

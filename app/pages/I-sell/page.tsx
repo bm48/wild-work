@@ -22,10 +22,10 @@ export default function ISell() {
                         count of how many clients have said the exact same thing to me: &quot;Scott—You sold our house.&quot;
                     </p>
                     <p className="text-base">
-                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their old home and called me in to fix up their new one. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten a great price for their old home.
+                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their old home, and called me in to fix up their new one. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten a great price for their old home.
                     </p>
                     <p className="text-base">
-                    He said to me: &quot;You sold our house. It had to be you. You gave us the most beautiful things there!&quot; He also said to me, &quot;You&apos;re the best! You are absolutely the best there is. You&apos;re going to make our new house spectacular!&quot; This is the house that two 70 year olds with 20 grandkids are going to spend their golden years. They believed in me, that I delivered <em>Spectacular</em>.
+                    He said to me: &quot;You sold our house. It had to be you. You gave us the most beautiful things there!&quot; He also said, &quot;You&apos;re the best! You are absolutely the best there is. You&apos;re going to make our new house spectacular!&quot; This is the house that two 70 year olds with 20 grandkids are going to spend their golden years. They believed in me, that I delivered <em>Spectacular</em>.
                     </p>
                     <p className="text-base">
                         Another client told me the same thing after reading their realtor&apos;s report. The buyers specifically mentioned how much they loved the super artsy and wild patio and seat wall area. That outdoor space was the reason they fell in love with the home, and had to have it.
@@ -37,7 +37,7 @@ export default function ISell() {
                     They both nodded vociferously and the wife said, “Oh my God—at least!”
                     </p>
                     <p className="text-base">
-                        That kind of result doesn&apos;t happen by accident. It comes from fixing problems correctly—and at a fair price. The best part of all? You, the client, get to enjoy these things as long as you own your home. For these clients, they had not only the dream back yard for their kids to grow up in, but also the congregating area their family could enjoy for decades, and also an investment that was going to give them maximum Return On Investment.
+                        That kind of result doesn&apos;t happen by accident. It comes from fixing problems correctly—and at a fair price. The best part of all? You, the client, get to enjoy these things as long as you own your home. For these clients, they had not only the dream back yard for their kids to grow up in, the congregating area their family could enjoy for decades, and also an investment that was going to give them maximum Return On Investment.
                     </p>
                     <p className="text-base">
                         I&apos;ve always been drawn to not only beauty, but practicality and problem solving. I charge forward into the hardest problems—the ones people live with for years because no one can quite figure them out. The spaces that never worked. The water issues no one could stop. I&apos;ve solved home and garden problems for clients who had been searching—sometimes for decades—for real solutions. Not workarounds. Not patches. Solutions that make sense, last, and actually improve people&apos;s quality of life.
