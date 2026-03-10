@@ -26,27 +26,27 @@ export default function Home() {
           WildWorks
         </h2>
 
-        <div className="space-y-1 pt-2 sm:pt-4 " >
-          <p className="text-lg mt-1 sm:text-xl">Fine Art and Practical Landscaping</p>
-          <p className="text-xl mt-1 sm:mt-9 sm:text-2xl md:text-3xl">Want Something Stunningly Wild</p>
-          <p className="text-2xl mt-1 sm:mt-9 sm:text-3xl md:text-4xl">In Your Back Yard This Season?</p>
+        <div className="space-y-1 pt-2 sm:pt-4 -mt-5 sm:mt-0 " >
+          <p className="text-lg mt-3 sm:text-xl md:2xl">Fine Art and Practical Landscaping</p>
+          <p className="text-xl mt-3 sm:mt-9 sm:text-2xl md:text-3xl">Want Something Stunningly Wild</p>
+          <p className="text-2xl mt-3 sm:mt-9 sm:text-3xl md:text-4xl">In Your Back Yard This Season?</p>
         </div>
 
         <p className="pt-4 mt-2 text-4xl sm:pt-6 sm:text-5xl md:text-6xl" >Call Now!</p>
         <a
           href="tel:+14437972166"
-          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-6 inline-block min-h-[44px] sm:mt-8 sm:text-4xl md:text-5xl"
+          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-1 inline-block min-h-[44px] sm:mt-8 sm:text-4xl md:text-5xl"
         >
           1+443-797-2166
         </a>
         <a
           href="mailto:Wildworks@pm.me"
-          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity mt-4 inline-block min-h-[44px] sm:mt-8 sm:text-3xl md:text-4xl"
+          className="text-2xl font-medium text-white hover:opacity-90 transition-opacity -mt-2 inline-block min-h-[44px] sm:mt-8 sm:text-3xl md:text-4xl"
         >
           or Wildworks@pm.me
         </a>
 
-        <p className="text-5xl tracking-widest mt-6 sm:mt-8 sm:text-6xl" >Scott</p>
+        <p className="text-5xl tracking-widest -mt-2 sm:mt-8 sm:text-6xl" >Scott</p>
 
         <p className="text-lg mt-6 sm:mt-8 sm:text-2xl md:text-3xl" >
           I WILL TRAVEL ANYWHERE IN THE WORLD TO DESIGN, BUILD, AND PROBLEM SOLVE FOR YOU
@@ -95,12 +95,12 @@ export default function Home() {
       </section>
 
       {/* Current project banner */}
-      <section className="flex flex-col items-center justify-center gap-4 bg-black px-4 pt-5 text-center text-white sm:gap-4 sm:px-6" >
+      <section className="flex flex-col items-center justify-center bg-black px-4 pt-5 text-center text-white sm:gap-4 sm:px-6" >
         <p className="text-sm font-normal sm:text-base">
           The Tree of Life Natural Stone Patio with Creeping Perennial
           &quot;Leaves&quot;
         </p>
-        <h2 className="text-2xl mt-2 mb-6 sm:mt-8 sm:text-4xl">
+        <h2 className="text-2xl mt-2 mb-6 sm:text-4xl">
           Our Current Project: Wildfire
         </h2>
       </section>
@@ -140,18 +140,19 @@ export default function Home() {
         </section>
 
       {/* Inspiration: Lew French */}
-      <section className="bg-black px-4 pt-6 pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14">
+      <section className="bg-black px-4 pt-2 pb-8 sm:pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14">
         <div className="space-y-2 text-left text-sm leading-relaxed sm:space-y-5">
           <h2 className="text-2xl text-center sm:text-4xl">
             Inspiration: Lew French
           </h2>
-          <p className="text-center text-sm sm:text-base">
+          <p className="text-center mb-4 text-sm sm:text-base">
           Project Wildfire Draws Direct Inspiration from the Work of Master Stone Artisan <strong>Lew French</strong>
           </p>
           <div className="flex align-center justify-center">
             <Link
               href="/pages/Inspiration"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-1 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-1 font-medium 
+              transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
               style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: "1rem", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
             >
               Click Here For Details
@@ -171,9 +172,9 @@ export default function Home() {
       </section>
 
       {/* The Ruins CTA */}
-      <section className="bg-black px-6 pt-8 pb-14 text-white text-center" >
-        <h2 className="text-4xl  mb-2">The Ruins</h2>
-        <p className="text-md text-white/90 mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
+      <section className="bg-black px-6 pt-2 sm:pt-8 pb-8 sm:pb-14 text-white text-center" >
+        <h2 className="text-2xl sm:text-4xl  mb-2">The Ruins</h2>
+        <p className="text-md text-white/90 mt-2 sm:mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
         <Link
           href="/pages/The-ruins"
           className="inline-block rounded-xl bg-white px-8 py-2 text-[#888] font-medium transition-opacity hover:opacity-90"
@@ -194,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* I sell people's homes. Period. */}
-      <section className="bg-black px-4 py-10 text-white pb-14 sm:-mt-12 sm:px-6 sm:pt-16">
+      <section className="bg-black px-4 text-white pb-8 sm:pb-14 sm:-mt-12 sm:px-6 sm:pt-16">
         <div className="space-y-4 text-left leading-relaxed sm:space-y-5">
           <h2 className="text-2xl text-center sm:text-3xl mt-3">
             My Work Sells People&apos;s Homes. Period.
@@ -205,7 +206,8 @@ export default function Home() {
           <div className="flex align-center justify-center">
             <Link
               href="/pages/I-sell"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-6 py-1 font-medium transition-opacity hover:opacity-90 text-sm sm:px-6 sm:py-2 sm:text-base"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl 
+                    bg-white px-6 font-medium transition-opacity hover:opacity-90 text-sm sm:px-6 sm:py-2 sm:text-base"
               style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
             >
               Click Here To See How
@@ -232,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* Video section - YouTube embed with Copy link & Watch on YouTube */}
-      <YouTubeVideoBlock />
+      {/* <YouTubeVideoBlock /> */}
 
       {/* Twitter embed */}
       <section className="bg-black px-4 pb-8 text-center text-white sm:px-6">
