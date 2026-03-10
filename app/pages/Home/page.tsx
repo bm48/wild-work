@@ -150,7 +150,7 @@ export default function Home() {
           </p>
           <div className="flex align-center justify-center">
             <Link
-              href="/pages/Lew-french"
+              href="/pages/Inspiration"
               className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-1 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
               style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: "1rem", backgroundColor: "white", color: "#888", borderRadius: "10px" }}
             >
