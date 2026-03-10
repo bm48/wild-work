@@ -22,7 +22,7 @@ export default function Home() {
         <p className="text-xl text-white/95 sm:text-3xl">On a Quest to Create Planet Earth&apos;s Ultimate Stone Artwork</p>
         <p className="text-lg text-white/80 -mt-2 sm:text-2xl">Scott G. Dietz - Owner/Artist</p>
 
-        <h2 className="pt-2 text-4xl tracking-wide mt-6 sm:mt-8 sm:text-5xl md:text-6xl" >
+        <h2 className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl" >
           WildWorks
         </h2>
 
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Project Wildfire CTA */}
-      <section className="bg-black px-4 pb-10 text-center text-white sm:px-6 sm:pb-14">
+      <section className="bg-black px-4 pb-8 sm:pb-14 text-center text-white sm:px-6">
         <p className="mx-auto mb-4 mt-5 text-sm leading-relaxed sm:mb-6 sm:text-base">
           Project Wildfire is a Natural Stone Outdoor Fireplace that we&apos;re Building RIGHT NOW
         </p>
@@ -253,13 +253,13 @@ export default function Home() {
       </section>
 
       {/* Exquisite Art / WildWorks CTA */}
-      <section className="bg-black px-4 py-8 text-center text-white sm:px-6">
-        <div className="space-y-3 sm:space-y-4">
+      <section className="bg-black px-4 py-1 sm:py-8 text-center text-white sm:px-6">
+        <div className="space-y-1 sm:space-y-3 sm:space-y-4">
           <p className="text-2xl sm:text-3xl">Exquisite Art</p>
           <p className="text-2xl sm:text-3xl">
             Unequaled Practicality & Craftsmanship
           </p>
-          <h2 className="py-6 text-5xl sm:py-8 sm:text-6xl" >
+          <h2 className="py-4 text-5xl sm:py-8 sm:text-6xl" >
             WildWorks
           </h2>
           <p className="text-2xl text-white/95 sm:text-3xl">
@@ -272,9 +272,9 @@ export default function Home() {
             1+443-797-2166
           </a>
           <p className="text-3xl sm:text-4xl">Call or Text Today!</p>
-          <p className="pt-6 text-5xl sm:text-6xl">Scott</p>
+          <p className="pt-4 sm:pt-6 text-5xl sm:text-6xl">Scott</p>
 
-        <div className="mt-10 flex justify-center items-center gap-4 sm:mt-14">
+        <div className="mt-6 sm:mt-10 flex justify-center items-center gap-4 sm:mt-14">
           <a
             href="https://x.com/OfficialSGDietz"
             aria-label="X (Twitter)"
@@ -305,7 +305,7 @@ export default function Home() {
           </a>
         </div>
         <p className="pt-4 text-base text-white/90 sm:text-xl">
-         DM Me on X or WhatsApp</p>
+         DM Me directly on X or WhatsApp</p>
         </div>
       </section>
     </div>
