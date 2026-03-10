@@ -36,7 +36,7 @@ export default function WhoIsG() {
           <p className="text-base">
             Scott is constantly studying, learning, and experimenting. He understands that Ai is reshaping the world and believes the right response is to learn how it works, and use the technology as another tool for creativity, design, and problem solving.
           </p>
-          <p className="text-lg">
+          <p className="text-base">
             His mindset is simple: <strong><b>Middle Age is Just the Beginning.</b></strong>
           </p>
           <p className="text-base">
@@ -51,7 +51,7 @@ export default function WhoIsG() {
             Based in Baltimore, Scott is willing to travel anywhere on Earth to create extraordinary stone landscapes and rock art for people who wish to own exquisite one-of-a-kind things.
           </p>
           <p className="text-base">His goals are simple and ambitious:</p>
-          <ol className="list-decimal list-outside pl-6 space-y-1 ">
+          <ol className="list-decimal list-outside pl-4 space-y-1 ">
             <li>
               To become a landscape artist whose work stands among the finest in the world. And...
             </li>
@@ -68,12 +68,12 @@ export default function WhoIsG() {
           </p>
         </div>
 
-        <h2 className="mb-4 mt-10 text-center text-3xl sm:text-4xl">Call or Text Directly:</h2>
-        <a href="tel:+14437972166" className="block py-6 text-2xl text-center text-4xl sm:py-8 sm:text-5xl min-h-[44px]">
+        <h2 className="mb-4 mt-6 text-center text-xl sm:text-2xl">Call or Text Directly:</h2>
+        <a href="tel:+14437972166" className="block py-2 text-2xl text-center text-3xl sm:py-4 sm:text-4xl min-h-[44px]">
           1+443-797-2166
         </a>
         <p className="py-4 text-center text-5xl sm:py-6 sm:text-6xl">Just Do It</p>
-        <p className="py-4 text-center text-5xl sm:py-6 sm:text-6xl">Call or Text Scott.</p>
+        <p className="py-2 text-center text-5xl sm:py-4 sm:text-6xl">Call or Text Scott.</p>
 
         <p className="pt-4 text-center text-md text-white/90 sm:text-base">
           or DM Me directly on X or WhatsApp
