@@ -16,18 +16,18 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 pt-6 text-white mx-auto w-full sm:px-6 sm:pt-8 pb-2" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h1 className="mb-4 text-3xl text-center sm:mb-6 sm:text-6xl">The Ruins</h1>
+                <h1 className="mb-4 text-3xl text-center sm:mb-6 sm:text-5xl">The Ruins</h1>
                 <p className="text-sm text-white/90 pb-2">Federal Hill, Baltimore City, Maryland</p>
                 <div className="space-y-2 text-sm leading-relaxed">
                     <p>My client asked me, &quot;What do you see here?&quot;</p>
                     <p>
-                        I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench … not only was there no there there yet but I felt like, given the location, this area needed a story
+                        I stood there looking at a back yard garden—flowers, mulch, a gravel walk, and a wooden bench. … not only was there no there there yet but I felt like, given the location, this area needed a story
                     </p>
                     <p>
                         Federal Hill is a high ground overlook of Baltimore&apos;s inner harbor—important early, and absolutely relevant in the War of 1812, when it served as a military observation post, signal station, and a gun battery looking out over the harbor.
                     </p>
                     <p>
-                        So when my client asked that question, my mind didn&apos;t stay in &quot;landscaping mode.&quot; It went straight to: <i>what could have happened here?</i>
+                        So when my client asked that question, my mind didn&apos;t stay in &quot;landscaping mode,&quot; It went straight to: <i>what could have happened here?</i>
                     </p>
                     <p>
                         We&apos;d already done a couple projects with these clients in the years prior, so I knew something important: they
@@ -50,7 +50,7 @@ export default function TheRuins() {
                     <p>
                     </p>
                     <p>
-                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up.&quot; they preserved 
+                        And then—more than 200 years later—the present-day owners didn&apos;t &quot;clean it up,&quot; they preserved 
                         The Ruins and memorialized them by building gardens and a reflecting pool around them.
                     </p>
                 </div>
@@ -64,7 +64,7 @@ export default function TheRuins() {
                     <li>Seating placed where you&apos;d naturally want to sit</li>
                     <li>A reflecting pool</li>
                     <li>A rusting urn with overflowing water</li>
-                    <li>And the ruin fragments themselves—built like true remmants</li>
+                    <li>And the ruin fragments themselves—built like true remnants</li>
                 </ul>
             </section>
 
@@ -81,7 +81,7 @@ export default function TheRuins() {
                         A few local people had set some aside, which we salvaged, and used for the build. Hopefully this stone will live another 150+years right here-maybe a couple thousand!
                     </p>
                     <p>
-                        That&apos;s why the finished work doesn&apos;t feel like &quot;new hardscape pretending to be old.&quot; It feels like it could have been there all along—like Baltimore coughed up one of its older layers and we set it down carefully in the present.
+                        That&apos;s why the finished work doesn&apos;t feel like &quot;new hardscape pretending to be old.&quot; It feels like it could have been there all along—like Baltimore coughed up one of its older layers and set it down carefully in the present.
                     </p>
                 </div>
             </section>
@@ -105,15 +105,15 @@ export default function TheRuins() {
                 <div className="space-y-2 text-sm leading-relaxed">
                     <p>
                     That would serve in the real world as A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, 
-                    <i>whatever would be most useful to you</i>, whatever we can imagine your own personal Ruins might be, Let&spos;s Talk, and throw around ideas.                     </p>
+                    <i>whatever would be most useful to you</i>, whatever we can imagine your own personal Ruins might be, Let&apos;s Talk, and throw around ideas.                     </p>
                     <p>I&apos;ll happily come over to your house, or jump on a video call with you, wherever you are in the world, to discuss ideas.</p>
                     <p>The “Ruin” concept can go a hundred directions, and it can be purpose-built to suit your life&apos;s needs. Your Ruin could be:</p>
                     <ul className="list-disc list-outside space-y-2 text-sm leading-relaxed mb-2 pl-6">
                         <li>
-                            A <strong>farmhouse ruin</strong> that is the original farm that &quot;predates the neighborhood,&quot; 
-                            where the gnarley, jagged, broken base of an old chimney becomes
+                            A remains of the original farmhouse that &quot;predates the neighborhood,&quot; 
+                            where the gnarley, jagged, broken base of an old stone chimney becomes
                              a mordern, purpose built, working wood-fire feature—surrounded by stone floors with intentionally fractured edges. 
-                             What is it today? Ultra Cool Party Zone.
+                             What is it today? Ultra Cool Party Zone that you will want to live in, and friends will want to come over and have fun in.
                         </li>
                         <li>
                             <strong>Collapsed stone garden walls</strong> from an old stone building that become natural boulder seating, like the structure simply fell into place over time.
@@ -127,10 +127,12 @@ export default function TheRuins() {
                         </li>
                     </ul>
                     <p>
-                        And yes: done right, this kind of work can dramatically increase the feel—and the value—of a property, because it creates something buyers want to live in with them.
+                        And yes-done right, this kind of work can dramatically increase the feel—and the value—of a property, because it creates something 
+                        that is so far beyond ordinary that it is truly extraordinary; something you will love for as long as you own your home, 
+                        and buyers will fall in love with and want to have as their own.
                     </p>
                     <p>
-                        If you&apos;ve got a space and you want to turn it into a place with a past,{" "} call me directly on my cell I&apos;d love to discuss ideas with you.
+                        If you&apos;ve got a space and want to turn it into a place with a past,{" "} you can call me directly on my cell I&apos;d love to discuss ideas with you.
                         
                     </p>
                 </div>

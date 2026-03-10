@@ -18,10 +18,11 @@ export default function ISell() {
                 </h1>
                 <div className="space-y-2 text-left text-sm leading-relaxed">
                     <p className="text-base">
-                        I don&apos;t work in real estate, or stage houses. but over the years—now more than forty of them—I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;G—You sold our house.&quot;
+                        I don&apos;t work in real estate. but over the years—now more than forty of them—I&apos;ve lost 
+                        count of how many clients have said the exact same thing to me: &quot;Scott—You sold our house.&quot;
                     </p>
                     <p className="text-base">
-                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their old home and called me in to fix up their new home. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten quite a pleasing sum for their old home.
+                        Last summer, I was standing in the front yard of a client&apos;s property after they had sold their old home and called me in to fix up their new one. The homeowner looked at me and he was absolutely glowing. I didn&apos;t ask him, and he didn&apos;t tell me, but I knew just by the look on his face that they had gotten a greate place for their old home.
                     </p>
                     <p className="text-base">
                     He said to me: &quot;You sold our house. It had to be you. You gave us the most beautiful things there!&quot; He also said to me, &quot;You&apos;re the best! You are absolutely the best there is. You&apos;re going to make our new house spectacular!&quot; This is the house that two 70 year olds with 20 grandkids are going to spend their golden years. They believed in me, that I delivered <em>Spectacular</em>.

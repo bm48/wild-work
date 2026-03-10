@@ -45,6 +45,27 @@ export default function WhoIsG() {
           <p className="text-base">
             WildWorks exists for one reason: to design and build the world&apos;s wildest art, and solve problems that others simply cannot.
           </p>
+
+        {/* <div className="mt-6 space-y-2 text-left text-base leading-relaxed"> */}
+          <p className="text-base">
+            Based in Baltimore, Scott is willing to travel anywhere on Earth to create extraordinary stone landscapes and rock art for people who wish to own exquisite one-of-a-kind things.
+          </p>
+          <p className="text-base">His goals are simple and ambitious:</p>
+          <ol className="list-decimal list-outside pl-6 space-y-1 ">
+            <li>
+              To become a landscape artist whose work stands among the finest in the world. And...
+            </li>
+            <li>
+              To work with as many people, to help them solve as many problems, as is humanly possible.
+            </li>
+          </ol>
+          <p className="text-base">Scott G. Dietz believes above everything else:</p>
+          <p className="text-base">
+            Keep creating. Keep building. Always be willing to help others solve their problems. And never stop getting back up.
+          </p>
+          <p className="text-base">
+            If you would like a work of exquisite art of your own, or need help solving one or more problems—
+          </p>
         </div>
 
         <h2 className="mb-4 mt-10 text-center text-3xl sm:text-4xl">Call or Text Directly:</h2>
@@ -57,6 +78,8 @@ export default function WhoIsG() {
         <p className="pt-4 text-center text-md text-white/90 sm:text-base">
           or DM Me directly on X or WhatsApp
         </p>
+
+        
         <div className="mt-4 flex justify-center gap-4">
           
           <a
