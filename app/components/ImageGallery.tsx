@@ -1,20 +1,21 @@
 "use client";
 
+import { Galada } from "next/font/google";
 import Image from "next/image";
 import { useState, useCallback } from "react";
 
 const IMAGES_PER_PAGE = 12;
 const GALLERY_IMAGES = Array.from(
-  { length: 26 },
+  { length: 38 },
   (_, i) => `/${String(i + 1).padStart(2, "0")}.jpg`
-);
+).reverse();
 
 export default function ImageGallery() {
   const [currentPage, setCurrentPage] = useState(1);
   const [aspectRatios, setAspectRatios] = useState<Record<string, string>>({});
   const totalPages = Math.ceil(GALLERY_IMAGES.length / IMAGES_PER_PAGE);
   const start = (currentPage - 1) * IMAGES_PER_PAGE;
-  const images = GALLERY_IMAGES.slice(start, start + IMAGES_PER_PAGE);
+  const images = GALLERY_IMAGES.slice(start, start + IMAGES_PER_PAGE).sort((a, b) => a.localeCompare(b)).reverse();
 
   const handleLoad = useCallback(
     (e: React.SyntheticEvent<HTMLImageElement>, src: string) => {
@@ -26,6 +27,7 @@ export default function ImageGallery() {
     },
     []
   );
+
 
   return (
     <section className="bg-black px-4 py-6 sm:px-6 sm:py-10">
@@ -62,7 +64,7 @@ export default function ImageGallery() {
           >
             <span className="text-lg font-medium">&lt;</span>
           </button>
-          
+
 
           <div className="flex items-center gap-3">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(
