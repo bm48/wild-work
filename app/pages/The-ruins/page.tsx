@@ -38,7 +38,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-xl font-bold mb-2">What I saw</h2>
+                <h2 className="text-xl mb-2">What I saw</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
                         In my mind, the &quot;backstory&quot; was this: 
@@ -57,7 +57,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-xl font-bold mb-2">Building the Ruins</h2>
+                <h2 className="text-xl mb-2">Building the Ruins</h2>
                 <p className="text-xs leading-relaxed mb-4">The finished space was built to feel real, with:</p>
                 <ul className="list-disc list-outside space-y-2 text-xs leading-relaxed mb-2 pl-6">
                     <li>Bluestone patios and a walk</li>
@@ -69,7 +69,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-xl font-bold mb-2">This Stone has Baltimore in it</h2>
+                <h2 className="text-xl mb-2">This Stone has Baltimore in it</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
                         Much of the stone used is reclaimed granite-the kind that actually spent a previous life of 150+ years as Baltimore street and curb stone.
@@ -87,7 +87,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-xl font-bold mb-2">Why this works</h2>
+                <h2 className="text-xl mb-2">Why this works</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
                         The Ruins isn&apos;t a replica and is plausible and real-and now it is a place that makes people sit and wonder.
@@ -101,7 +101,7 @@ export default function TheRuins() {
             </section>
 
             <section className="bg-black px-4 py-2 text-white mx-auto w-full sm:px-6 mt-6" style={{ fontFamily: "var(--font-serif), serif" }}>
-                <h2 className="text-xl font-bold mb-2">If you want a Ruin of your own...</h2>
+                <h2 className="text-2xl mb-2">If you want a Ruin of your own...</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
                     That would serve in the real world as A Party Zone, A Quiet Morning Spot, A Zen Area, or a Fire and Whiskey Corner, 
