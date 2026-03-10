@@ -1,6 +1,5 @@
 "use client";
 
-import { Galada } from "next/font/google";
 import Image from "next/image";
 import { useState, useCallback } from "react";
 

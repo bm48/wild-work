@@ -48,7 +48,7 @@ export default function ISell() {
                     <p className="text-base">
                     If you&apos;d like to talk it through, I&apos;m happy to drive to you or hop on a video call—whether you&apos;re not far away or halfway around the world—and help figure out what will actually make the most sense for you, your family, and your home. Please feel free to call me anytime directly on my cell phone, I&apos;m always happy to talk.
                     </p>
-                    <a href="tel:+14437972166" className="block mt-6 mb-8 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
+                    <a href="tel:+14437972166" className="block mt-6 mb-4 text-2xl text-center sm:mb-10 sm:text-4xl min-h-[44px]">
                     1+443-797-2166
                     </a>
                     <h1 className="text-center text-5xl sm:text-6xl mb-6 sm:mb-12">Scott</h1>
