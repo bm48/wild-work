@@ -38,7 +38,7 @@ export default function ImageGallery() {
               key={`${currentPage}-${src}`}
               className="relative mb-2 overflow-hidden border border-black bg-zinc-900 break-inside-avoid md:mb-3"
               style={{
-                aspectRatio: aspectRatios[src] ?? "1",
+                aspectRatio: aspectRatios[src] ?? "16/9",
               }}
             >
               <Image
