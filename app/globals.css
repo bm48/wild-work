@@ -31,3 +31,31 @@ body {
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Home page CTA animations */
+@keyframes home-cta-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.15); }
+  50% { text-shadow: 0 0 32px rgba(255, 255, 255, 0.35); }
+}
+
+@keyframes home-cta-shine {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+.home-cta-glow {
+  animation: home-cta-glow 3s ease-in-out infinite;
+}
+
+.home-cta-link {
+  animation: home-cta-shine 2.5s ease-in-out infinite;
+}
+
+.home-cta-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-cta-btn:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
