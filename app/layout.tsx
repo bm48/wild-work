@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Libre_Baskerville, Great_Vibes } from "next/font/goo
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import StarryBackground from "./components/StarryBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,11 +48,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${greatVibes.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col bg-black">
+        <div className="relative z-[6] flex min-h-screen flex-col bg-black">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <StarryBackground />
       </body>
     </html>
   );
