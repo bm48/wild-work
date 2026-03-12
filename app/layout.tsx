@@ -48,12 +48,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${greatVibes.variable} antialiased`}
       >
-        <div className="relative z-[6] flex min-h-screen flex-col bg-black">
+        <StarryBackground />
+        <div className="relative z-10 flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        <StarryBackground />
       </body>
     </html>
   );

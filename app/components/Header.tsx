@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const navTabs = [
   { label: "HOME", href: "/pages/Home" },
@@ -52,19 +53,25 @@ export default function Header() {
                   ? pathname === "/" || pathname === "/pages/Home"
                   : pathname.startsWith(tab.href);
               return (
-                <Link
+                <motion.div
                   key={tab.href}
-                  href={tab.href}
-                  className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-1 text-xs font-normal 
-                    uppercase tracking-wide transition-colors sm:px-2 sm:py-1 sm:text-sm hover:border  hover:bg-[#ffffff] hover:text-[#666] ${
-                    isActive
-                      ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
-                      : "text-[#FFFFFF] "
-                  }`}
-                  style={{ fontFamily: "var(--font-serif), serif" }}
+                  className="inline-flex"
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  whileTap={{ scale: 0.98, y: 0 }}
                 >
-                  {tab.label}
-                </Link>
+                  <Link
+                    href={tab.href}
+                    className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-1 text-xs font-normal 
+                    uppercase tracking-wide transition-colors sm:px-2 sm:py-1 sm:text-sm hover:border  hover:bg-[#ffffff] hover:text-[#666] ${
+                      isActive
+                        ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
+                        : "text-[#FFFFFF] "
+                    }`}
+                    style={{ fontFamily: "var(--font-serif), serif" }}
+                  >
+                    {tab.label}
+                  </Link>
+                </motion.div>
               );
             })}
           </div>
@@ -112,15 +119,20 @@ export default function Header() {
           {/* Vertical nav links: white, uppercase, centered, generous spacing */}
           <nav className="flex flex-1 flex-col items-center justify-start gap-8 py-10">
             {navTabs.map((tab) => (
-              <Link
+              <motion.div
                 key={tab.href}
-                href={tab.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-normal uppercase tracking-wide text-white transition-opacity hover:opacity-85"
-                style={{ fontFamily: "var(--font-serif), serif" }}
+                whileHover={{ scale: 1.08, y: -3 }}
+                whileTap={{ scale: 0.98, y: 0 }}
               >
-                {tab.label}
-              </Link>
+                <Link
+                  href={tab.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-normal uppercase tracking-wide text-white transition-opacity hover:opacity-85"
+                  style={{ fontFamily: "var(--font-serif), serif" }}
+                >
+                  {tab.label}
+                </Link>
+              </motion.div>
             ))}
           </nav>
         </div>

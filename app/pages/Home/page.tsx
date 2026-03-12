@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Promotional / Contact CTA - black background, centered */}
       <motion.section
-        className="flex flex-col items-center justify-center gap-3 bg-black px-4 py-6 text-center text-white sm:gap-4 sm:px-6 sm:py-8"
+        className="flex flex-col items-center justify-center gap-3 px-4 py-6 text-center text-white sm:gap-4 sm:px-6 sm:py-8"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -206,7 +206,7 @@ export default function Home() {
 
       {/* Current project banner */}
       <motion.section
-        className="flex flex-col items-center justify-center bg-black px-4 pt-5 text-center text-white sm:gap-4 sm:px-6"
+        className="flex flex-col items-center justify-center px-4 pt-5 text-center text-white sm:gap-4 sm:px-6"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -229,7 +229,7 @@ export default function Home() {
 
       {/* Project Wildfire CTA */}
       <motion.section
-        className="bg-black px-4 pb-8 sm:pb-14 text-center text-white sm:px-6"
+        className="px-4 pb-8 sm:pb-14 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -238,7 +238,7 @@ export default function Home() {
         <p className="mx-auto mb-4 mt-5 text-sm leading-relaxed sm:mb-6 sm:text-base">
           Project Wildfire is a Natural Stone Outdoor Fireplace that we&apos;re Building RIGHT NOW
         </p>
-        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
           <Link
             href="/pages/Wildfire"
             className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-2 py-1 font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2"
@@ -256,7 +256,7 @@ export default function Home() {
 
       {/* Inspiration: Lew French */}
       <motion.section
-        className="bg-black px-4 pt-2 pb-8 sm:pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14"
+        className="px-4 pt-2 pb-8 sm:pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -269,7 +269,7 @@ export default function Home() {
           <motion.p className="text-center mb-4 text-sm sm:text-base" variants={fadeInUp}>
             Project Wildfire Draws Direct Inspiration from the Work of Master Stone Artisan <strong>Lew French</strong>
           </motion.p>
-          <motion.div className="flex align-center justify-center" variants={fadeInUp}>
+          <motion.div className="flex align-center justify-center" variants={fadeInUp} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/pages/Inspiration"
               className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-white px-4 py-1 font-medium 
@@ -289,7 +289,7 @@ export default function Home() {
 
       {/* The Ruins CTA */}
       <motion.section
-        className="bg-black px-6 pt-2 sm:pt-8 pb-8 sm:pb-14 text-white text-center"
+        className="px-6 pt-2 sm:pt-8 pb-8 sm:pb-14 text-white text-center"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -297,13 +297,15 @@ export default function Home() {
       >
         <motion.h2 className="text-2xl sm:text-4xl mb-2" variants={fadeInUp}>The Ruins</motion.h2>
         <p className="text-md text-white/90 mt-2 sm:mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
-        <Link
-          href="/pages/The-ruins"
-          className="inline-block rounded-xl bg-white px-8 py-2 text-[#888] font-medium transition-opacity hover:opacity-90"
-          style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px", padding: "12px 15px" }}
+        <motion.div className="inline-block" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
+          <Link
+            href="/pages/The-ruins"
+            className="inline-block rounded-xl bg-white px-8 py-2 text-[#888] font-medium transition-opacity hover:opacity-90"
+            style={{ fontFamily: "var(--font-geist-sans), sans-serif", backgroundColor: "white", color: "#888", borderRadius: "10px", padding: "12px 15px" }}
           >
-          Click Here to Find Out What I Saw
-        </Link>
+            Click Here to Find Out What I Saw
+          </Link>
+        </motion.div>
       </motion.section>
 
       <AnimatedImageSection
@@ -313,7 +315,7 @@ export default function Home() {
 
       {/* I sell people's homes. Period. */}
       <motion.section
-        className="bg-black px-4 text-white pb-8 sm:pb-14 sm:-mt-12 sm:px-6 sm:pt-16"
+        className="px-4 text-white pb-8 sm:pb-14 sm:-mt-12 sm:px-6 sm:pt-16"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -326,7 +328,7 @@ export default function Home() {
           <motion.p className="text-center text-sm sm:text-base" variants={fadeInUp}>
             I&apos;ve lost count of how many clients have said the exact same thing to me: &quot;Scott—you sold our house.&quot;
           </motion.p>
-          <motion.div className="flex align-center justify-center" variants={fadeInUp}>
+          <motion.div className="flex align-center justify-center" variants={fadeInUp} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/pages/I-sell"
               className="inline-flex min-h-[44px] items-center justify-center rounded-2xl 
@@ -357,7 +359,7 @@ export default function Home() {
 
       {/* Fireplace caption */}
       <motion.section
-        className="bg-black px-4 py-6 text-white sm:px-6 sm:py-8"
+        className="px-4 py-6 text-white sm:px-6 sm:py-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={viewportReplay}
@@ -373,7 +375,7 @@ export default function Home() {
 
       {/* Twitter embed */}
       <motion.section
-        className="bg-black px-4 pb-8 text-center text-white sm:px-6"
+        className="px-4 pb-8 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -395,7 +397,7 @@ export default function Home() {
 
       {/* Exquisite Art / WildWorks CTA */}
       <motion.section
-        className="bg-black px-4 py-1 sm:py-8 text-center text-white sm:px-6"
+        className="px-4 py-1 sm:py-8 text-center text-white sm:px-6"
         variants={stagger}
         initial="initial"
         whileInView="animate"
