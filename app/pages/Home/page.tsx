@@ -22,6 +22,36 @@ const viewportTight = { once: true, amount: 0.1 };
 /** Replay animations every time section re-enters view (used for all non-image content) */
 const viewportReplay = { once: false, amount: 0.2 };
 
+const LIVE_AVATAR_EMBED_URL = "https://live-avatar-web-sdk-demo.vercel.app/";
+
+function LiveAvatarEmbed({ variants }: { variants: typeof fadeInUp }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: false, amount: 0.2 });
+  return (
+    <motion.div
+      ref={ref}
+      className="mx-auto w-full max-w-2xl px-4 py-4 sm:py-6"
+      variants={variants}
+    >
+      <div className="relative aspect-[1/2] w-full overflow-hidden rounded-lg bg-black/40">
+        {inView ? (
+          <iframe
+            src={LIVE_AVATAR_EMBED_URL}
+            title="Live Avatar Web SDK Demo"
+            allow="camera; microphone"
+            className="absolute inset-0 h-full w-full border-0"
+            allowFullScreen
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white/70 text-sm">
+            Loading…
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
 function AnimatedImageSection({
   src,
   alt,
@@ -101,6 +131,8 @@ export default function Home() {
         <motion.p className="text-lg text-white/80 -mt-2 sm:text-2xl" variants={fadeInUp}>
           Scott G. Dietz - Owner/Artist
         </motion.p>
+
+        <LiveAvatarEmbed variants={fadeInUp} />
 
         <motion.h2
           className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl"
