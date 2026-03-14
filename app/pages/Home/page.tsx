@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
 
 const fadeInUp = {
@@ -24,31 +25,70 @@ const viewportReplay = { once: false, amount: 0.2 };
 
 const LIVE_AVATAR_EMBED_URL = "https://live-avatar-web-sdk-demo.vercel.app/";
 
-function LiveAvatarEmbed({ variants }: { variants: typeof fadeInUp }) {
+function IScottSection({
+  variants,
+  sessionActive,
+  onToggleSession,
+}: {
+  variants: typeof fadeInUp;
+  sessionActive: boolean;
+  onToggleSession: () => void;
+}) {
+  return (
+    <div className="flex flex-col items-center w-full max-w-[34rem] mx-auto">
+      <motion.div
+        className="mx-auto w-full max-w-[34rem] px-4 py-4 sm:py-6"
+        variants={variants}
+      >
+        <div className="relative aspect-[9/16] w-full max-w-[min(100%,calc(85vh*9/16))] min-h-[200px] overflow-hidden rounded-lg bg-black/40 sm:max-w-none">
+          {sessionActive ? (
+            <LiveAvatarEmbedInner />
+          ) : (
+            <Image
+              src="/Avatar.png"
+              alt="iScott - Talk to iScott"
+              fill
+              className="object-cover"
+              sizes="(max-width: 34rem) 100vw, 34rem"
+              priority={false}
+              unoptimized
+            />
+          )}
+        </div>
+      </motion.div>
+      <motion.button
+        type="button"
+        onClick={onToggleSession}
+        className="mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium text-white bg-white/20 hover:bg-white/30 transition-colors border border-white/40 cursor-pointer"
+        variants={variants}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        {sessionActive ? "Finish Talking" : "Talk to iScott"}
+      </motion.button>
+    </div>
+  );
+}
+
+function LiveAvatarEmbedInner() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: false, amount: 0.2 });
   return (
-    <motion.div
-      ref={ref}
-      className="mx-auto w-full max-w-2xl px-4 py-4 sm:py-6"
-      variants={variants}
-    >
-      <div className="relative aspect-[1/2] w-full overflow-hidden rounded-lg bg-black/40">
-        {inView ? (
-          <iframe
-            src={LIVE_AVATAR_EMBED_URL}
-            title="Live Avatar Web SDK Demo"
-            allow="camera; microphone"
-            className="absolute inset-0 h-full w-full border-0"
-            allowFullScreen
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white/70 text-sm">
-            Loading…
-          </div>
-        )}
-      </div>
-    </motion.div>
+    <div ref={ref} className="absolute inset-0">
+      {inView ? (
+        <iframe
+          src={LIVE_AVATAR_EMBED_URL}
+          title="Live Avatar Web SDK Demo"
+          allow="camera; microphone"
+          className="absolute inset-0 h-full w-full border-0"
+          allowFullScreen
+        />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white/70 text-sm">
+          Loading…
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -92,6 +132,7 @@ function AnimatedImageSection({
 }
 
 export default function Home() {
+  const [iScottSessionActive, setIScottSessionActive] = useState(false);
   return (
     <div className="mx-auto lg:max-w-5xl py-4">
       {/* Hero: image with overlaid text - full image visible */}
@@ -132,7 +173,11 @@ export default function Home() {
           Scott G. Dietz - Owner/Artist
         </motion.p>
 
-        <LiveAvatarEmbed variants={fadeInUp} />
+        <IScottSection
+          variants={fadeInUp}
+          sessionActive={iScottSessionActive}
+          onToggleSession={() => setIScottSessionActive((prev) => !prev)}
+        />
 
         <motion.h2
           className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl"
