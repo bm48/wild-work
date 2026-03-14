@@ -5,7 +5,7 @@ export default function ISell() {
         <div className="mx-auto lg:max-w-5xl py-4">
             <section className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
             <AspectRatioImage
-                src="/Travis-G-20260204-A copy.jpg"
+                src="/sell.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
                 priority
                 sizes="100vw"

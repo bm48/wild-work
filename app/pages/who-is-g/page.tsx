@@ -6,7 +6,7 @@ export default function WhoIsG() {
       {/* Image constrained to same width as header separator line */}
       <section className="relative mx-auto flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
         <AspectRatioImage
-          src="/EllicotCity.jpeg"
+          src="/Potter-Happy.png"
           alt="The Ruins - site-specific stonework in Federal Hill, Baltimore"
           priority
           sizes="(max-width: 64rem) 100vw, 64rem"

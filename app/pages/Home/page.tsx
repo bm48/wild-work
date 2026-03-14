@@ -373,7 +373,7 @@ export default function Home() {
         viewport={viewportReplay}
       >
         <motion.h2 className="text-2xl sm:text-4xl mb-2" variants={fadeInUp}>The Ruins</motion.h2>
-        <p className="text-md text-white/90 mt-2 sm:mt-4 mb-4">My Client asked me, as we stood looking at their bland back yard, “What do you see here?”</p>
+        <p className="text-md text-white/90 mt-2 sm:mt-4 mb-4">My Client asked me, as we stood looking at their normie back yard, “What do you see here?”</p>
         <motion.div className="inline-block" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
           <Link
             href="/pages/The-ruins"
@@ -386,7 +386,7 @@ export default function Home() {
       </motion.section>
 
       <AnimatedImageSection
-        src="/Travis-G-20260204-A copy.jpg"
+        src="/sell.png"
         alt="WildWorks - client property and landscape"
       />
 
