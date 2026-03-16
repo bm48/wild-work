@@ -3,7 +3,7 @@ import AspectRatioImage from "../../components/AspectRatioImage";
 export default function ISell() {
     return (
         <div className="mx-auto lg:max-w-5xl py-4">
-            <section className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
+            <section className="relative flex w-full items-center justify-center overflow-hidden px-4 sm:px-6">
             <AspectRatioImage
                 src="/sell.png"
                 alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
@@ -12,7 +12,7 @@ export default function ISell() {
                 />
             </section>
 
-            <section className="mx-auto w-full bg-black px-4 pt-6 text-white sm:px-6 sm:pt-8" >
+            <section className="mx-auto w-full px-4 pt-6 text-white sm:px-6 sm:pt-8" >
                 <h1 className="mb-2 text-2xl sm:text-3xl">
                 My Work Sells People&apos;s Homes. Period.
                 </h1>

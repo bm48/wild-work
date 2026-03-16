@@ -103,7 +103,7 @@ export default function StarryBackground() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-0 bg-black"
+      className="fixed inset-0 z-[1] bg-black/30"
       aria-hidden
       style={{ pointerEvents: "none" }}
     >

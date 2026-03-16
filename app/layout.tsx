@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StarryBackground from "./components/StarryBackground";
+import AnimationBackground from "./components/AnimationBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,9 +46,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/animation.html" as="document" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${greatVibes.variable} antialiased`}
       >
+        <AnimationBackground />
         <StarryBackground />
         <div className="relative z-10 flex min-h-screen flex-col">
           <Header />

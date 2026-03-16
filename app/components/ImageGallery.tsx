@@ -29,7 +29,7 @@ export default function ImageGallery() {
 
 
   return (
-    <section className="bg-black px-4 py-6 sm:px-6 sm:py-10">
+    <section className="px-4 py-6 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-6xl">
         {/* Masonry-style columns: each cell's aspect ratio matches its image so object-contain has no letterboxing */}
         <div className="columns-2 gap-2 sm:columns-3 md:columns-4 md:gap-3">
@@ -74,7 +74,7 @@ export default function ImageGallery() {
                   onClick={() => setCurrentPage(page)}
                   className={`flex h-10 min-w-10 items-center justify-center rounded-xl px-3 text-sm font-medium underline transition-colors cursor-pointer ${
                     currentPage === page
-                      ? "border border-white bg-black text-white"
+                      ? "border border-white text-white"
                       : "text-white hover:text-cyan-300"
                   }`}
                 >

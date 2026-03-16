@@ -19,7 +19,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#000000] text-white">
+    <header className="bg-transparent text-white">
       {/* Mobile: hamburger at top right (width < 500px) */}
       <div className="hidden min-h-[56px] items-center justify-end px-4 max-[500px]:flex">
         <button

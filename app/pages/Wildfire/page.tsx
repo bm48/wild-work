@@ -7,11 +7,11 @@ export default function Wildfire() {
 
           <ImageGallery />
           
-          <section className="bg-black px-4 text-white sm:px-6">
+          <section className="px-4 text-white sm:px-6">
               <h1 className="text-3xl text-center sm:text-6xl">Project Wildfire</h1>
           </section>
           {/* Project Wildfire description */}
-          <section className="bg-black px-4 py-4 text-white sm:px-6 sm:py-6 text-xs">
+          <section className="px-4 py-4 text-white sm:px-6 sm:py-6 text-xs">
               <div
               className="space-y-2 text-left text-sm leading-[2]"
               style={{ fontFamily: "var(--font-serif), serif" }}

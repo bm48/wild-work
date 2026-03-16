@@ -35,12 +35,12 @@ function IScottSection({
   onToggleSession: () => void;
 }) {
   return (
-    <div className="flex flex-col items-center w-full max-w-[34rem] mx-auto">
+    <div className="flex flex-col items-center w-full max-w-[26rem] mx-auto">
       <motion.div
-        className="mx-auto w-full max-w-[34rem] px-4 py-4 sm:py-6"
+        className="mx-auto w-full max-w-[26rem] px-4 py-4 sm:py-6 flex justify-center"
         variants={variants}
       >
-        <div className="relative aspect-[9/16] w-full max-w-[min(100%,calc(85vh*9/16))] min-h-[200px] overflow-hidden rounded-lg bg-black/40 sm:max-w-none">
+        <div className="relative aspect-[9/16] w-full max-w-[min(100%,calc(85vh*9/16))] min-h-[180px] overflow-hidden rounded-lg bg-black/40">
           {sessionActive ? (
             <LiveAvatarEmbedInner />
           ) : (
@@ -49,23 +49,43 @@ function IScottSection({
               alt="iScott - Talk to iScott"
               fill
               className="object-cover"
-              sizes="(max-width: 34rem) 100vw, 34rem"
+              sizes="22rem"
               priority={false}
               unoptimized
+              // onClick={onToggleSession}
             />
           )}
+
+            <motion.button
+            type="button"
+            onClick={onToggleSession}
+            className={`left-1/2 -translate-x-1/2 bg-[#555] hover:bg-[#777] mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium
+               text-white transition-colors border border-white/40 cursor-pointer 
+               ${sessionActive ? "hidden" : "absolute bottom-[23.5%]"}`}
+            // variants={variants}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            style={{ opacity: 1 }}
+          >
+            Talk to iScott
+          </motion.button>
         </div>
+        
       </motion.div>
-      <motion.button
-        type="button"
-        onClick={onToggleSession}
-        className="mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium text-white bg-white/20 hover:bg-white/30 transition-colors border border-white/40 cursor-pointer"
-        variants={variants}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        {sessionActive ? "Finish Talking" : "Talk to iScott"}
-      </motion.button>
+      
+        <motion.button
+          type="button"
+          onClick={onToggleSession}
+          className={`bg-[#555] hover:bg-[#777] mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium
+              text-white transition-colors border border-white/40 cursor-pointer 
+              ${sessionActive ? "mt-2" : "hidden"}`}
+          // variants={variants}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+          style={{ opacity: 1 }}
+        >
+          Stop Talking
+        </motion.button>
     </div>
   );
 }
@@ -108,7 +128,7 @@ function AnimatedImageSection({
   return (
     <motion.section
       ref={ref}
-      className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6"
+      className="relative flex w-full items-center justify-center overflow-hidden px-4 sm:px-6"
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.22, 0.61, 0.36, 1] }}
@@ -137,7 +157,7 @@ export default function Home() {
     <div className="mx-auto lg:max-w-5xl py-4">
       {/* Hero: image with overlaid text - full image visible */}
       <motion.section
-        className="relative flex w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6"
+        className="relative flex w-full items-center justify-center overflow-hidden px-4 sm:px-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -180,7 +200,7 @@ export default function Home() {
         />
 
         <motion.h2
-          className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl"
+          className="pt-2 text-4xl tracking-wide mt-16 sm:mt-24 sm:text-5xl md:text-6xl"
           variants={fadeInUp}
         >
           WildWorks
@@ -419,7 +439,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="relative flex md:w-[60%] mx-auto items-center justify-center overflow-hidden bg-black px-4 sm:px-6"
+        className="relative flex md:w-[60%] mx-auto items-center justify-center overflow-hidden px-4 sm:px-6"
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={viewport}
