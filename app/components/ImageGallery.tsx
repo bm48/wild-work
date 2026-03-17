@@ -5,7 +5,7 @@ import { useState, useCallback } from "react";
 
 const IMAGES_PER_PAGE = 12;
 const GALLERY_IMAGES = Array.from(
-  { length: 38 },
+  { length: 52 },
   (_, i) => `/${String(i + 1).padStart(2, "0")}.jpg`
 ).reverse();
 

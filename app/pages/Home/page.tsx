@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
+import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 28 },
@@ -45,7 +46,7 @@ function IScottSection({
             <LiveAvatarEmbedInner />
           ) : (
             <Image
-              src="/Avatar.png"
+              src="/Avatar1.png"
               alt="iScott - Talk to iScott"
               fill
               className="object-cover"
@@ -59,33 +60,20 @@ function IScottSection({
             <motion.button
             type="button"
             onClick={onToggleSession}
-            className={`left-1/2 -translate-x-1/2 bg-[#555] hover:bg-[#777] mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium
-               text-white transition-colors border border-white/40 cursor-pointer 
-               ${sessionActive ? "hidden" : "absolute bottom-[23.5%]"}`}
+            className={`absolute bottom-[23.5%] left-1/2 -translate-x-1/2 btn-inset p-3 rounded-lg flex items-center justify-center
+               text-lg font-medium whitespace-nowrap cursor-pointer`}
             // variants={variants}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            style={{ opacity: 1 }}
+            // style={{ opacity: 1, border: "1px solid white" }}
           >
-            Talk to iScott
+            {sessionActive ? "Stop Talking" : "Talk to iScott"}
           </motion.button>
         </div>
         
       </motion.div>
       
-        <motion.button
-          type="button"
-          onClick={onToggleSession}
-          className={`bg-[#555] hover:bg-[#777] mt-2 min-h-[44px] px-6 py-2.5 rounded-xl font-medium
-              text-white transition-colors border border-white/40 cursor-pointer 
-              ${sessionActive ? "mt-2" : "hidden"}`}
-          // variants={variants}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          style={{ opacity: 1 }}
-        >
-          Stop Talking
-        </motion.button>
+        
     </div>
   );
 }
@@ -187,7 +175,7 @@ export default function Home() {
         viewport={viewportReplay}
       >
         <motion.p className="text-xl text-white/95 sm:text-3xl" variants={fadeInUp}>
-          On a Quest to Create Planet Earth&apos;s Ultimate Stone Artwork
+          On a Quest to Create The World&apos;s Wildest Rock Art
         </motion.p>
         <motion.p className="text-lg text-white/80 -mt-2 sm:text-2xl" variants={fadeInUp}>
           Scott G. Dietz - Owner/Artist
@@ -319,7 +307,7 @@ export default function Home() {
       </motion.section>
 
       <AnimatedImageSection
-        src="/25.jpg"
+        src="/50.jpg"
         alt="WildWorks - Stone staircase and pathway leading to a rustic house with natural landscaping"
         sizes="90vw"
       />
@@ -470,7 +458,29 @@ export default function Home() {
       {/* Video section - YouTube embed with Copy link & Watch on YouTube */}
       {/* <YouTubeVideoBlock /> */}
 
-      {/* Twitter embed */}
+      <motion.section
+        className="px-4 pb-8 sm:px-6 sm:pb-10"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewportReplay}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="mx-auto w-full max-w-2xl">
+          <video
+            loop
+            muted
+            playsInline
+            controls
+            className="w-full h-auto max-h-[75vh] object-contain"
+          >
+            <source src="/WildWorksVideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </motion.section>
+
+
+      {/* Twitter timeline embed */}
       <motion.section
         className="px-4 pb-8 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 24 }}
@@ -478,13 +488,17 @@ export default function Home() {
         viewport={viewportReplay}
         transition={{ duration: 0.6 }}
       >
-        <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-tweet]:mx-auto">
-          <blockquote
-            className="twitter-tweet"
-            dangerouslySetInnerHTML={{
-              __html: `<p lang="en" dir="ltr">Most People Never See Stonework Like This.<br><br>Drone footage of a handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>When the lush foliage grows in and around this landscape, it's built to look like it's been part of the… <a href="https://t.co/NPQRR59Eyj">pic.twitter.com/NPQRR59Eyj</a></p>&mdash; WildWorks (@OfficialSGDietz) <a href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw">March 7, 2026</a>`,
-            }}
-          />
+        <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-timeline]:mx-auto">
+          <motion.a
+            className="twitter-timeline text-3xl"
+            href="https://twitter.com/OfficialSGDietz"
+            data-dnt="true"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "tween", duration: 0.1 }}
+          >
+            Tweets by OfficialSGDietz
+          </motion.a>
         </div>
         <Script
           src="https://platform.twitter.com/widgets.js"

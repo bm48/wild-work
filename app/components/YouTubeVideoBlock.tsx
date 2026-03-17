@@ -22,7 +22,7 @@ export default function YouTubeVideoBlock() {
   }, []);
 
   return (
-    <section className="bg-black px-4 py-2 sm:px-6">
+    <section className="px-4 py-2 sm:px-6">
       <div className="md:w-[60%] mx-auto">
         <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
           <iframe
