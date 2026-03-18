@@ -42,10 +42,10 @@ function IScottSection({
         variants={variants}
       >
         <div className="relative aspect-[9/16] w-full max-w-[min(100%,calc(85vh*9/16))] min-h-[180px] overflow-hidden rounded-lg bg-black/40">
-          {sessionActive ? (
+          {/* {sessionActive ? ( */}
             <LiveAvatarEmbedInner />
-          ) : (
-            <Image
+          {/* ) : ( */}
+            {/* <Image
               src="/Avatar1.png"
               alt="iScott - Talk to iScott"
               fill
@@ -54,8 +54,8 @@ function IScottSection({
               priority={false}
               unoptimized
               // onClick={onToggleSession}
-            />
-          )}
+            /> */}
+          {/* )} */}
 
             {/* <motion.button
             type="button"
@@ -188,7 +188,7 @@ export default function Home() {
         />
 
         <motion.h2
-          className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl"
+          className="text-4xl tracking-wide sm:text-5xl md:text-6xl"
           variants={fadeInUp}
         >
           WildWorks
