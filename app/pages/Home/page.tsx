@@ -57,7 +57,7 @@ function IScottSection({
             />
           )}
 
-            <motion.button
+            {/* <motion.button
             type="button"
             onClick={onToggleSession}
             className={`absolute bottom-[23.5%] left-1/2 -translate-x-1/2 btn-inset p-3 rounded-lg flex items-center justify-center
@@ -68,7 +68,7 @@ function IScottSection({
             // style={{ opacity: 1, border: "1px solid white" }}
           >
             {sessionActive ? "Stop Talking" : "Talk to iScott"}
-          </motion.button>
+          </motion.button> */}
         </div>
         
       </motion.div>
