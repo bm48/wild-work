@@ -496,7 +496,7 @@ export default function Home() {
               handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>
               When the lush foliage grows in and around this landscape, it's built to look like it's been part of the… 
               <a href="https://t.co/NPQRR59Eyj">pic.twitter.com/NPQRR59Eyj</a></p>&mdash; WildWorks (@OfficialSGDietz) 
-              <a href="https://twitter.com/OfficialSGDietz">March 7, 2026</a>`,
+              <a href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw">March 7, 2026</a>`,
             }}
           />
         </div>
