@@ -490,7 +490,7 @@ export default function Home() {
       >
         <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-tweet]:mx-auto">
           <blockquote
-            className="twitter-timeline"
+            className="twitter-tweet"
             dangerouslySetInnerHTML={{
               __html: `<p lang="en" dir="ltr">Most People Never See Stonework Like This.<br><br>Drone footage of a 
               handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>
