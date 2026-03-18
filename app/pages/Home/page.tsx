@@ -491,7 +491,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-timeline]:mx-auto">
           <motion.a
             className="twitter-timeline text-3xl"
-            href="https://twitter.com/OfficialSGDietz"
+            href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw"
             data-dnt="true"
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.98 }}

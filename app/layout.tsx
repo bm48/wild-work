@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${greatVibes.variable} antialiased`}
       >
         <div className="relative min-h-screen overflow-hidden">
-          <AnimationBackground />
+          {/* <AnimationBackground /> */}
           <StarryBackground />
           <div className="relative z-10 flex min-h-screen flex-col">
             <Header />
