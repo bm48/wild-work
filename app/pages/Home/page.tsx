@@ -188,7 +188,7 @@ export default function Home() {
         />
 
         <motion.h2
-          className="pt-2 text-4xl tracking-wide mt-16 sm:mt-24 sm:text-5xl md:text-6xl"
+          className="pt-2 text-4xl tracking-wide mt-4 sm:mt-8 sm:text-5xl md:text-6xl"
           variants={fadeInUp}
         >
           WildWorks
