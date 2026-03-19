@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
 import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
@@ -25,6 +24,133 @@ const viewportTight = { once: true, amount: 0.1 };
 const viewportReplay = { once: false, amount: 0.2 };
 
 const LIVE_AVATAR_EMBED_URL = "https://live-avatar-web-sdk-demo.vercel.app/";
+
+type LatestTweetApiOk = {
+  ok: true;
+  text: string;
+  createdAt: string;
+  id: string;
+  url: string;
+  media: { type: string; url: string }[];
+};
+
+type LatestTweetApiErr = { ok: false; error: string; detail?: string };
+
+/** Fetches latest original post via /api/x/latest (X API v2 + X_BEARER_TOKEN on server). */
+function LatestPostFromX() {
+  const [state, setState] = useState<
+    | { status: "loading" }
+    | { status: "error"; message: string }
+    | { status: "ok"; data: LatestTweetApiOk }
+  >({ status: "loading" });
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/x/latest");
+        const json = (await res.json()) as LatestTweetApiOk | LatestTweetApiErr;
+        if (cancelled) return;
+        if (!json.ok) {
+          const message = json.detail
+            ? `${json.error}\n${json.detail}`
+            : json.error;
+          setState({ status: "error", message });
+          return;
+        }
+        setState({ status: "ok", data: json });
+      } catch {
+        if (!cancelled) setState({ status: "error", message: "Could not load post." });
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (state.status === "loading") {
+    return (
+      <p className="text-sm text-white/60" aria-live="polite">
+        Loading latest post…
+      </p>
+    );
+  }
+
+  if (state.status === "error") {
+    const showEnvHint =
+      /X_BEARER|not configured|503/i.test(state.message) ||
+      /Add .*X_BEARER_TOKEN/i.test(state.message);
+    return (
+      <div className="mx-auto max-w-xl space-y-2 text-sm text-white/75">
+        <p className="whitespace-pre-wrap break-words">{state.message}</p>
+        {showEnvHint ? (
+          <p className="text-white/50">
+            Add <code className="rounded bg-white/10 px-1 py-0.5 text-xs">X_BEARER_TOKEN</code>{" "}
+            to <code className="rounded bg-white/10 px-1 py-0.5 text-xs">.env.local</code>{" "}
+            (see <code className="rounded bg-white/10 px-1 py-0.5 text-xs">.env.example</code>
+            ), then restart <code className="rounded bg-white/10 px-1 py-0.5 text-xs">next dev</code>.
+          </p>
+        ) : null}
+      </div>
+    );
+  }
+
+  const { text, createdAt, url, media } = state.data;
+  const when = new Date(createdAt);
+
+  return (
+    <div className="mx-auto w-full max-w-xl space-y-4 text-left">
+      <p className="whitespace-pre-wrap text-base leading-relaxed text-white/95 sm:text-lg">
+        {text}
+      </p>
+      {media.length > 0 ? (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {media.map((m, i) => (
+            <a
+              key={`${m.url}-${i}`}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block overflow-hidden rounded-lg border border-white/10 bg-black/20"
+            >
+              <Image
+                src={m.url}
+                alt=""
+                width={800}
+                height={450}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 400px"
+                unoptimized
+              />
+              {m.type === "video" || m.type === "animated_gif" ? (
+                <span className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-0.5 text-xs text-white">
+                  Watch on X
+                </span>
+              ) : null}
+            </a>
+          ))}
+        </div>
+      ) : null}
+      <p className="text-xs text-white/50">
+        {Number.isNaN(when.getTime())
+          ? null
+          : when.toLocaleString(undefined, {
+              dateStyle: "medium",
+              timeStyle: "short",
+            })}
+        {" · "}
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white/70 underline decoration-white/30 underline-offset-2 hover:decoration-white"
+        >
+          View on X
+        </a>
+      </p>
+    </div>
+  );
+}
 
 function IScottSection({
   variants,
@@ -480,7 +606,7 @@ export default function Home() {
       </motion.section>
 
 
-      {/* Twitter timeline embed */}
+      {/* Latest X post — text/media from X API v2 (server) */}
       <motion.section
         className="px-4 pb-8 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 24 }}
@@ -488,22 +614,10 @@ export default function Home() {
         viewport={viewportReplay}
         transition={{ duration: 0.6 }}
       >
-        <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-tweet]:mx-auto">
-          <blockquote
-            className="twitter-tweet"
-            dangerouslySetInnerHTML={{
-              __html: `<p lang="en" dir="ltr">Most People Never See Stonework Like This.<br><br>Drone footage of a 
-              handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>
-              When the lush foliage grows in and around this landscape, it's built to look like it's been part of the… 
-              <a href="https://t.co/NPQRR59Eyj">pic.twitter.com/NPQRR59Eyj</a></p>&mdash; WildWorks (@OfficialSGDietz) 
-              <a href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw">March 7, 2026</a>`,
-            }}
-          />
-        </div>
-        <Script
-          src="https://platform.twitter.com/widgets.js"
-          strategy="lazyOnload"
-        />
+        <h3 className="mb-4 text-lg font-medium text-white/95 sm:text-xl">
+          Latest from WildWorks on X (@OfficialSGDietz)
+        </h3>
+        <LatestPostFromX />
       </motion.section>
 
       {/* Exquisite Art / WildWorks CTA */}
