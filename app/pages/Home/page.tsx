@@ -563,7 +563,7 @@ export default function Home() {
         <LatestPostFromX />
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         className="px-4 pb-8 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -586,7 +586,7 @@ export default function Home() {
           src="https://platform.twitter.com/widgets.js"
           strategy="lazyOnload"
         />
-      </motion.section>
+      </motion.section> */}
 
       {/* Exquisite Art / WildWorks CTA */}
       <motion.section
