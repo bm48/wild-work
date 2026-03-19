@@ -44,6 +44,14 @@ export type LatestTweetSuccess = {
   id: string;
   url: string;
   media: { type: string; url: string }[];
+  author: {
+    name: string;
+    username: string;
+    profileImageUrl: string;
+    verified: boolean;
+  };
+  likeCount: number;
+  edited: boolean;
 };
 
 export type LatestTweetFailure = {
@@ -71,7 +79,7 @@ export async function GET() {
 
   try {
     const userRes = await xApiFetch(
-      `https://api.twitter.com/2/users/by/username/${X_USERNAME}`,
+      `https://api.twitter.com/2/users/by/username/${X_USERNAME}?user.fields=profile_image_url,name,username,verified`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -89,7 +97,15 @@ export async function GET() {
       );
     }
 
-    const userJson = await readJson<{ data?: { id: string } }>(userRes);
+    const userJson = await readJson<{
+      data?: {
+        id: string;
+        name: string;
+        username: string;
+        profile_image_url?: string;
+        verified?: boolean;
+      };
+    }>(userRes);
     if (!userJson) {
       return NextResponse.json<LatestTweetFailure>(
         {
@@ -99,8 +115,9 @@ export async function GET() {
         { status: 502 }
       );
     }
-    const userId = userJson.data?.id;
-    if (!userId) {
+    const userData = userJson.data;
+    const userId = userData?.id;
+    if (!userId || !userData?.name || !userData?.username) {
       return NextResponse.json<LatestTweetFailure>(
         { ok: false, error: "Unexpected user API response." },
         { status: 502 }
@@ -109,7 +126,8 @@ export async function GET() {
 
     const params = new URLSearchParams({
       max_results: "10",
-      "tweet.fields": "created_at,attachments",
+      "tweet.fields":
+        "created_at,attachments,public_metrics,edit_history_tweet_ids",
       exclude: "retweets,replies",
       expansions: "attachments.media_keys",
       "media.fields": "type,url,preview_image_url",
@@ -128,6 +146,8 @@ export async function GET() {
         text: string;
         created_at: string;
         attachments?: { media_keys?: string[] };
+        public_metrics?: { like_count?: number };
+        edit_history_tweet_ids?: string[];
       }>;
       includes?: {
         media?: Array<{
@@ -184,6 +204,10 @@ export async function GET() {
       if (url) media.push({ type: m.type, url });
     }
 
+    const edited =
+      Array.isArray(tweet.edit_history_tweet_ids) &&
+      tweet.edit_history_tweet_ids.length > 1;
+
     const payload: LatestTweetSuccess = {
       ok: true,
       text: tweet.text ?? "",
@@ -191,6 +215,14 @@ export async function GET() {
       id: tweet.id,
       url: `https://x.com/${X_USERNAME}/status/${tweet.id}`,
       media,
+      author: {
+        name: userData.name,
+        username: userData.username,
+        profileImageUrl: userData.profile_image_url ?? "",
+        verified: Boolean(userData.verified),
+      },
+      likeCount: tweet.public_metrics?.like_count ?? 0,
+      edited,
     };
 
     return NextResponse.json(payload, {

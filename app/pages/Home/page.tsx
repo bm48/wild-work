@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import Script from "next/script";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
+import {
+  LatestXPostCard,
+  LatestXPostCardSkeleton,
+  type LatestXPostPayload,
+} from "../../components/LatestXPostCard";
 import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
 const fadeInUp = {
@@ -26,15 +30,6 @@ const viewportReplay = { once: false, amount: 0.2 };
 
 const LIVE_AVATAR_EMBED_URL = "https://live-avatar-web-sdk-demo.vercel.app/";
 
-type LatestTweetApiOk = {
-  ok: true;
-  text: string;
-  createdAt: string;
-  id: string;
-  url: string;
-  media: { type: string; url: string }[];
-};
-
 type LatestTweetApiErr = { ok: false; error: string; detail?: string };
 
 /** Fetches latest original post via /api/x/latest (X API v2 + X_BEARER_TOKEN on server). */
@@ -42,7 +37,7 @@ function LatestPostFromX() {
   const [state, setState] = useState<
     | { status: "loading" }
     | { status: "error"; message: string }
-    | { status: "ok"; data: LatestTweetApiOk }
+    | { status: "ok"; data: LatestXPostPayload }
   >({ status: "loading" });
 
   useEffect(() => {
@@ -50,7 +45,7 @@ function LatestPostFromX() {
     (async () => {
       try {
         const res = await fetch("/api/x/latest");
-        const json = (await res.json()) as LatestTweetApiOk | LatestTweetApiErr;
+        const json = (await res.json()) as LatestXPostPayload | LatestTweetApiErr;
         if (cancelled) return;
         if (!json.ok) {
           const message = json.detail
@@ -71,9 +66,10 @@ function LatestPostFromX() {
 
   if (state.status === "loading") {
     return (
-      <p className="text-sm text-white/60" aria-live="polite">
-        Loading latest post…
-      </p>
+      <div aria-live="polite" className="flex flex-col items-center">
+        <span className="sr-only">Loading latest post…</span>
+        <LatestXPostCardSkeleton />
+      </div>
     );
   }
 
@@ -96,61 +92,7 @@ function LatestPostFromX() {
     );
   }
 
-  const { text, createdAt, url, media } = state.data;
-  const when = new Date(createdAt);
-
-  return (
-    <div className="mx-auto w-full max-w-xl space-y-4 text-left">
-      <p className="whitespace-pre-wrap text-base leading-relaxed text-white/95 sm:text-lg">
-        {text}
-      </p>
-      {media.length > 0 ? (
-        <div className="grid gap-3 sm:grid-cols-2">
-          {media.map((m, i) => (
-            <a
-              key={`${m.url}-${i}`}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative block overflow-hidden rounded-lg border border-white/10 bg-black/20"
-            >
-              <Image
-                src={m.url}
-                alt=""
-                width={800}
-                height={450}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 400px"
-                unoptimized
-              />
-              {m.type === "video" || m.type === "animated_gif" ? (
-                <span className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-0.5 text-xs text-white">
-                  Watch on X
-                </span>
-              ) : null}
-            </a>
-          ))}
-        </div>
-      ) : null}
-      <p className="text-xs text-white/50">
-        {Number.isNaN(when.getTime())
-          ? null
-          : when.toLocaleString(undefined, {
-              dateStyle: "medium",
-              timeStyle: "short",
-            })}
-        {" · "}
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white/70 underline decoration-white/30 underline-offset-2 hover:decoration-white"
-        >
-          View on X
-        </a>
-      </p>
-    </div>
-  );
+  return <LatestXPostCard data={state.data} />;
 }
 
 function IScottSection({
