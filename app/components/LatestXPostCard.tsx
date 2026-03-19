@@ -1,6 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import {
+  ArrowUpRight,
+  BadgeCheck,
+  Heart,
+  Info,
+  Link2,
+  MessageCircle,
+  Pencil,
+  Play,
+} from "lucide-react";
 import { useCallback, useState } from "react";
 
 export type LatestXPostPayload = {
@@ -24,46 +34,9 @@ const X_BLUE = "#1d9bf0";
 const X_GRAY = "#536471";
 const X_PINK = "#f91880";
 
-function XLogo({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
-function VerifiedBadge({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-label="Verified account"
-      role="img"
-    >
-      <path
-        fill={X_BLUE}
-        d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.89.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.2-1.91 2.2-3.34zm-10.77 4.92-3.77-3.77 1.42-1.42 2.35 2.35 4.56-4.56 1.41 1.41-5.97 5.99z"
-      />
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <div
-      className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1d9bf0] shadow-lg"
-      aria-hidden
-    >
-      <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 text-white" fill="currentColor">
-        <path d="M8 5v14l11-7z" />
-      </svg>
-    </div>
-  );
+/** Lucide has no X/Twitter mark; use an external-link style cue for “open on X”. */
+function OpenOnXIcon({ className }: { className?: string }) {
+  return <ArrowUpRight className={className} strokeWidth={2.25} aria-hidden />;
 }
 
 function formatPostWhen(iso: string, edited: boolean) {
@@ -117,7 +90,10 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
   return (
     <article
       className="mx-auto w-full max-w-[550px] overflow-hidden rounded-2xl border border-[#cfd9de] bg-white text-left shadow-[0_0_0_1px_rgba(15,20,25,0.08)]"
-      style={{ fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" }}
+      style={{
+        fontFamily:
+          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+      }}
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
@@ -150,7 +126,11 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
                 {data.author.name}
               </a>
               {data.author.verified ? (
-                <VerifiedBadge className="h-[18px] w-[18px] shrink-0" />
+                <BadgeCheck
+                  className="h-[18px] w-[18px] shrink-0 text-[#1d9bf0]"
+                  strokeWidth={2.5}
+                  aria-label="Verified account"
+                />
               ) : null}
             </div>
             <p className="mt-0.5 text-[15px]" style={{ color: X_GRAY }}>
@@ -175,7 +155,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           className="shrink-0 text-[#0f1419] opacity-90 hover:opacity-100"
           aria-label="Open on X"
         >
-          <XLogo className="h-5 w-5" />
+          <OpenOnXIcon className="h-5 w-5" />
         </a>
       </div>
 
@@ -227,7 +207,19 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
             {hasVideo ? (
               <>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/10">
-                  <PlayIcon />
+                  <div
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1d9bf0] shadow-lg"
+                    aria-hidden
+                  >
+                    <Play
+                      className="ml-1 shrink-0 text-white"
+                      size={28}
+                      fill="white"
+                      stroke="white"
+                      strokeWidth={1.5}
+                      aria-hidden
+                    />
+                  </div>
                 </div>
                 <span className="absolute right-3 top-3 rounded-full bg-black/85 px-3 py-1 text-xs font-medium text-white">
                   Watch on X
@@ -249,19 +241,10 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
         style={{ color: X_GRAY }}
       >
         <span className="flex items-center gap-1">
-          <svg
-            viewBox="0 0 24 24"
-            className="h-4 w-4 shrink-0 opacity-70"
-            fill="currentColor"
-            aria-hidden
-          >
-            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
-          </svg>
+          <Pencil className="h-4 w-4 shrink-0 opacity-70" strokeWidth={2} aria-hidden />
           {formatPostWhen(data.createdAt, data.edited)}
         </span>
-        <span className="opacity-50" aria-hidden>
-          ⓘ
-        </span>
+        <Info className="h-4 w-4 shrink-0 opacity-50" strokeWidth={2} aria-hidden />
       </div>
 
       {/* Actions */}
@@ -270,9 +253,13 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
         style={{ color: X_GRAY }}
       >
         <span className="inline-flex items-center gap-1.5">
-          <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill={X_PINK} aria-hidden>
-            <path d="M12 21.638h-.014C9.403 21.59 1 12.856 1 7.478 1 3.964 3.952 1 7.438 1c1.652 0 3.185.793 4.14 2.12C12.147 1.793 13.68 1 15.33 1c3.486 0 6.438 2.964 6.438 6.478 0 5.378-8.403 14.112-10.974 14.16z" />
-          </svg>
+          <Heart
+            className="h-[18px] w-[18px] shrink-0"
+            fill={X_PINK}
+            stroke={X_PINK}
+            strokeWidth={2}
+            aria-hidden
+          />
           <span style={{ color: X_GRAY }}>{data.likeCount}</span>
         </span>
         <a
@@ -282,9 +269,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           className="inline-flex items-center gap-1.5 hover:underline"
           style={{ color: X_BLUE }}
         >
-          <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor" aria-hidden>
-            <path d="M1.751 10c0-6.638 5.372-12 12-12s12 5.362 12 12c0 6.63-5.373 12-12 12h-12.449c-.509 0-.757-.645-.383-1.002l2.751-2.65a.75.75 0 00-.53-1.281h-2.25c-4.556 0-8.25-3.694-8.25-8.25v-.5z" />
-          </svg>
+          <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2} aria-hidden />
           Reply
         </a>
         <button
@@ -292,14 +277,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           onClick={onCopyLink}
           className="inline-flex items-center gap-1.5 hover:underline"
         >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-[18px] w-[18px]"
-            fill="currentColor"
-            aria-hidden
-          >
-            <path d="M18.36 5.64c-1.95-1.96-5.11-1.96-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.16-2.73 9.9 0 2.73 2.74 2.73 7.17 0 9.9l-1.42 1.42-1.41-1.42 1.41-1.41c1.96-1.96 1.96-5.12 0-7.07zm-2.12 3.53l-7.07 7.07-2.83-2.83 7.07-7.07 2.83 2.83zm-1.41 1.41l-7.07 7.07-1.41-1.41 7.07-7.07 1.41 1.41zM4.93 19.07c2.73 2.73 7.17 2.73 9.9 0l1.41-1.41-1.41-1.41-1.42 1.42c-1.96 1.96-5.12 1.96-7.07 0-1.96-1.96-1.96-5.12 0-7.07l1.42-1.42-1.41-1.41-1.42 1.42c-2.73 2.74-2.73 7.17 0 9.9z" />
-          </svg>
+          <Link2 className="h-[18px] w-[18px]" strokeWidth={2} aria-hidden />
           {copied ? "Copied!" : "Copy link"}
         </button>
       </div>
