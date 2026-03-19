@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
@@ -618,6 +619,31 @@ export default function Home() {
           Latest from WildWorks on X (@OfficialSGDietz)
         </h3>
         <LatestPostFromX />
+      </motion.section>
+
+      <motion.section
+        className="px-4 pb-8 text-center text-white sm:px-6"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewportReplay}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="mx-auto flex max-w-2xl justify-center [&_.twitter-tweet]:mx-auto">
+          <blockquote
+            className="twitter-tweet"
+            dangerouslySetInnerHTML={{
+              __html: `<p lang="en" dir="ltr">Most People Never See Stonework Like This.<br><br>Drone footage of a 
+              handcrafted natural stone terrace, super steps, a seat wall with boulder bookends, and boulder outcroppings.<br><br>
+              When the lush foliage grows in and around this landscape, it's built to look like it's been part of the… 
+              <a href="https://t.co/NPQRR59Eyj">pic.twitter.com/NPQRR59Eyj</a></p>&mdash; WildWorks (@OfficialSGDietz) 
+              <a href="https://twitter.com/OfficialSGDietz/status/2030296263833313522?ref_src=twsrc%5Etfw">March 7, 2026</a>`,
+            }}
+          />
+        </div>
+        <Script
+          src="https://platform.twitter.com/widgets.js"
+          strategy="lazyOnload"
+        />
       </motion.section>
 
       {/* Exquisite Art / WildWorks CTA */}
