@@ -1,26 +1,16 @@
 import { NextResponse } from "next/server";
-import { Agent, fetch as undiciFetch } from "undici";
 
 /** Public handle (no @) */
 const X_USERNAME = "OfficialSGDietz";
 
 export const dynamic = "force-dynamic";
 
-/** Node’s default fetch uses a ~10s connect timeout; slow or filtered networks need more time. */
-const xApiAgent = new Agent({
-  connectTimeout: 60_000,
-  headersTimeout: 60_000,
-  bodyTimeout: 120_000,
-});
-
+/** Use global fetch (Node/Edge) so Vercel/Turbopack don’t need the `undici` package. */
 function xApiFetch(
   url: string,
   init?: { headers?: Record<string, string> }
 ) {
-  return undiciFetch(url, {
-    ...init,
-    dispatcher: xApiAgent,
-  });
+  return fetch(url, init);
 }
 
 function isLikelyNetworkFailure(e: unknown): boolean {
@@ -218,7 +208,7 @@ export async function GET() {
           error:
             "Cannot reach X’s API from this environment (connection timed out or blocked).",
           detail:
-            "api.twitter.com must be reachable from the machine running Next.js. Try another network or VPN, check firewall/antivirus, or deploy (e.g. Vercel) where X’s API is allowed. Longer timeouts are already enabled (60s connect).",
+            "api.twitter.com must be reachable from the machine running Next.js. Try another network or VPN, check firewall/antivirus, or deploy (e.g. Vercel) where X’s API is allowed.",
         },
         { status: 503 }
       );
