@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Script from "next/script";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import AspectRatioImage from "../../components/AspectRatioImage";
-import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
+// import YouTubeVideoBlock from "../../components/YouTubeVideoBlock";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 28 },
@@ -36,13 +36,41 @@ type LatestTweetApiOk = {
 
 type LatestTweetApiErr = { ok: false; error: string; detail?: string };
 
-/** Fetches latest original post via /api/x/latest (X API v2 + X_BEARER_TOKEN on server). */
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/** Plain-text tweet → safe HTML inside <p> (line breaks like the classic embed). */
+function tweetBodyToEmbedHtml(text: string): string {
+  return escapeHtml(text.replace(/\r\n/g, "\n")).replace(/\n/g, "<br>");
+}
+
+/**
+ * Fetches latest post from /api/x/latest, then renders it with X’s official embed
+ * (blockquote.twitter-tweet + widgets.js) so it matches the original site look.
+ */
 function LatestPostFromX() {
   const [state, setState] = useState<
     | { status: "loading" }
     | { status: "error"; message: string }
     | { status: "ok"; data: LatestTweetApiOk }
   >({ status: "loading" });
+  const embedRootRef = useRef<HTMLDivElement>(null);
+
+  const hydrateWidgets = useCallback(() => {
+    if (typeof window === "undefined") return;
+    const twttr = (
+      window as Window & {
+        twttr?: { widgets?: { load: (el?: Element | null) => void } };
+      }
+    ).twttr;
+    twttr?.widgets?.load(embedRootRef.current ?? undefined);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,6 +95,12 @@ function LatestPostFromX() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (state.status !== "ok") return;
+    const id = window.setTimeout(() => hydrateWidgets(), 0);
+    return () => window.clearTimeout(id);
+  }, [state, hydrateWidgets]);
 
   if (state.status === "loading") {
     return (
@@ -95,60 +129,39 @@ function LatestPostFromX() {
     );
   }
 
-  const { text, createdAt, url, media } = state.data;
+  const { text, createdAt, url } = state.data;
   const when = new Date(createdAt);
+  const dateLabel = Number.isNaN(when.getTime())
+    ? ""
+    : when.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+
+  const blockquoteHtml = `<p lang="en" dir="ltr">${tweetBodyToEmbedHtml(text)}</p>&mdash; WildWorks (@OfficialSGDietz) <a href="${escapeHtml(url)}">${escapeHtml(dateLabel)}</a>`;
 
   return (
-    <div className="mx-auto w-full max-w-xl space-y-4 text-left">
-      <p className="whitespace-pre-wrap text-base leading-relaxed text-white/95 sm:text-lg">
-        {text}
-      </p>
-      {media.length > 0 ? (
-        <div className="grid gap-3 sm:grid-cols-2">
-          {media.map((m, i) => (
-            <a
-              key={`${m.url}-${i}`}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative block overflow-hidden rounded-lg border border-white/10 bg-black/20"
-            >
-              <Image
-                src={m.url}
-                alt=""
-                width={800}
-                height={450}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 400px"
-                unoptimized
-              />
-              {m.type === "video" || m.type === "animated_gif" ? (
-                <span className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-0.5 text-xs text-white">
-                  Watch on X
-                </span>
-              ) : null}
-            </a>
-          ))}
-        </div>
-      ) : null}
-      <p className="text-xs text-white/50">
-        {Number.isNaN(when.getTime())
-          ? null
-          : when.toLocaleString(undefined, {
-              dateStyle: "medium",
-              timeStyle: "short",
-            })}
-        {" · "}
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white/70 underline decoration-white/30 underline-offset-2 hover:decoration-white"
-        >
-          View on X
-        </a>
-      </p>
-    </div>
+    <>
+      <div
+        ref={embedRootRef}
+        className="mx-auto flex max-w-2xl justify-center text-[15px] text-white [&_.twitter-tweet]:mx-auto"
+      >
+        <blockquote
+          key={state.data.id}
+          className="twitter-tweet"
+          data-theme="dark"
+          data-dnt="true"
+          dangerouslySetInnerHTML={{ __html: blockquoteHtml }}
+        />
+      </div>
+      <Script
+        src="https://platform.twitter.com/widgets.js"
+        strategy="lazyOnload"
+        charSet="utf-8"
+        onLoad={hydrateWidgets}
+      />
+    </>
   );
 }
 
