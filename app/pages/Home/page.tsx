@@ -557,9 +557,6 @@ export default function Home() {
         viewport={viewportReplay}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="mb-4 text-lg font-medium text-white/95 sm:text-xl">
-          Latest from WildWorks on X (@OfficialSGDietz)
-        </h3>
         <LatestPostFromX />
       </motion.section>
 
