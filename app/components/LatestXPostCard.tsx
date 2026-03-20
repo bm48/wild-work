@@ -11,7 +11,6 @@ import {
   Link2,
   MessageCircle,
   Pencil,
-  Play,
   X,
 } from "lucide-react";
 import {
@@ -102,11 +101,6 @@ function buildMediaSegments(media: LatestXPostMediaItem[]): MediaSegment[] {
   }
   flushPhotos();
   return segments;
-}
-
-/** X CDN blocks direct browser loads; play via same-origin proxy (see /api/x/video-proxy). */
-function twVideoProxySrc(videoUrl: string): string {
-  return `/api/x/video-proxy?u=${encodeURIComponent(videoUrl)}`;
 }
 
 function WatchOnXLink({
@@ -230,69 +224,33 @@ function PhotoGrid({
   );
 }
 
-function VideoBlock({
-  item,
+/**
+ * Native &lt;video&gt; + MP4 URLs from the API cannot play reliably (X CDN 403/416; Vercel proxy brittle).
+ * Official embed iframe uses X’s own player — same pattern as the commented block on Home.
+ */
+function XTweetEmbedIframe({
+  tweetId,
   postUrl,
+  username,
 }: {
-  item: LatestXPostMediaItem;
+  tweetId: string;
   postUrl: string;
+  username: string;
 }) {
-  const isMotion =
-    item.type === "video" || item.type === "animated_gif";
-
-  if (item.videoUrl) {
-    return (
-      <div className="space-y-2">
-        <div className="overflow-hidden rounded-2xl border border-black/5 bg-black">
-          <video
-            className="aspect-video w-full object-contain sm:max-h-[min(80vh,520px)]"
-            controls
-            playsInline
-            preload="metadata"
-            poster={item.url || undefined}
-            src={twVideoProxySrc(item.videoUrl)}
-          />
-        </div>
-        <div className="flex flex-wrap items-center justify-end gap-2">
-          <WatchOnXLink href={postUrl} />
-        </div>
-      </div>
-    );
-  }
-
+  const src = `https://platform.twitter.com/embed/Tweet.html?id=${encodeURIComponent(tweetId)}&theme=light&dnt=true&maxWidth=550`;
   return (
     <div className="space-y-2">
-      <div className="relative overflow-hidden rounded-2xl border border-black/5 bg-black">
-        {item.url ? (
-          <Image
-            src={item.url}
-            alt=""
-            width={1200}
-            height={675}
-            className="h-auto w-full object-cover"
-            sizes="(max-width: 640px) 100vw, 550px"
-            unoptimized
-          />
-        ) : null}
-        {isMotion ? (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20">
-            <div
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1d9bf0] shadow-lg"
-              aria-hidden
-            >
-              <Play
-                className="ml-1 shrink-0 text-white"
-                size={28}
-                fill="white"
-                stroke="white"
-                strokeWidth={1.5}
-                aria-hidden
-              />
-            </div>
-          </div>
-        ) : null}
+      <div className="overflow-hidden rounded-2xl border border-black/5 bg-white">
+        <iframe
+          title={`Post by @${username}`}
+          src={src}
+          className="h-[min(560px,78vh)] w-full max-w-full border-0 sm:h-[min(520px,75vh)]"
+          loading="lazy"
+          allowFullScreen
+          allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
+        />
       </div>
-      <div className="flex flex-wrap items-center justify-end gap-2">
+      <div className="flex flex-wrap items-center justify-end gap-2 px-1">
         <WatchOnXLink href={postUrl} />
       </div>
     </div>
@@ -429,6 +387,14 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
     [data.media]
   );
 
+  const hasVideo = useMemo(
+    () =>
+      data.media.some(
+        (m) => m.type === "video" || m.type === "animated_gif"
+      ),
+    [data.media]
+  );
+
   const onOpenLightbox = useCallback((globalIndex: number) => {
     setLightboxIndex(globalIndex);
   }, []);
@@ -465,129 +431,136 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
         onNext={onLightboxNext}
       />
 
-      {/* Header */}
-      <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
-        <div className="flex min-w-0 flex-1 gap-3">
-          <a
-            href={data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#eff3f4]"
-          >
-            {avatarSrc ? (
-              <Image
-                src={avatarSrc}
-                alt=""
-                width={40}
-                height={40}
-                className="h-10 w-10 object-cover"
-                unoptimized
-              />
-            ) : null}
-          </a>
-          <div className="min-w-0 flex-1 leading-tight">
-            <div className="flex flex-wrap items-center gap-1">
+      {/* Header + text — hidden when video: X’s embed includes author + copy (avoids duplicate UI). */}
+      {!hasVideo ? (
+        <>
+          <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
+            <div className="flex min-w-0 flex-1 gap-3">
               <a
                 href={data.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="truncate font-bold text-[15px] text-[#0f1419] hover:underline"
+                className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#eff3f4]"
               >
-                {data.author.name}
+                {avatarSrc ? (
+                  <Image
+                    src={avatarSrc}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-cover"
+                    unoptimized
+                  />
+                ) : null}
               </a>
-              {data.author.verified ? (
-                <BadgeCheck
-                  className="h-[18px] w-[18px] shrink-0 text-[#1d9bf0]"
-                  strokeWidth={2.5}
-                  aria-label="Verified account"
-                />
-              ) : null}
+              <div className="min-w-0 flex-1 leading-tight">
+                <div className="flex flex-wrap items-center gap-1">
+                  <a
+                    href={data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="truncate font-bold text-[15px] text-[#0f1419] hover:underline"
+                  >
+                    {data.author.name}
+                  </a>
+                  {data.author.verified ? (
+                    <BadgeCheck
+                      className="h-[18px] w-[18px] shrink-0 text-[#1d9bf0]"
+                      strokeWidth={2.5}
+                      aria-label="Verified account"
+                    />
+                  ) : null}
+                </div>
+                <p className="mt-0.5 text-[15px]" style={{ color: X_GRAY }}>
+                  <span className="text-[#0f1419]">@{data.author.username}</span>
+                  <span className="mx-1">·</span>
+                  <a
+                    href={followUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium hover:underline"
+                    style={{ color: X_BLUE }}
+                  >
+                    Follow
+                  </a>
+                </p>
+              </div>
             </div>
-            <p className="mt-0.5 text-[15px]" style={{ color: X_GRAY }}>
-              <span className="text-[#0f1419]">@{data.author.username}</span>
-              <span className="mx-1">·</span>
-              <a
-                href={followUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium hover:underline"
+            <a
+              href={data.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 text-[#0f1419] opacity-90 hover:opacity-100"
+              aria-label="Open on X"
+            >
+              <OpenOnXIcon className="h-5 w-5" />
+            </a>
+          </div>
+
+          <div className="space-y-3 px-4 pb-3 pt-1">
+            {paragraphs.length > 0 ? (
+              paragraphs.map((para, i) => (
+                <p
+                  key={i}
+                  className="text-[15px] leading-5 text-[#0f1419]"
+                  style={{ wordBreak: "break-word" }}
+                >
+                  {para}
+                </p>
+              ))
+            ) : (
+              <p className="text-[15px] leading-5 text-[#0f1419]">{displayText}</p>
+            )}
+            {longText ? (
+              <button
+                type="button"
+                onClick={() => setExpanded((e) => !e)}
+                className="text-left text-[15px] font-medium hover:underline"
                 style={{ color: X_BLUE }}
               >
-                Follow
-              </a>
-            </p>
+                {expanded ? "Show less" : "Show more"}
+              </button>
+            ) : null}
           </div>
+        </>
+      ) : null}
+
+      {/* Media: official X embed for video/GIF; photo grids for image-only posts */}
+      {hasVideo ? (
+        <div className="px-3 pb-3 pt-1 sm:px-4 sm:pt-2">
+          <XTweetEmbedIframe
+            tweetId={data.id}
+            postUrl={data.url}
+            username={data.author.username}
+          />
         </div>
-        <a
-          href={data.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 text-[#0f1419] opacity-90 hover:opacity-100"
-          aria-label="Open on X"
-        >
-          <OpenOnXIcon className="h-5 w-5" />
-        </a>
-      </div>
-
-      {/* Text */}
-      <div className="space-y-3 px-4 pb-3 pt-1">
-        {paragraphs.length > 0 ? (
-          paragraphs.map((para, i) => (
-            <p
-              key={i}
-              className="text-[15px] leading-5 text-[#0f1419]"
-              style={{ wordBreak: "break-word" }}
-            >
-              {para}
-            </p>
-          ))
-        ) : (
-          <p className="text-[15px] leading-5 text-[#0f1419]">{displayText}</p>
-        )}
-        {longText ? (
-          <button
-            type="button"
-            onClick={() => setExpanded((e) => !e)}
-            className="text-left text-[15px] font-medium hover:underline"
-            style={{ color: X_BLUE }}
-          >
-            {expanded ? "Show less" : "Show more"}
-          </button>
-        ) : null}
-      </div>
-
-      {/* Media */}
-      {segments.length > 0 ? (
+      ) : segments.length > 0 ? (
         <div className="space-y-3 px-3 pb-3 sm:px-4">
-          {segments.map((seg, i) => {
-            if (seg.kind === "photos") {
-              return (
-                <div key={`p-${i}`} className="space-y-2">
-                  <PhotoGrid
-                    urls={seg.urls}
-                    startIndex={seg.startIndex}
-                    onOpen={onOpenLightbox}
-                  />
-                  <div className="flex justify-end">
-                    <a
-                      href={data.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
-                    >
-                      <OpenOnXIcon className="h-4 w-4" />
-                      View on X
-                    </a>
-                  </div>
+          {segments
+            .filter(
+              (s): s is Extract<MediaSegment, { kind: "photos" }> =>
+                s.kind === "photos"
+            )
+            .map((seg, i) => (
+              <div key={`p-${i}`} className="space-y-2">
+                <PhotoGrid
+                  urls={seg.urls}
+                  startIndex={seg.startIndex}
+                  onOpen={onOpenLightbox}
+                />
+                <div className="flex justify-end">
+                  <a
+                    href={data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
+                  >
+                    <OpenOnXIcon className="h-4 w-4" />
+                    View on X
+                  </a>
                 </div>
-              );
-            }
-            return (
-              <div key={`v-${i}`}>
-                <VideoBlock item={seg.item} postUrl={data.url} />
               </div>
-            );
-          })}
+            ))}
         </div>
       ) : null}
 
