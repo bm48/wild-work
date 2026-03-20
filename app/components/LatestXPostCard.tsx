@@ -104,6 +104,11 @@ function buildMediaSegments(media: LatestXPostMediaItem[]): MediaSegment[] {
   return segments;
 }
 
+/** X CDN blocks direct browser loads; play via same-origin proxy (see /api/x/video-proxy). */
+function twVideoProxySrc(videoUrl: string): string {
+  return `/api/x/video-proxy?u=${encodeURIComponent(videoUrl)}`;
+}
+
 function WatchOnXLink({
   href,
   className,
@@ -245,7 +250,7 @@ function VideoBlock({
             playsInline
             preload="metadata"
             poster={item.url || undefined}
-            src={item.videoUrl}
+            src={twVideoProxySrc(item.videoUrl)}
           />
         </div>
         <div className="flex flex-wrap items-center justify-end gap-2">
