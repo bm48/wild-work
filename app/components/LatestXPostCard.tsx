@@ -431,99 +431,96 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
         onNext={onLightboxNext}
       />
 
-      {/* Header + text — hidden when video: X’s embed includes author + copy (avoids duplicate UI). */}
-      {!hasVideo ? (
-        <>
-          <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
-            <div className="flex min-w-0 flex-1 gap-3">
+      {/* Header */}
+      <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
+        <div className="flex min-w-0 flex-1 gap-3">
+          <a
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#eff3f4]"
+          >
+            {avatarSrc ? (
+              <Image
+                src={avatarSrc}
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 object-cover"
+                unoptimized
+              />
+            ) : null}
+          </a>
+          <div className="min-w-0 flex-1 leading-tight">
+            <div className="flex flex-wrap items-center gap-1">
               <a
                 href={data.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#eff3f4]"
+                className="truncate font-bold text-[15px] text-[#0f1419] hover:underline"
               >
-                {avatarSrc ? (
-                  <Image
-                    src={avatarSrc}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 object-cover"
-                    unoptimized
-                  />
-                ) : null}
+                {data.author.name}
               </a>
-              <div className="min-w-0 flex-1 leading-tight">
-                <div className="flex flex-wrap items-center gap-1">
-                  <a
-                    href={data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="truncate font-bold text-[15px] text-[#0f1419] hover:underline"
-                  >
-                    {data.author.name}
-                  </a>
-                  {data.author.verified ? (
-                    <BadgeCheck
-                      className="h-[18px] w-[18px] shrink-0 text-[#1d9bf0]"
-                      strokeWidth={2.5}
-                      aria-label="Verified account"
-                    />
-                  ) : null}
-                </div>
-                <p className="mt-0.5 text-[15px]" style={{ color: X_GRAY }}>
-                  <span className="text-[#0f1419]">@{data.author.username}</span>
-                  <span className="mx-1">·</span>
-                  <a
-                    href={followUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium hover:underline"
-                    style={{ color: X_BLUE }}
-                  >
-                    Follow
-                  </a>
-                </p>
-              </div>
+              {data.author.verified ? (
+                <BadgeCheck
+                  className="h-[18px] w-[18px] shrink-0 text-[#1d9bf0]"
+                  strokeWidth={2.5}
+                  aria-label="Verified account"
+                />
+              ) : null}
             </div>
-            <a
-              href={data.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 text-[#0f1419] opacity-90 hover:opacity-100"
-              aria-label="Open on X"
-            >
-              <OpenOnXIcon className="h-5 w-5" />
-            </a>
-          </div>
-
-          <div className="space-y-3 px-4 pb-3 pt-1">
-            {paragraphs.length > 0 ? (
-              paragraphs.map((para, i) => (
-                <p
-                  key={i}
-                  className="text-[15px] leading-5 text-[#0f1419]"
-                  style={{ wordBreak: "break-word" }}
-                >
-                  {para}
-                </p>
-              ))
-            ) : (
-              <p className="text-[15px] leading-5 text-[#0f1419]">{displayText}</p>
-            )}
-            {longText ? (
-              <button
-                type="button"
-                onClick={() => setExpanded((e) => !e)}
-                className="text-left text-[15px] font-medium hover:underline"
+            <p className="mt-0.5 text-[15px]" style={{ color: X_GRAY }}>
+              <span className="text-[#0f1419]">@{data.author.username}</span>
+              <span className="mx-1">·</span>
+              <a
+                href={followUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium hover:underline"
                 style={{ color: X_BLUE }}
               >
-                {expanded ? "Show less" : "Show more"}
-              </button>
-            ) : null}
+                Follow
+              </a>
+            </p>
           </div>
-        </>
-      ) : null}
+        </div>
+        <a
+          href={data.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 text-[#0f1419] opacity-90 hover:opacity-100"
+          aria-label="Open on X"
+        >
+          <OpenOnXIcon className="h-5 w-5" />
+        </a>
+      </div>
+
+      {/* Text */}
+      <div className="space-y-3 px-4 pb-3 pt-1">
+        {paragraphs.length > 0 ? (
+          paragraphs.map((para, i) => (
+            <p
+              key={i}
+              className="text-[15px] leading-5 text-[#0f1419]"
+              style={{ wordBreak: "break-word" }}
+            >
+              {para}
+            </p>
+          ))
+        ) : (
+          <p className="text-[15px] leading-5 text-[#0f1419]">{displayText}</p>
+        )}
+        {longText ? (
+          <button
+            type="button"
+            onClick={() => setExpanded((e) => !e)}
+            className="text-left text-[15px] font-medium hover:underline"
+            style={{ color: X_BLUE }}
+          >
+            {expanded ? "Show less" : "Show more"}
+          </button>
+        ) : null}
+      </div>
 
       {/* Media: official X embed for video/GIF; photo grids for image-only posts */}
       {hasVideo ? (

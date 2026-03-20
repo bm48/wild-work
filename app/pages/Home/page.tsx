@@ -543,7 +543,6 @@ export default function Home() {
             className="w-full h-auto max-h-[75vh] object-contain"
           >
             <source src="/WildWorksVideo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
       </motion.section>
