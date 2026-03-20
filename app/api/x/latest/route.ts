@@ -37,13 +37,29 @@ async function readJson<T>(res: { text: () => Promise<string> }): Promise<T | nu
   }
 }
 
+/** `url` is always a display URL (photo or video poster); `videoUrl` is set when X returns MP4 variants. */
+export type LatestTweetMediaItem = {
+  type: string;
+  url: string;
+  videoUrl?: string;
+};
+
+function bestMp4FromVariants(
+  variants?: Array<{ bit_rate?: number; content_type?: string; url?: string }>
+): string | undefined {
+  if (!variants?.length) return undefined;
+  const mp4 = variants.filter((v) => v.content_type === "video/mp4" && v.url);
+  if (!mp4.length) return undefined;
+  return [...mp4].sort((a, b) => (b.bit_rate ?? 0) - (a.bit_rate ?? 0))[0]?.url;
+}
+
 export type LatestTweetSuccess = {
   ok: true;
   text: string;
   createdAt: string;
   id: string;
   url: string;
-  media: { type: string; url: string }[];
+  media: LatestTweetMediaItem[];
   author: {
     name: string;
     username: string;
@@ -130,7 +146,7 @@ export async function GET() {
         "created_at,attachments,public_metrics,edit_history_tweet_ids",
       exclude: "retweets,replies",
       expansions: "attachments.media_keys",
-      "media.fields": "type,url,preview_image_url",
+      "media.fields": "type,url,preview_image_url,variants",
     });
 
     const tweetsRes = await xApiFetch(
@@ -155,6 +171,7 @@ export async function GET() {
           type: string;
           url?: string;
           preview_image_url?: string;
+          variants?: Array<{ bit_rate?: number; content_type?: string; url?: string }>;
         }>;
       };
       errors?: unknown;
@@ -192,16 +209,21 @@ export async function GET() {
 
     const mediaList = tweetsJson.includes?.media ?? [];
     const keys = tweet.attachments?.media_keys ?? [];
-    const media: { type: string; url: string }[] = [];
+    const media: LatestTweetMediaItem[] = [];
 
     for (const key of keys) {
       const m = mediaList.find((x) => x.media_key === key);
       if (!m) continue;
-      const url =
-        m.type === "photo"
-          ? m.url
-          : m.preview_image_url ?? m.url ?? "";
-      if (url) media.push({ type: m.type, url });
+      if (m.type === "photo") {
+        if (m.url) media.push({ type: m.type, url: m.url });
+        continue;
+      }
+      const poster = m.preview_image_url ?? m.url ?? "";
+      const videoUrl = bestMp4FromVariants(m.variants);
+      if (!poster && !videoUrl) continue;
+      const item: LatestTweetMediaItem = { type: m.type, url: poster };
+      if (videoUrl) item.videoUrl = videoUrl;
+      media.push(item);
     }
 
     const edited =

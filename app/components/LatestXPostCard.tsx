@@ -4,14 +4,29 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   BadgeCheck,
+  ChevronLeft,
+  ChevronRight,
   Heart,
   Info,
   Link2,
   MessageCircle,
   Pencil,
   Play,
+  X,
 } from "lucide-react";
-import { useCallback, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
+
+export type LatestXPostMediaItem = {
+  type: string;
+  url: string;
+  videoUrl?: string;
+};
 
 export type LatestXPostPayload = {
   ok: true;
@@ -19,7 +34,7 @@ export type LatestXPostPayload = {
   createdAt: string;
   id: string;
   url: string;
-  media: { type: string; url: string }[];
+  media: LatestXPostMediaItem[];
   author: {
     name: string;
     username: string;
@@ -34,7 +49,6 @@ const X_BLUE = "#1d9bf0";
 const X_GRAY = "#536471";
 const X_PINK = "#f91880";
 
-/** Lucide has no X/Twitter mark; use an external-link style cue for “open on X”. */
 function OpenOnXIcon({ className }: { className?: string }) {
   return <ArrowUpRight className={className} strokeWidth={2.25} aria-hidden />;
 }
@@ -55,9 +69,327 @@ function formatPostWhen(iso: string, edited: boolean) {
   return edited ? `Last edited ${time} · ${date}` : `${time} · ${date}`;
 }
 
+type MediaSegment =
+  | { kind: "photos"; urls: string[]; startIndex: number }
+  | { kind: "video"; item: LatestXPostMediaItem };
+
+function buildMediaSegments(media: LatestXPostMediaItem[]): MediaSegment[] {
+  const segments: MediaSegment[] = [];
+  let photoUrls: string[] = [];
+  let photoStart = 0;
+  let globalPhotoIndex = 0;
+
+  const flushPhotos = () => {
+    if (photoUrls.length > 0) {
+      segments.push({
+        kind: "photos",
+        urls: photoUrls,
+        startIndex: photoStart,
+      });
+      photoUrls = [];
+    }
+  };
+
+  for (const m of media) {
+    if (m.type === "photo") {
+      if (photoUrls.length === 0) photoStart = globalPhotoIndex;
+      photoUrls.push(m.url);
+      globalPhotoIndex += 1;
+    } else {
+      flushPhotos();
+      segments.push({ kind: "video", item: m });
+    }
+  }
+  flushPhotos();
+  return segments;
+}
+
+function WatchOnXLink({
+  href,
+  className,
+}: {
+  href: string;
+  className?: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={
+        className ??
+        "inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
+      }
+    >
+      <OpenOnXIcon className="h-4 w-4" />
+      Watch on X
+    </a>
+  );
+}
+
+function PhotoGrid({
+  urls,
+  startIndex,
+  onOpen,
+}: {
+  urls: string[];
+  startIndex: number;
+  onOpen: (globalIndex: number) => void;
+}) {
+  const n = urls.length;
+  if (n === 0) return null;
+
+  const cell = (localIdx: number, className: string) => (
+    <button
+      key={localIdx}
+      type="button"
+      onClick={() => onOpen(startIndex + localIdx)}
+      className={`relative block w-full overflow-hidden bg-[#eff3f4] ${className}`}
+    >
+      <Image
+        src={urls[localIdx]}
+        alt=""
+        width={1200}
+        height={1200}
+        className="h-full w-full object-cover"
+        sizes="(max-width: 640px) 100vw, 550px"
+        unoptimized
+      />
+    </button>
+  );
+
+  if (n === 1) {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-black/5">
+        {cell(0, "aspect-video sm:aspect-[16/9]")}
+      </div>
+    );
+  }
+
+  if (n === 2) {
+    return (
+      <div className="grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+        {cell(0, "aspect-square")}
+        {cell(1, "aspect-square")}
+      </div>
+    );
+  }
+
+  if (n === 3) {
+    return (
+      <div className="space-y-0.5 overflow-hidden rounded-2xl border border-black/5">
+        <div className="w-full">{cell(0, "aspect-[2/1]")}</div>
+        <div className="grid grid-cols-2 gap-0.5">
+          {cell(1, "aspect-square")}
+          {cell(2, "aspect-square")}
+        </div>
+      </div>
+    );
+  }
+
+  if (n === 4) {
+    return (
+      <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+        {cell(0, "aspect-square")}
+        {cell(1, "aspect-square")}
+        {cell(2, "aspect-square")}
+        {cell(3, "aspect-square")}
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+      {cell(0, "aspect-square")}
+      {cell(1, "aspect-square")}
+      {cell(2, "aspect-square")}
+      <button
+        type="button"
+        onClick={() => onOpen(startIndex + 3)}
+        className="relative aspect-square overflow-hidden bg-black/80"
+      >
+        <Image
+          src={urls[3]}
+          alt=""
+          width={800}
+          height={800}
+          className="h-full w-full object-cover opacity-60"
+          sizes="275px"
+          unoptimized
+        />
+        <span className="absolute inset-0 flex items-center justify-center text-lg font-bold text-white">
+          +{n - 3}
+        </span>
+      </button>
+    </div>
+  );
+}
+
+function VideoBlock({
+  item,
+  postUrl,
+}: {
+  item: LatestXPostMediaItem;
+  postUrl: string;
+}) {
+  const isMotion =
+    item.type === "video" || item.type === "animated_gif";
+
+  if (item.videoUrl) {
+    return (
+      <div className="space-y-2">
+        <div className="overflow-hidden rounded-2xl border border-black/5 bg-black">
+          <video
+            className="aspect-video w-full object-contain sm:max-h-[min(80vh,520px)]"
+            controls
+            playsInline
+            preload="metadata"
+            poster={item.url || undefined}
+            src={item.videoUrl}
+          />
+        </div>
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          <WatchOnXLink href={postUrl} />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="relative overflow-hidden rounded-2xl border border-black/5 bg-black">
+        {item.url ? (
+          <Image
+            src={item.url}
+            alt=""
+            width={1200}
+            height={675}
+            className="h-auto w-full object-cover"
+            sizes="(max-width: 640px) 100vw, 550px"
+            unoptimized
+          />
+        ) : null}
+        {isMotion ? (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20">
+            <div
+              className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1d9bf0] shadow-lg"
+              aria-hidden
+            >
+              <Play
+                className="ml-1 shrink-0 text-white"
+                size={28}
+                fill="white"
+                stroke="white"
+                strokeWidth={1.5}
+                aria-hidden
+              />
+            </div>
+          </div>
+        ) : null}
+      </div>
+      <div className="flex flex-wrap items-center justify-end gap-2">
+        <WatchOnXLink href={postUrl} />
+      </div>
+    </div>
+  );
+}
+
+function PhotoLightbox({
+  urls,
+  index,
+  onClose,
+  onPrev,
+  onNext,
+}: {
+  urls: string[];
+  index: number | null;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  useEffect(() => {
+    if (index === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [index, onClose, onPrev, onNext]);
+
+  useEffect(() => {
+    if (index === null) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [index]);
+
+  if (index === null || !urls[index]) return null;
+
+  const node = (
+    <div
+      className="fixed inset-0 z-[100] flex flex-col bg-black/92 p-2 sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <div className="flex shrink-0 items-center justify-between gap-2 pb-2 text-white">
+        <span className="text-sm tabular-nums opacity-80">
+          {index + 1} / {urls.length}
+        </span>
+        <button
+          type="button"
+          onClick={onClose}
+          className="rounded-full p-2 hover:bg-white/10"
+          aria-label="Close"
+        >
+          <X className="h-6 w-6" strokeWidth={2} />
+        </button>
+      </div>
+      <div className="relative flex min-h-0 flex-1 items-center justify-center">
+        {urls.length > 1 ? (
+          <button
+            type="button"
+            onClick={onPrev}
+            className="absolute left-0 z-10 rounded-full p-2 text-white hover:bg-white/10 sm:left-2"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="h-10 w-10" strokeWidth={1.5} />
+          </button>
+        ) : null}
+        <div className="relative max-h-full max-w-full">
+          {/* eslint-disable-next-line @next/next/no-img-element -- lightbox needs native img for dynamic external URLs */}
+          <img
+            src={urls[index]}
+            alt=""
+            className="max-h-[min(85vh,900px)] max-w-full object-contain"
+          />
+        </div>
+        {urls.length > 1 ? (
+          <button
+            type="button"
+            onClick={onNext}
+            className="absolute right-0 z-10 rounded-full p-2 text-white hover:bg-white/10 sm:right-2"
+            aria-label="Next image"
+          >
+            <ChevronRight className="h-10 w-10" strokeWidth={1.5} />
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+
+  if (typeof document === "undefined") return null;
+  return createPortal(node, document.body);
+}
+
 export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const avatarSrc = data.author.profileImageUrl
     ? data.author.profileImageUrl.replace("_normal", "_400x400")
@@ -82,10 +414,35 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
   const followUrl = `https://x.com/intent/follow?screen_name=${encodeURIComponent(data.author.username)}`;
   const replyUrl = `https://x.com/intent/tweet?in_reply_to=${data.id}`;
 
-  const primaryMedia = data.media[0];
-  const hasVideo =
-    primaryMedia &&
-    (primaryMedia.type === "video" || primaryMedia.type === "animated_gif");
+  const photoUrls = useMemo(
+    () => data.media.filter((m) => m.type === "photo").map((m) => m.url),
+    [data.media]
+  );
+
+  const segments = useMemo(
+    () => buildMediaSegments(data.media),
+    [data.media]
+  );
+
+  const onOpenLightbox = useCallback((globalIndex: number) => {
+    setLightboxIndex(globalIndex);
+  }, []);
+
+  const onLightboxPrev = useCallback(() => {
+    setLightboxIndex((i) => {
+      if (i === null || photoUrls.length < 2) return i;
+      return (i - 1 + photoUrls.length) % photoUrls.length;
+    });
+  }, [photoUrls.length]);
+
+  const onLightboxNext = useCallback(() => {
+    setLightboxIndex((i) => {
+      if (i === null || photoUrls.length < 2) return i;
+      return (i + 1) % photoUrls.length;
+    });
+  }, [photoUrls.length]);
+
+  const onCloseLightbox = useCallback(() => setLightboxIndex(null), []);
 
   return (
     <article
@@ -95,6 +452,14 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
       }}
     >
+      <PhotoLightbox
+        urls={photoUrls}
+        index={lightboxIndex}
+        onClose={onCloseLightbox}
+        onPrev={onLightboxPrev}
+        onNext={onLightboxNext}
+      />
+
       {/* Header */}
       <div className="flex items-start justify-between gap-3 px-4 pb-1 pt-3 sm:px-4 sm:pt-4">
         <div className="flex min-w-0 flex-1 gap-3">
@@ -187,51 +552,37 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
       </div>
 
       {/* Media */}
-      {primaryMedia ? (
-        <div className="px-3 pb-3 sm:px-4">
-          <a
-            href={data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative block overflow-hidden rounded-2xl bg-black"
-          >
-            <Image
-              src={primaryMedia.url}
-              alt=""
-              width={1200}
-              height={675}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 640px) 100vw, 550px"
-              unoptimized
-            />
-            {hasVideo ? (
-              <>
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/10">
-                  <div
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1d9bf0] shadow-lg"
-                    aria-hidden
-                  >
-                    <Play
-                      className="ml-1 shrink-0 text-white"
-                      size={28}
-                      fill="white"
-                      stroke="white"
-                      strokeWidth={1.5}
-                      aria-hidden
-                    />
+      {segments.length > 0 ? (
+        <div className="space-y-3 px-3 pb-3 sm:px-4">
+          {segments.map((seg, i) => {
+            if (seg.kind === "photos") {
+              return (
+                <div key={`p-${i}`} className="space-y-2">
+                  <PhotoGrid
+                    urls={seg.urls}
+                    startIndex={seg.startIndex}
+                    onOpen={onOpenLightbox}
+                  />
+                  <div className="flex justify-end">
+                    <a
+                      href={data.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
+                    >
+                      <OpenOnXIcon className="h-4 w-4" />
+                      View on X
+                    </a>
                   </div>
                 </div>
-                <span className="absolute right-3 top-3 rounded-full bg-black/85 px-3 py-1 text-xs font-medium text-white">
-                  Watch on X
-                </span>
-              </>
-            ) : null}
-          </a>
-          {data.media.length > 1 ? (
-            <p className="mt-2 text-center text-xs" style={{ color: X_GRAY }}>
-              +{data.media.length - 1} more on X
-            </p>
-          ) : null}
+              );
+            }
+            return (
+              <div key={`v-${i}`}>
+                <VideoBlock item={seg.item} postUrl={data.url} />
+              </div>
+            );
+          })}
         </div>
       ) : null}
 
@@ -290,7 +641,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           rel="noopener noreferrer"
           className="flex w-full items-center justify-center rounded-full border-2 border-[#1d9bf0] bg-white py-2.5 text-[15px] font-bold text-[#1d9bf0] transition-colors hover:bg-[#1d9bf0]/5"
         >
-          Read more on X
+          See full post on X
         </a>
       </div>
     </article>
