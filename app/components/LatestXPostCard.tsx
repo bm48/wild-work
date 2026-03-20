@@ -103,28 +103,28 @@ function buildMediaSegments(media: LatestXPostMediaItem[]): MediaSegment[] {
   return segments;
 }
 
-function WatchOnXLink({
-  href,
-  className,
-}: {
-  href: string;
-  className?: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={
-        className ??
-        "inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
-      }
-    >
-      <OpenOnXIcon className="h-4 w-4" />
-      Watch on X
-    </a>
-  );
-}
+// function WatchOnXLink({
+//   href,
+//   className,
+// }: {
+//   href: string;
+//   className?: string;
+// }) {
+//   return (
+//     <a
+//       href={href}
+//       target="_blank"
+//       rel="noopener noreferrer"
+//       className={
+//         className ??
+//         "inline-flex items-center justify-center gap-1.5 rounded-full border border-[#cfd9de] bg-white px-3 py-1.5 text-[13px] font-semibold text-[#0f1419] shadow-sm transition-colors hover:bg-[#f7f9f9]"
+//       }
+//     >
+//       <OpenOnXIcon className="h-4 w-4" />
+//       Watch on X
+//     </a>
+//   );
+// }
 
 function PhotoGrid({
   urls,
@@ -250,9 +250,9 @@ function XTweetEmbedIframe({
           allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
         />
       </div>
-      <div className="flex flex-wrap items-center justify-end gap-2 px-1">
+      {/* <div className="flex flex-wrap items-center justify-end gap-2 px-1">
         <WatchOnXLink href={postUrl} />
-      </div>
+      </div> */}
     </div>
   );
 }
