@@ -81,7 +81,7 @@ export default function InspirationGallery() {
   const current = GALLERY_IMAGES[currentIndex];
 
   return (
-    <section className="bg-black px-4 py-6 sm:px-6 sm:py-10">
+    <section className="discordSection discordSection--3 bg-black px-4 py-6 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-6xl cursor-pointer">
         {/* Main image viewer - arrows and expand show on hover; container aspect ratio matches current image */}
         <div

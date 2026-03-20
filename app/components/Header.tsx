@@ -19,7 +19,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent text-white">
+    <header className="bg-transparent text-white discordSection discordSection--1">
       {/* Mobile: hamburger at top right (width < 500px) */}
       <div className="hidden min-h-[56px] items-center justify-end px-4 max-[500px]:flex">
         <button
@@ -62,10 +62,10 @@ export default function Header() {
                   <Link
                     href={tab.href}
                     className={`inline-flex min-h-[44px] min-w-[44px] flex-shrink-0 items-center justify-center rounded px-1 py-1 text-xs font-normal 
-                    uppercase tracking-wide transition-colors sm:px-2 sm:py-1 sm:text-sm hover:border  hover:bg-[#ffffff] hover:text-[#666] ${
+                    uppercase tracking-wide transition-colors sm:px-2 sm:py-1 sm:text-sm hover:border hover:bg-white/10 ${
                       isActive
-                        ? "border border-[#DCDCDC] bg-[#FFFFFF] text-[#666666] hover:bg-[#f5f5f5]"
-                        : "text-[#FFFFFF] "
+                        ? "border border-white/20 bg-white/10 hover:bg-white/15"
+                        : "text-white/70 "
                     }`}
                     style={{ fontFamily: "var(--font-serif), serif" }}
                   >

@@ -37,7 +37,7 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <footer className="bg-transparent text-white max-[450px]:pb-24 mt-6">
+    <footer className="bg-transparent text-white max-[450px]:pb-24 mt-6 discordSection discordSection--2">
       <motion.div
         className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 border-t border-[#333]"
         variants={stagger}

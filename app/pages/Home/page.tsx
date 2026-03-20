@@ -211,7 +211,7 @@ function AnimatedImageSection({
 export default function Home() {
   const [iScottSessionActive, setIScottSessionActive] = useState(false);
   return (
-    <div className="mx-auto lg:max-w-5xl py-4">
+    <div className="discordSection discordSection--1 mx-auto lg:max-w-5xl py-4">
       {/* Hero: image with overlaid text - full image visible */}
       <motion.section
         className="relative flex w-full items-center justify-center overflow-hidden px-4 sm:px-6"
@@ -237,7 +237,7 @@ export default function Home() {
 
       {/* Promotional / Contact CTA - black background, centered */}
       <motion.section
-        className="flex flex-col items-center justify-center gap-3 px-4 py-6 text-center text-white sm:gap-4 sm:px-6 sm:py-8"
+        className="discordSection discordSection--1 flex flex-col items-center justify-center gap-3 px-4 py-6 text-center text-white sm:gap-4 sm:px-6 sm:py-8"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -360,7 +360,7 @@ export default function Home() {
 
       {/* Current project banner */}
       <motion.section
-        className="flex flex-col items-center justify-center px-4 pt-5 text-center text-white sm:gap-4 sm:px-6"
+        className="discordSection discordSection--2 flex flex-col items-center justify-center px-4 pt-5 text-center text-white sm:gap-4 sm:px-6"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -383,7 +383,7 @@ export default function Home() {
 
       {/* Project Wildfire CTA */}
       <motion.section
-        className="px-4 pb-8 sm:pb-14 text-center text-white sm:px-6"
+        className="discordSection discordSection--3 px-4 pb-8 sm:pb-14 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -410,7 +410,7 @@ export default function Home() {
 
       {/* Inspiration: Lew French */}
       <motion.section
-        className="px-4 pt-2 pb-8 sm:pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14"
+        className="discordSection discordSection--4 px-4 pt-2 pb-8 sm:pb-10 text-white sm:px-6 sm:pt-8 sm:pb-14"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -443,7 +443,7 @@ export default function Home() {
 
       {/* The Ruins CTA */}
       <motion.section
-        className="px-6 pt-2 sm:pt-8 pb-8 sm:pb-14 text-white text-center"
+        className="discordSection discordSection--1 px-6 pt-2 sm:pt-8 pb-8 sm:pb-14 text-white text-center"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -469,7 +469,7 @@ export default function Home() {
 
       {/* I sell people's homes. Period. */}
       <motion.section
-        className="px-4 text-white pb-8 sm:pb-14 sm:-mt-12 sm:px-6 sm:pt-16"
+        className="discordSection discordSection--2 px-4 text-white pb-8 sm:pb-14 sm:-mt-12 sm:px-6 sm:pt-16"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -513,7 +513,7 @@ export default function Home() {
 
       {/* Fireplace caption */}
       <motion.section
-        className="px-4 py-6 text-white sm:px-6 sm:py-8"
+        className="discordSection discordSection--3 px-4 py-6 text-white sm:px-6 sm:py-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={viewportReplay}
@@ -550,7 +550,7 @@ export default function Home() {
 
       {/* Latest X post — text/media from X API v2 (server) */}
       <motion.section
-        className="px-4 pb-8 text-center text-white sm:px-6"
+        className="discordSection discordSection--4 px-4 pb-8 text-center text-white sm:px-6"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportReplay}
@@ -586,7 +586,7 @@ export default function Home() {
 
       {/* Exquisite Art / WildWorks CTA */}
       <motion.section
-        className="px-4 py-1 sm:py-8 text-center text-white sm:px-6"
+        className="discordSection discordSection--1 px-4 py-1 sm:py-8 text-center text-white sm:px-6"
         variants={stagger}
         initial="initial"
         whileInView="animate"

@@ -2,7 +2,7 @@ import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function WhoIsG() {
   return (
-    <div className="mx-auto lg:max-w-5xl py-4">
+    <div className="mx-auto lg:max-w-5xl py-4 discordSection discordSection--1">
       {/* Image constrained to same width as header separator line */}
       <section className="relative mx-auto flex w-full items-center justify-center overflow-hidden px-4 sm:px-6">
         <AspectRatioImage
@@ -14,7 +14,7 @@ export default function WhoIsG() {
         <div className="absolute inset-0  pointer-events-none" aria-hidden />
       </section>
 
-      <section className="mx-auto w-full px-4 pt-6 text-white sm:px-6 sm:pt-8 ">
+      <section className="discordSection discordSection--2 mx-auto w-full px-4 pt-6 text-white sm:px-6 sm:pt-8 ">
         <div className="space-y-2 text-left text-sm leading-relaxed">
           <h1 className="text-2xl sm:text-3xl">Who is Scott G. Dietz?</h1>
           <p className="text-base">

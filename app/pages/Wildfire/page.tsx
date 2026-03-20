@@ -50,7 +50,7 @@ function AnimatedTopImage() {
 
 export default function Wildfire() {
   return (
-    <div className="mx-auto lg:max-w-5xl py-4">
+    <div className="mx-auto lg:max-w-5xl py-4 discordSection discordSection--1">
       <AnimatedTopImage />
 
       <motion.div
@@ -63,7 +63,7 @@ export default function Wildfire() {
       </motion.div>
 
       <motion.section
-        className="px-4 text-white sm:px-6"
+        className="discordSection discordSection--2 px-4 text-white sm:px-6"
         variants={stagger}
         initial="initial"
         whileInView="animate"
@@ -79,7 +79,7 @@ export default function Wildfire() {
 
       {/* Project Wildfire description */}
       <motion.section
-        className="px-4 py-4 text-white sm:px-6 sm:py-6 text-xs"
+        className="discordSection discordSection--3 px-4 py-4 text-white sm:px-6 sm:py-6 text-xs"
         variants={stagger}
         initial="initial"
         whileInView="animate"

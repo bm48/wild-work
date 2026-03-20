@@ -78,3 +78,126 @@ body {
 .btn-inset:disabled {
   opacity: 0.7;
 }
+
+/* Discord-brilliant animated gradient text (dark-mode friendly) */
+@keyframes discord-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.discordSection {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #a855f7 0%,
+    #f91880 20%,
+    #1d9bf0 50%,
+    #facc15 75%,
+    #ff3b30 100%
+  );
+  --discord-glow: rgba(168, 85, 247, 0.35);
+}
+
+.discordSection--1 {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #a855f7 0%,
+    #ff4fd8 18%,
+    #4f46e5 38%,
+    #1d9bf0 60%,
+    #facc15 78%,
+    #ff3b30 100%
+  );
+  --discord-glow: rgba(168, 85, 247, 0.45);
+}
+
+.discordSection--2 {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #f91880 0%,
+    #8b5cf6 22%,
+    #22d3ee 48%,
+    #f472b6 68%,
+    #facc15 82%,
+    #fb7185 100%
+  );
+  --discord-glow: rgba(249, 24, 128, 0.45);
+}
+
+.discordSection--3 {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #1d9bf0 0%,
+    #22c55e 18%,
+    #a855f7 45%,
+    #f91880 62%,
+    #facc15 82%,
+    #ff3b30 100%
+  );
+  --discord-glow: rgba(29, 155, 240, 0.45);
+}
+
+.discordSection--4 {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #facc15 0%,
+    #ff3b30 20%,
+    #f91880 45%,
+    #a855f7 65%,
+    #1d9bf0 90%,
+    #34d399 100%
+  );
+  --discord-glow: rgba(250, 204, 21, 0.42);
+}
+
+.discordSection--lightbox {
+  --discord-gradient: linear-gradient(
+    90deg,
+    #a855f7 0%,
+    #1d9bf0 30%,
+    #f91880 60%,
+    #facc15 85%,
+    #ff3b30 100%
+  );
+  --discord-glow: rgba(29, 155, 240, 0.45);
+}
+
+.discordSection :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    li,
+    strong,
+    em,
+    b,
+    i,
+    code,
+    label,
+    button
+  ) {
+  color: transparent !important;
+  background-image: var(--discord-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: discord-gradient-shift 5s ease-in-out infinite;
+  text-shadow: 0 0 16px var(--discord-glow), 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* Keep icon colors readable when parents use gradient text */
+.discordSection svg {
+  color: rgba(255, 255, 255, 0.9) !important;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.25));
+}

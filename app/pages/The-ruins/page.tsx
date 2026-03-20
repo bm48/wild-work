@@ -2,7 +2,7 @@ import AspectRatioImage from "../../components/AspectRatioImage";
 
 export default function TheRuins() {
     return (
-        <div className="mx-auto lg:max-w-5xl py-4">
+        <div className="mx-auto lg:max-w-5xl py-4 discordSection discordSection--1">
             {/* First image: same width as header separator line (like who-is-g) */}
             
             <section className="relative flex w-full mx-auto items-center justify-center overflow-hidden px-4 sm:px-6">
@@ -15,7 +15,7 @@ export default function TheRuins() {
                 <div className="absolute inset-0  pointer-events-none" aria-hidden />
             </section>
 
-            <section className="px-4 pt-6 text-white mx-auto w-full sm:px-6 sm:pt-8 pb-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--1 px-4 pt-6 text-white mx-auto w-full sm:px-6 sm:pt-8 pb-2" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h1 className="mb-4 text-3xl text-center sm:mb-6 sm:text-5xl">The Ruins</h1>
                 <p className="text-xs text-white/90 pb-2">Federal Hill, Baltimore City, Maryland</p>
                 <div className="space-y-2 text-xs leading-relaxed">
@@ -37,7 +37,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--2 px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-xl mb-2">What I saw</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
@@ -56,7 +56,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--3 px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-xl mb-2">Building the Ruins</h2>
                 <p className="text-xs leading-relaxed mb-4">The finished space was built to feel real, with:</p>
                 <ul className="list-disc list-outside space-y-2 text-xs leading-relaxed mb-2 pl-6">
@@ -68,7 +68,7 @@ export default function TheRuins() {
                 </ul>
             </section>
 
-            <section className="px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--4 px-4 py-4 text-white mx-auto w-full sm:px-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-xl mb-2">This Stone has Baltimore in it</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
@@ -86,7 +86,7 @@ export default function TheRuins() {
                 </div>
             </section>
 
-            <section className="px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--1 px-4 text-white mx-auto w-full sm:px-6 sm:pt-2" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-xl mb-2">Why this works</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>
@@ -100,7 +100,7 @@ export default function TheRuins() {
                 <hr className="mt-2 border-white/30" />
             </section>
 
-            <section className="px-4 py-2 text-white mx-auto w-full sm:px-6 mt-6" style={{ fontFamily: "var(--font-serif), serif" }}>
+            <section className="discordSection discordSection--2 px-4 py-2 text-white mx-auto w-full sm:px-6 mt-6" style={{ fontFamily: "var(--font-serif), serif" }}>
                 <h2 className="text-2xl mb-2">If you want a Ruin of your own...</h2>
                 <div className="space-y-2 text-xs leading-relaxed">
                     <p>

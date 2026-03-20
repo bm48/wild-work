@@ -1,6 +1,6 @@
 export default function WildworksLegal() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-6 sm:py-12">
+    <div className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-6 sm:py-12 discordSection discordSection--4">
       <div
         className="space-y-8 text-[0.9rem] leading-relaxed"
         style={{ fontFamily: "var(--font-serif), serif" }}

@@ -249,7 +249,10 @@ export default function LewFrench() {
   );
 
   return (
-    <div ref={containerRef} className="mx-auto lg:max-w-5xl py-4">
+    <div
+      ref={containerRef}
+      className="discordSection discordSection--1 mx-auto lg:max-w-5xl py-4"
+    >
       <section className="inspiration-hero-wrap relative flex w-full mx-auto items-center justify-center overflow-hidden px-4 sm:px-6">
         <div className="inspiration-hero-image relative w-full max-w-5xl overflow-hidden rounded-sm">
           <div className="inspiration-hero-image-inner relative w-full h-full">
@@ -263,7 +266,7 @@ export default function LewFrench() {
         </div>
       </section>
 
-      <section className="mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6">
+      <section className="discordSection discordSection--2 mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6">
         <div className="inspiration-title-section flex flex-col items-center mb-4">
           <h2
             className="inspiration-main-title flex flex-wrap items-center justify-center text-2xl text-center px-4 z-10 pointer-events-none sm:px-6 sm:text-4xl"
@@ -328,7 +331,7 @@ export default function LewFrench() {
         </div>
       </section>
 
-      <section className="mx-auto w-full px-4 py-2 text-white sm:px-6 sm:py-4">
+      <section className="discordSection discordSection--3 mx-auto w-full px-4 py-2 text-white sm:px-6 sm:py-4">
         <h2 className="inspiration-heading text-2xl font-bold">Design: Sketch</h2>
         <span className="inspiration-heading-line block h-0.5 w-16 bg-white/60 origin-left mb-1" />
         <div className="inspiration-text-block">
@@ -352,7 +355,7 @@ export default function LewFrench() {
         </div>
       </section>
 
-      <section className="space-y-2 mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6 leading-[1]">
+      <section className="discordSection discordSection--4 space-y-2 mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6 leading-[1]">
         <h2 className="inspiration-heading text-2xl font-bold">Stone Purchasing</h2>
         <span className="inspiration-heading-line block h-0.5 w-16 bg-white/60 origin-left mb-1" />
         <div className="inspiration-text-block">
@@ -382,7 +385,7 @@ export default function LewFrench() {
         </div>
       </section>
 
-      <section className="mx-auto w-full px-4 py-2 text-white sm:px-6 sm:py-4">
+      <section className="discordSection discordSection--2 mx-auto w-full px-4 py-2 text-white sm:px-6 sm:py-4">
         <div className="inspiration-text-block">
           <p className="text-base">
             I took about 2 hours, and started into more curved outer edges. I abandoned the concept after numerous iterations, as I just could not get anything to look pleasing. As I look at it now upon writing this, this style of design could perhaps be magnificent for a future build. King Cobra.
@@ -401,7 +404,7 @@ export default function LewFrench() {
         </div>
       </section>
 
-      <section className="inspiration-cta mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6">
+      <section className="discordSection discordSection--3 inspiration-cta mx-auto w-full px-4 py-4 text-white sm:px-6 sm:py-6">
         <div className="inspiration-text-block">
           <p className="text-base ">
             I realized that we had a pallet of 3 superstepper stones, massive, chunky, and two of them might be perfect to cantilever out as shoulders and be quite the spectacular finishing touch to the entire project.

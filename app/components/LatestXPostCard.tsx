@@ -143,7 +143,7 @@ function PhotoGrid({
       key={localIdx}
       type="button"
       onClick={() => onOpen(startIndex + localIdx)}
-      className={`relative block w-full overflow-hidden bg-[#eff3f4] ${className}`}
+      className={`relative block w-full overflow-hidden bg-[#0f1419] ${className}`}
     >
       <Image
         src={urls[localIdx]}
@@ -159,7 +159,7 @@ function PhotoGrid({
 
   if (n === 1) {
     return (
-      <div className="overflow-hidden rounded-2xl border border-black/5">
+      <div className="overflow-hidden rounded-2xl border border-[#253042]">
         {cell(0, "aspect-video sm:aspect-[16/9]")}
       </div>
     );
@@ -167,7 +167,7 @@ function PhotoGrid({
 
   if (n === 2) {
     return (
-      <div className="grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+      <div className="grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl border border-[#253042]">
         {cell(0, "aspect-square")}
         {cell(1, "aspect-square")}
       </div>
@@ -176,7 +176,7 @@ function PhotoGrid({
 
   if (n === 3) {
     return (
-      <div className="space-y-0.5 overflow-hidden rounded-2xl border border-black/5">
+      <div className="space-y-0.5 overflow-hidden rounded-2xl border border-[#253042]">
         <div className="w-full">{cell(0, "aspect-[2/1]")}</div>
         <div className="grid grid-cols-2 gap-0.5">
           {cell(1, "aspect-square")}
@@ -188,7 +188,7 @@ function PhotoGrid({
 
   if (n === 4) {
     return (
-      <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+      <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-[#253042]">
         {cell(0, "aspect-square")}
         {cell(1, "aspect-square")}
         {cell(2, "aspect-square")}
@@ -198,7 +198,7 @@ function PhotoGrid({
   }
 
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-black/5">
+    <div className="grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded-2xl border border-[#253042]">
       {cell(0, "aspect-square")}
       {cell(1, "aspect-square")}
       {cell(2, "aspect-square")}
@@ -237,10 +237,10 @@ function XTweetEmbedIframe({
   postUrl: string;
   username: string;
 }) {
-  const src = `https://platform.twitter.com/embed/Tweet.html?id=${encodeURIComponent(tweetId)}&theme=light&dnt=true&maxWidth=550`;
+  const src = `https://platform.twitter.com/embed/Tweet.html?id=${encodeURIComponent(tweetId)}&theme=dark&dnt=true&maxWidth=550`;
   return (
     <div className="space-y-2">
-      <div className="overflow-hidden rounded-2xl border border-black/5 bg-white">
+      <div className="overflow-hidden rounded-2xl border border-[#253042] bg-[#0f1419]">
         <iframe
           title={`Post by @${username}`}
           src={src}
@@ -294,7 +294,7 @@ function PhotoLightbox({
 
   const node = (
     <div
-      className="fixed inset-0 z-[100] flex flex-col bg-black/92 p-2 sm:p-4"
+      className="discordSection discordSection--lightbox fixed inset-0 z-[100] flex flex-col bg-black/92 p-2 sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Image viewer"
@@ -417,7 +417,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
 
   return (
     <article
-      className="mx-auto w-full max-w-[550px] overflow-hidden rounded-2xl border border-[#cfd9de] bg-white text-left shadow-[0_0_0_1px_rgba(15,20,25,0.08)]"
+      className="discordSection discordSection--3 mx-auto w-full max-w-[550px] overflow-hidden rounded-2xl border border-[#253042] bg-[#0f1419] text-left shadow-[0_0_0_1px_rgba(0,0,0,0.25)]"
       style={{
         fontFamily:
           "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
@@ -438,7 +438,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
             href={data.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#eff3f4]"
+            className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#111827]"
           >
             {avatarSrc ? (
               <Image
@@ -563,7 +563,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
 
       {/* Meta row */}
       <div
-        className="flex items-center justify-between border-t border-[#eff3f4] px-4 py-2 text-[13px]"
+        className="flex items-center justify-between border-t border-[#253042] px-4 py-2 text-[13px]"
         style={{ color: X_GRAY }}
       >
         <span className="flex items-center gap-1">
@@ -575,7 +575,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
 
       {/* Actions */}
       <div
-        className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#eff3f4] px-4 py-3 text-[13px] font-medium"
+        className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#253042] px-4 py-3 text-[13px] font-medium"
         style={{ color: X_GRAY }}
       >
         <span className="inline-flex items-center gap-1.5">
@@ -614,7 +614,7 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
           href={data.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center rounded-full border-2 border-[#1d9bf0] bg-white py-2.5 text-[15px] font-bold text-[#1d9bf0] transition-colors hover:bg-[#1d9bf0]/5"
+          className="flex w-full items-center justify-center rounded-full border-2 border-transparent bg-transparent py-2.5 text-[15px] font-bold transition-colors hover:bg-white/5"
         >
           See full post on X
         </a>
@@ -626,21 +626,21 @@ export function LatestXPostCard({ data }: { data: LatestXPostPayload }) {
 export function LatestXPostCardSkeleton() {
   return (
     <div
-      className="mx-auto h-[320px] w-full max-w-[550px] animate-pulse rounded-2xl border border-[#cfd9de] bg-white"
+      className="discordSection discordSection--3 mx-auto h-[320px] w-full max-w-[550px] animate-pulse rounded-2xl border border-[#253042] bg-[#0f1419]"
       aria-hidden
     >
       <div className="p-4">
         <div className="flex gap-3">
-          <div className="h-10 w-10 rounded-full bg-[#eff3f4]" />
+          <div className="h-10 w-10 rounded-full bg-[#111827]" />
           <div className="flex-1 space-y-2 pt-1">
-            <div className="h-4 w-32 rounded bg-[#eff3f4]" />
-            <div className="h-3 w-48 rounded bg-[#eff3f4]" />
+            <div className="h-4 w-32 rounded bg-[#111827]" />
+            <div className="h-3 w-48 rounded bg-[#111827]" />
           </div>
         </div>
         <div className="mt-4 space-y-2">
-          <div className="h-3 w-full rounded bg-[#eff3f4]" />
-          <div className="h-3 w-full rounded bg-[#eff3f4]" />
-          <div className="h-3 w-2/3 rounded bg-[#eff3f4]" />
+          <div className="h-3 w-full rounded bg-[#111827]" />
+          <div className="h-3 w-full rounded bg-[#111827]" />
+          <div className="h-3 w-2/3 rounded bg-[#111827]" />
         </div>
       </div>
     </div>
