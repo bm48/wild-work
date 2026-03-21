@@ -43,10 +43,108 @@ function createStars() {
 
 type Star = ReturnType<typeof createStars>[number];
 
+/** ms between meteors when idle — kept fairly rare vs. typical Grok-style pages */
+const SHOOTING_STAR_GAP_MIN = 12_000;
+const SHOOTING_STAR_GAP_MAX = 36_000;
+
+type MeteorParams = {
+  id: string;
+  leftPct: number;
+  topPct: number;
+  angleDeg: number;
+  lengthPx: number;
+  travelPx: number;
+  duration: number;
+};
+
+function createMeteorParams(): MeteorParams {
+  const angleDeg = getRandom(30, 52);
+  const travelPx = getRandom(480, 880);
+  return {
+    id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+    leftPct: getRandom(-12, 62),
+    topPct: getRandom(-10, 28),
+    angleDeg,
+    lengthPx: getRandom(100, 200),
+    travelPx,
+    duration: getRandom(0.5, 0.9),
+  };
+}
+
+function ShootingStar({
+  params,
+  onComplete,
+}: {
+  params: MeteorParams;
+  onComplete: () => void;
+}) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const el = wrapperRef.current;
+      if (!el) return;
+      const rad = (params.angleDeg * Math.PI) / 180;
+      const dx = Math.cos(rad) * params.travelPx;
+      const dy = Math.sin(rad) * params.travelPx;
+
+      gsap.set(el, { x: 0, y: 0, opacity: 0 });
+      gsap
+        .timeline({
+          onComplete,
+          defaults: { ease: "none" },
+        })
+        .to(el, { opacity: 0.95, duration: 0.07, ease: "power2.out" }, 0)
+        .to(
+          el,
+          { x: dx, y: dy, duration: params.duration, ease: "power1.in" },
+          0
+        )
+        .to(
+          el,
+          {
+            opacity: 0,
+            duration: params.duration * 0.42,
+            ease: "power2.in",
+          },
+          params.duration * 0.34
+        );
+    },
+    { scope: wrapperRef, dependencies: [params.id] }
+  );
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="absolute will-change-[transform,opacity]"
+      style={{
+        left: `${params.leftPct}%`,
+        top: `${params.topPct}%`,
+        pointerEvents: "none",
+      }}
+    >
+      <div
+        className="rounded-full"
+        style={{
+          width: `${params.lengthPx}px`,
+          height: "2px",
+          transform: `rotate(${params.angleDeg}deg)`,
+          transformOrigin: "0 50%",
+          background:
+            "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(210,230,255,0.45) 42%, transparent 100%)",
+          boxShadow:
+            "0 0 10px 2px rgba(255,255,255,0.25), 0 0 4px 1px rgba(200,220,255,0.35)",
+        }}
+      />
+    </div>
+  );
+}
+
 export default function StarryBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
   const starsRef = useRef<HTMLDivElement[]>([]);
   const [stars, setStars] = useState<Star[] | null>(null);
+  const [meteor, setMeteor] = useState<MeteorParams | null>(null);
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -54,6 +152,13 @@ export default function StarryBackground() {
     });
     return () => cancelAnimationFrame(id);
   }, []);
+
+  useEffect(() => {
+    if (meteor !== null) return;
+    const delay = getRandom(SHOOTING_STAR_GAP_MIN, SHOOTING_STAR_GAP_MAX);
+    const t = window.setTimeout(() => setMeteor(createMeteorParams()), delay);
+    return () => clearTimeout(t);
+  }, [meteor]);
 
   useGSAP(
     () => {
@@ -124,6 +229,13 @@ export default function StarryBackground() {
           }}
         />
       ))}
+      {meteor ? (
+        <ShootingStar
+          key={meteor.id}
+          params={meteor}
+          onComplete={() => setMeteor(null)}
+        />
+      ) : null}
     </div>
   );
 }
